@@ -1,0 +1,5 @@
+node_modules/
+packages
+
+settings.json
+settings-production.json
