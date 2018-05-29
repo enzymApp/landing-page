@@ -1,5 +1,7 @@
 import {Meteor}   from 'meteor/meteor'
 import {Accounts} from 'meteor/accounts-base'
+import '/imports/api/referrer/server/publications'
+import '/imports/api/referrer/server/updateRanks'
 
 Meteor.startup(() => {
   // code to run on server at startup

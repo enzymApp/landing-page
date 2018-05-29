@@ -1,0 +1,29 @@
+import React from 'react'
+
+import {Meteor}      from 'meteor/meteor'
+import {withTracker} from 'meteor/react-meteor-data'
+
+import {Referrers} from '/imports/api/referrer/Referrers'
+import ReferrerList from './ReferrerList'
+
+
+const MIN_COUNT = 20
+
+export default withTracker(() => {
+  Meteor.subscribe('referrers.one')
+  const referrerCursor = Referrers.find({userId: Meteor.userId})
+  let list = []
+  console.log(referrerCursor.count())
+  if(referrerCursor.count() > 0) {
+    const referrer = referrerCursor.fetch()[0]
+    const minRank = Math.max(1, referrer.rank - 1)
+    const maxRank = referrer.rank + 1
+    Meteor.subscribe('referrers.list', MIN_COUNT, minRank, maxRank)
+    const curs = Referrers.paginatedListCentered(MIN_COUNT, minRank, maxRank)
+    list = curs.fetch()
+  }
+  return {
+    list,
+    loading: list.length === 0
+  }
+})(ReferrerList)

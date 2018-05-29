@@ -1,6 +1,7 @@
 import React         from 'react'
 import { Jumbotron } from 'reactstrap'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
+import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 
 export default ({userId, children}) => (
   <div>
@@ -15,6 +16,9 @@ export default ({userId, children}) => (
         <SubscriptionFormContainer />
       }
       {children}
+      {userId &&
+        <ReferrerListContainer />
+      }
     </Jumbotron>
   </div>
 )
