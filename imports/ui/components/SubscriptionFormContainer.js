@@ -6,15 +6,17 @@ import {Form,
         Label,
         Button,
         Col}          from 'reactstrap'
+import {withRouter}   from 'react-router'
 import {Experiment,
         Variant,
         emitter}      from '@marvelapp/react-ab-test'
-import {analytics} from 'meteor/okgrow:analytics'
+import {analytics}    from 'meteor/okgrow:analytics'
 
 
 emitter.defineVariants('mainButton', ['A', 'B'])
 
-export default class SubscriptionFormContainer extends React.Component {
+
+class SubscriptionFormContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,6 +24,7 @@ export default class SubscriptionFormContainer extends React.Component {
       email:      '',
       newsletter: '',
       engage:     '',
+      username:   '',
     }
   }
   componentWillMount() {
@@ -123,9 +126,20 @@ export default class SubscriptionFormContainer extends React.Component {
   handleSubmit = () => async (e) => {
     e.preventDefault()
     console.log(this.state)
-    const {engage, newsletter, email} = this.state
+    const {email, engage, newsletter, username} = this.state
+    const {referrerToken} = this.props.match.params
     //emitter.emitWin('mainButton')
-    Meteor.sendVerificationCode(email)
+    const options = {
+      profile: {
+        engage:       engage === 'on',
+        newsletter:   newsletter === 'on',
+        referrerToken,
+      },
+      username
+    }
+    Meteor.sendVerificationCode(email, options)
     this.nextStep()()
   }
 }
+
+export default withRouter(SubscriptionFormContainer)

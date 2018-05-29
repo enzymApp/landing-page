@@ -5,6 +5,7 @@ import {Referrers} from '../Referrers'
 
 Meteor.publish('referrers.one', function() {
   const userId = this.userId
+  if(!userId) return
   const cursor = Referrers.find(
     {userId},
     {fields: Referrers.publicFields}

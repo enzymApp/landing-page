@@ -11,11 +11,10 @@ const MIN_COUNT = 20
 
 export default withTracker(() => {
   Meteor.subscribe('referrers.one')
-  const referrerCursor = Referrers.find({userId: Meteor.userId})
+  const referrer = Referrers.findOne({userId: Meteor.userId})
   let list = []
-  console.log(referrerCursor.count())
-  if(referrerCursor.count() > 0) {
-    const referrer = referrerCursor.fetch()[0]
+  console.log(referrer)
+  if(referrer && referrer.rank) {
     const minRank = Math.max(1, referrer.rank - 1)
     const maxRank = referrer.rank + 1
     Meteor.subscribe('referrers.list', MIN_COUNT, minRank, maxRank)

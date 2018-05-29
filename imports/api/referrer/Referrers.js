@@ -77,5 +77,10 @@ Referrers.createReferrer = (userId) => {
 }
 
 Referrers.helpers({
-
+  getUrl() {
+    //.replace(/^https?:\/\//, '').replace(/\/$/, '')
+    const baseUrl = Meteor.absoluteUrl()
+    console.log(baseUrl)
+    return `${baseUrl}?referrer=${this.token}`
+  }
 })
