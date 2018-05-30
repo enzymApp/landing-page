@@ -4,6 +4,15 @@ import {Tracker} from 'meteor/tracker'
 import {Referrers} from '../Referrers'
 
 
+const result = Referrers.update(
+  {referralCount: {$exists: false}},
+  {$set: {referrals: []}},
+  {multi: true},
+)
+console.log("updated", result)
+
+updateRanks(Referrers)
+
 Referrers.find(
   {},
   {
@@ -16,7 +25,7 @@ Referrers.find(
 .observe({
   added({_id, rank}) {
     if(rank) return
-    console.log("added", _id)
+    //console.log("added", _id)
     Referrers.update(
       {_id},
       {$set: {
@@ -24,18 +33,59 @@ Referrers.find(
       }}
     )
   },
-  movedTo({_id, rank, referralCount}, fromIndex, toIndex, before) {
-    console.log("movedTo", _id, rank, referralCount, "-", fromIndex, toIndex, before)
-    const theOneBefore = Referrers.findOne(before)
+  movedTo({_id, rank, referralCount}, fromIndex, toIndex) {
+    console.log("movedTo", _id, rank, referralCount, "-", fromIndex, toIndex)
+    //if(!referralCount) return
+    const theOneBefore = Referrers.findOne({
+      referralCount: {$gte: referralCount},
+      _id:           {$ne:  _id},
+    }, {
+      sort: {rank: -1},
+    })
+    console.log(theOneBefore)
     const futureRank = (
-      theOneBefore.referralCount > referralCount ?
-      theOneBefore.rank + 1 :
-      theOneBefore.rank
+      !theOneBefore ?
+      1 :
+      (
+        theOneBefore.referralCount > referralCount ?
+        theOneBefore.rank + 1 :
+        theOneBefore.rank
+      )
     )
-    const hasOneWithOldRank = !!Referrers.findOne({rank})
-    Referrers.update({_id}, {$set: {rank: futureRank}})
-    if(!hasOneWithOldRank) {
-      Referrers.update({rank: {$gt: rank}}, {$inc: {rank: -1}})
+    console.log(futureRank, rank)
+    //Referrers.update(_id, {$set: {rank: futureRank}})
+    if(futureRank != rank) {
+      // if(!Referrers.findOne({rank})) {
+      //   Referrers.update({rank: {$gt: rank}}, {$inc: {rank: -1}})
+      // }
+    } else {
+      // Referrers.update({referralCount: {$lt: referralCount}}, {$inc: {rank: 1}})
     }
+    updateRanks(Referrers, referralCount, futureRank)
   }
 })
+
+function updateRanks(Referrers, referralCount, rank) {
+  if(referralCount === undefined) {
+    referralCount = (Referrers.findOne({}, {sort: {referralCount: -1}}) || {}).referralCount || 0
+  }
+  if(!rank) {
+    rank = (Referrers.findOne({referralCount}, {sort: {rank: 1}}) || {}).rank || 1
+  }
+  console.log("updateRanks", referralCount, rank)
+  let r = rank
+  let c = referralCount
+  Referrers.find(
+    {referralCount: {$lte: referralCount}},
+    {sort: Referrers.defaultSort, fields: {_id: 1, referralCount: 1}}
+  ).forEach(ref => {
+    if(ref.referralCount < c) {
+      r++
+      c = ref.referralCount
+    }
+    console.log(ref._id, c, r)
+    if(ref.rank != r) {
+      Referrers.update(ref._id, {$set: {rank: r}})
+    }
+  })
+}

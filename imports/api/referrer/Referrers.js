@@ -21,19 +21,20 @@ Referrers.schema = new SimpleSchema({
     },
   },
   referrals: {
-    type:         Array,
-    defaultValue: [],
+    type: Array,
   },
   'referrals.$': {
     type: String,
   },
   referralCount:  {
-    type:       SimpleSchema.Integer,
-    optional:   true,
+    type:         SimpleSchema.Integer,
+    optional:     true,
     autoValue() {
       this.unset()
-      //if(!this.field('referrals').isSet) return
-      return this.field('referrals').length
+      //FIXME: can't decrease count to 0, will stop to 1
+      if(!this.field('referrals').isSet) return
+      console.log("referrals", this.field('referrals').value)
+      return this.field('referrals').value.length
     }
   },
   rank: {
@@ -48,14 +49,14 @@ Referrers.schema = new SimpleSchema({
       const rank = this.field('rank').value
       if(!rank) return
       if(!this.isUpdate) return rank
-      return {$max: rank}
+      return {$min: rank}
     }
   }
 })
 
 Referrers.attachSchema(Referrers.schema)
 
-Referrers.defaultSort = {referralCount: 1}
+Referrers.defaultSort = {referralCount: -1, rank: 1, bestRank: 1}
 
 Referrers.publicFields = {
   token:         1,
@@ -73,14 +74,12 @@ Referrers.deny({
 
 
 Referrers.createReferrer = (userId) => {
-  Referrers.insert({userId})
+  Referrers.insert({userId, referrals: []})
 }
 
 Referrers.helpers({
   getUrl() {
-    //.replace(/^https?:\/\//, '').replace(/\/$/, '')
-    const baseUrl = Meteor.absoluteUrl()
-    console.log(baseUrl)
-    return `${baseUrl}?referrer=${this.token}`
+    const baseUrl = Meteor.absoluteUrl().replace(/\/$/, '')
+    return `${baseUrl}/referrer/${this.token}`
   }
 })

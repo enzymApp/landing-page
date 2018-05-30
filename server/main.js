@@ -1,6 +1,7 @@
 import {Meteor}   from 'meteor/meteor'
 import {Accounts} from 'meteor/accounts-base'
 import '/imports/api/referrer/server/publications'
+import '/imports/api/referrer/server/saveReferrer'
 import '/imports/api/referrer/server/updateRanks'
 
 Meteor.startup(() => {

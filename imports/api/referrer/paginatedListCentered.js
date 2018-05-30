@@ -18,20 +18,59 @@ export default (Referrers) => {
       },
     }).validate({minCount, minRank, maxRank})
 
-    let referrers
-    let fromRank = minRank
-    let toRank   = maxRank
-    if(!fromRank || !toRank) {
-      const {rank} = Referrers.findOne({userId})
-      fromRank = Math.max(1, rank - 1)
-      toRank   = rank + 1
+    let min = maxRank - minRank >= 2 ? minRank : Math.min(1, minRank - 1)
+    let max = maxRank - minRank >= 2 ? maxRank : maxRank + 1
+    console.log(min, max)
+    let prevMin, prevMax
+    let count = 0, prevCount = -1
+    prevMin = min + 1
+    prevMax = max - 1
+    const referrers = []
+    while(count < minCount && count > prevCount) {
+      prevCount = count
+      count += (
+        getReferrers(Referrers, {
+          from:   min,
+          to:     prevMin,
+          fields: {_id: 1},
+        }).count()
+        +
+        getReferrers(Referrers, {
+          from:   prevMax,
+          to:     max,
+          fields: {_id: 1},
+        }).count()
+      )
+      console.log(count)
+      prevMin   = min
+      prevMax   = max
+      min = Math.max(1, min - 1)
+      max = max + 1
     }
-    do {
-      referrers = Referrers.find({rank: {$gte: fromRank, $lte: toRank}})
-      fromRank = Math.max(1, fromRank - 1)
-      toRank   = toRank + 1
-    }
-    while(referrers.count() > minCount)
-    return referrers
+    return getReferrers(
+      Referrers,
+      {
+        from:   prevMin,
+        to:     prevMax,
+        fields: Referrers.publicFields,
+      }
+    )
   }
+}
+
+function getReferrers(Referrers, {from, to, fields}) {
+  console.log("getReferrers", from, to)
+  return Referrers.find(
+    {rank: {$gte: from, $lt: to}},
+    {
+      fields,
+      sort:   {rank: 1},
+    }
+  )
+}
+
+function countInArray(arr) {
+  return arr.map(cursor => cursor.count())
+  .map(c => {console.log(c);return c})
+  .reduce((acc, count) => acc + count, 0)
 }

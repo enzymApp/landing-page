@@ -5,7 +5,7 @@ import {Referrers} from '../Referrers'
 
 Meteor.publish('referrers.one', function() {
   const userId = this.userId
-  if(!userId) return
+  if(!userId) return this.ready()
   const cursor = Referrers.find(
     {userId},
     {fields: Referrers.publicFields}
@@ -15,7 +15,7 @@ Meteor.publish('referrers.one', function() {
     console.log("no. create referrer")
     Meteor.defer(() => Referrers.createReferrer(userId))
   }
-  console.log(cursor.fetch()[0])
+  //console.log(cursor.fetch()[0])
   return cursor
 })
 

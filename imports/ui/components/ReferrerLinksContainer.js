@@ -10,7 +10,7 @@ import ReferrerLinks from './ReferrerLinks'
 
 export default withTracker(() => {
   Meteor.subscribe('referrers.one')
-  const referrer = Referrers.findOne({userId: Meteor.userId})
+  const referrer = Referrers.findOne({userId: Meteor.userId}, Referrers.publicFields)
   let list = []
   console.log(referrer)
   return {
