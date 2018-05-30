@@ -29,7 +29,7 @@ Referrers.find(
     Referrers.update(
       {_id},
       {$set: {
-        rank: (Referrers.findOne({referralCount: 0}) || {rank: 1}).rank
+        rank: (Referrers.findOne({referralCount: 0}) || {}).rank || 1
       }}
     )
   },
