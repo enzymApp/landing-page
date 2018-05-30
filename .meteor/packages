@@ -30,3 +30,4 @@ reywood:publish-composite
 aldeed:collection2@3.0.0
 dburles:collection-helpers
 static-html
+http

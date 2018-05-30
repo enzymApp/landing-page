@@ -51,7 +51,11 @@ Referrers.schema = new SimpleSchema({
       if(!this.isUpdate) return rank
       return {$min: rank}
     }
-  }
+  },
+  city:    String,
+  region:  String,
+  country: String,
+  geoloc:  String,
 })
 
 Referrers.attachSchema(Referrers.schema)
@@ -74,7 +78,12 @@ Referrers.deny({
 
 
 Referrers.createReferrer = (userId) => {
-  Referrers.insert({userId, referrals: []})
+  const user = Meteor.users.findOne(userId)
+  const {profile: {city, region, country, geoloc}} = user
+
+  Referrers.insert({
+    userId, referrals: [], city, region, country, geoloc
+  })
 }
 
 Referrers.helpers({
