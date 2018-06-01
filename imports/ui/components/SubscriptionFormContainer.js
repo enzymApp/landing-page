@@ -23,7 +23,6 @@ class SubscriptionFormContainer extends React.Component {
       formStep:   1,
       email:      '',
       newsletter: '',
-      engage:     '',
       username:   '',
     }
   }
@@ -80,14 +79,6 @@ class SubscriptionFormContainer extends React.Component {
                   /> s'inscrire à la newsletter
                 </Label>
               </FormGroup>
-              <FormGroup check>
-                <Label check>
-                  <Input
-                    type="checkbox"
-                    onChange={this.handleChange('engage')}
-                  /> participer au concours
-                </Label>
-              </FormGroup>
               <Button onClick={this.nextStep()}>Continuer</Button>
             </div>
           }
@@ -126,12 +117,11 @@ class SubscriptionFormContainer extends React.Component {
   handleSubmit = () => async (e) => {
     e.preventDefault()
     console.log(this.state)
-    const {email, engage, newsletter, username} = this.state
+    const {email, newsletter, username} = this.state
     const {referrerToken} = this.props.match.params
     //emitter.emitWin('mainButton')
     const options = {
       profile: {
-        engage:       engage === 'on',
         newsletter:   newsletter === 'on',
         referrerToken,
       },

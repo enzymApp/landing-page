@@ -11,14 +11,15 @@ Meteor.startup(() => {
     ...Accounts.passwordless.config,
     codeType:            'url',
     emailFrom:           'no-reply@enzym.io',
-    validationRoutePath: '/validation'
+    validationRoutePath: '/validation',
+    tokenLifeTime:       15 * 60,
   }
   Accounts.passwordless.emailTemplates = {
     ...Accounts.passwordless.emailTemplates,
   }
   Accounts.passwordless.handleClientIpAddress = (profile, clientIpAddress) => {
     const token = Meteor.settings.ipinfoToken
-    if(clientIpAddress === '127.0.0.1') return
+    if(clientIpAddress === '127.0.0.1') return profile
     const {data} = HTTP.call('GET', `https://ipinfo.io/${clientIpAddress}?token=${token}`)
     const {ip, bogon, city, region, country, loc, org} = data
     if(bogon) {

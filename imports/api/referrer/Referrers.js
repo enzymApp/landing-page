@@ -52,10 +52,10 @@ Referrers.schema = new SimpleSchema({
       return {$min: rank}
     }
   },
-  city:    String,
-  region:  String,
-  country: String,
-  geoloc:  String,
+  city:    {type: String, optional: true},
+  region:  {type: String, optional: true},
+  country: {type: String, optional: true},
+  geoloc:  {type: String, optional: true},
 })
 
 Referrers.attachSchema(Referrers.schema)
