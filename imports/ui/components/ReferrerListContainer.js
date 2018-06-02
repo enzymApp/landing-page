@@ -17,10 +17,19 @@ export default withTracker(() => {
   if(referrer && referrer.rank) {
     const minRank = Math.max(1, referrer.rank - 1)
     const maxRank = referrer.rank + 1
-    //console.log(minRank, maxRank)
     Meteor.subscribe('referrers.list', MIN_COUNT, minRank, maxRank)
-    const curs = Referrers.paginatedListCentered(MIN_COUNT, minRank, maxRank)
-    list = curs.fetch()
+    list = Referrers.paginatedListCentered(MIN_COUNT, minRank, maxRank)
+      .map(referrer => {
+        return {
+          ...referrer,
+          username: (referrer.userId &&
+            Meteor.users.findOne(
+              {_id: referrer.userId},
+              {fields: {username: 1}}
+            ) || {}
+          ).username
+        }
+      })
   }
   return {
     list,

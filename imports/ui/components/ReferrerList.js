@@ -17,8 +17,8 @@ export default ({list, referrer}) => {
           <tr key={userId}>
             <td>
               {userId === referrer.userId &&
-                <b>{userId}</b> ||
-                userId
+                <b>{username || userId}</b> ||
+                username || userId
               }
           </td>
             <td>{referralCount}</td>
