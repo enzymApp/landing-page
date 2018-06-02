@@ -20,6 +20,13 @@ Accounts.onCreateUser((options, user) => {
                 {
                   email:    services.google.email,
                   verified: services.google.verified_email
+                },
+          services &&
+            services.twitter &&
+              services.twitter.email &&
+                {
+                  email:    services.twitter.email,
+                  verified: true
                 }
         ].filter(e => !!e)
       )
@@ -44,20 +51,19 @@ ServiceConfiguration.configurations.upsert(
   {
     $set: {
       loginStyle,
-      appId:   facebook.clientId,
+      appId:   facebook.appId,
       secret:  facebook.secret
     }
   }
 )
-
+*/
 ServiceConfiguration.configurations.upsert(
   { service: 'twitter' },
   {
     $set: {
       loginStyle,
-      consumerKey: twitter.clientId,
+      consumerKey: twitter.consumerKey,
       secret:      twitter.secret
     }
   }
 )
-*/
