@@ -1,39 +1,31 @@
 import {Meteor}               from 'meteor/meteor'
 import {ServiceConfiguration} from 'meteor/service-configuration'
 
+//import 'meteor/splendido:accounts-meld'
+
 const {google, facebook, twitter} = Meteor.settings.oauth
 const loginStyle = 'popup'
 
 Accounts.onCreateUser((options, user) => {
   console.log(user, options)
   const services = user.services || {}
-  const google = services.google
+  const {facebook, google, twitter} = services
+  const socialNetwork = facebook || google || twitter
+  const email = (
+    socialNetwork ?
+    {
+      address:  socialNetwork.email,
+      verified: socialNetwork.verified_email === undefined || socialNetwork.verified_email
+    } :
+    user.emails[0]
+  )
   return {
     ...user,
-    emails: [
-      ...new Set(
-        [
-          ...(user.emails || []),
-          services &&
-            services.google &&
-              services.google.email &&
-                {
-                  email:    services.google.email,
-                  verified: services.google.verified_email
-                },
-          services &&
-            services.twitter &&
-              services.twitter.email &&
-                {
-                  email:    services.twitter.email,
-                  verified: true
-                }
-        ].filter(e => !!e)
-      )
-    ],
-    profile: options.profile || {}
+    //emails: [email],
+    profile: socialNetwork ? {} : options.profile
   }
 })
+
 
 ServiceConfiguration.configurations.upsert(
   { service: 'google' },
@@ -45,7 +37,7 @@ ServiceConfiguration.configurations.upsert(
     }
   }
 )
-/*
+
 ServiceConfiguration.configurations.upsert(
   { service: 'facebook' },
   {
@@ -56,7 +48,7 @@ ServiceConfiguration.configurations.upsert(
     }
   }
 )
-*/
+
 ServiceConfiguration.configurations.upsert(
   { service: 'twitter' },
   {

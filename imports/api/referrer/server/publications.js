@@ -10,9 +10,7 @@ Meteor.publish('referrers.one', function() {
     {userId},
     {fields: Referrers.publicFields}
   )
-  console.log("does referrer exists")
   if(cursor.count() === 0) {
-    console.log("no. create referrer")
     Meteor.defer(() => Referrers.createReferrer(userId))
   }
   //console.log(cursor.fetch()[0])

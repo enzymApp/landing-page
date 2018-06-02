@@ -11,6 +11,7 @@ import {Experiment,
         Variant,
         emitter}      from '@marvelapp/react-ab-test'
 import {analytics}    from 'meteor/okgrow:analytics'
+import FacebookLogin  from './FacebookLogin'
 import GoogleLogin    from './GoogleLogin'
 import TwitterLogin   from './TwitterLogin'
 
@@ -49,7 +50,7 @@ class SubscriptionFormContainer extends React.Component {
     const {formStep} = this.state
     return (
       <div>
-        <GoogleLogin /> <TwitterLogin />
+        <FacebookLogin /> <GoogleLogin /> <TwitterLogin />
         <Form onSubmit={this.handleSubmit()}>
           {formStep === 1 &&
             <FormGroup row>
