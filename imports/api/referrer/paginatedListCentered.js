@@ -2,7 +2,6 @@ import SimpleSchema from 'simpl-schema'
 
 export default (Referrers) => {
   Referrers.paginatedListCentered = (minCount, minRank, maxRank) => {
-    console.log("get list of referrers", minCount, minRank, maxRank)
     new SimpleSchema({
       minCount: {
         type: SimpleSchema.Integer,
@@ -20,7 +19,6 @@ export default (Referrers) => {
 
     let min = maxRank - minRank >= 2 ? minRank : Math.min(1, minRank - 1)
     let max = maxRank - minRank >= 2 ? maxRank : maxRank + 1
-    console.log(min, max)
     let prevMin, prevMax
     let count = 0, prevCount = -1
     prevMin = min + 1
@@ -41,7 +39,6 @@ export default (Referrers) => {
           fields: {_id: 1},
         }).count()
       )
-      console.log(count)
       prevMin   = min
       prevMax   = max
       min = Math.max(1, min - 1)
@@ -59,7 +56,6 @@ export default (Referrers) => {
 }
 
 function getReferrers(Referrers, {from, to, fields}) {
-  console.log("getReferrers", from, to)
   return Referrers.find(
     {rank: {$gte: from, $lt: to}},
     {
@@ -71,6 +67,5 @@ function getReferrers(Referrers, {from, to, fields}) {
 
 function countInArray(arr) {
   return arr.map(cursor => cursor.count())
-  .map(c => {console.log(c);return c})
   .reduce((acc, count) => acc + count, 0)
 }

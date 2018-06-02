@@ -14,7 +14,6 @@ export default withTracker(() => {
   Meteor.subscribe('referrers.one')
   const referrer = Referrers.findOne({userId: Meteor.userId}, Referrers.publicFields)
   let list = []
-  console.log(referrer)
   if(referrer && referrer.rank) {
     const minRank = Math.max(1, referrer.rank - 1)
     const maxRank = referrer.rank + 1

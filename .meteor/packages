@@ -31,3 +31,7 @@ aldeed:collection2@3.0.0
 dburles:collection-helpers
 static-html
 http
+accounts-google
+service-configuration
+accounts-twitter
+accounts-facebook

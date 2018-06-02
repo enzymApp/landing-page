@@ -11,7 +11,7 @@ import {Experiment,
         Variant,
         emitter}      from '@marvelapp/react-ab-test'
 import {analytics}    from 'meteor/okgrow:analytics'
-
+import GoogleLogin    from './GoogleLogin'
 
 emitter.defineVariants('mainButton', ['A', 'B'])
 
@@ -48,6 +48,7 @@ class SubscriptionFormContainer extends React.Component {
     const {formStep} = this.state
     return (
       <div>
+        <GoogleLogin />
         <Form onSubmit={this.handleSubmit()}>
           {formStep === 1 &&
             <FormGroup row>

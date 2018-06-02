@@ -2,7 +2,6 @@ import React from 'react'
 import {Table} from 'reactstrap'
 
 export default ({list, referrer}) => {
-  console.log("?", referrer)
   return (
     <Table striped responsive>
       <thead>
