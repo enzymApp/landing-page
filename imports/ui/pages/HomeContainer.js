@@ -3,9 +3,9 @@ import {withTracker} from 'meteor/react-meteor-data'
 import Home from './Home'
 
 export default HomeContainer = withTracker(({children}) => {
-  const userId = Meteor.userId()
+  const user = Meteor.user()
   return {
-    userId,
+    user,
     children
   }
 })(Home)

@@ -6,24 +6,24 @@ export default ({list, referrer}) => {
     <Table striped responsive>
       <thead>
         <tr>
+          <th>Rank</th>
           <th>Username</th>
           <th>Parrainés</th>
-          <th>Rank</th>
-          <th>Best rank</th>
+          <th>Points</th>
         </tr>
       </thead>
       <tbody>
-        {list.map(({userId, username, rank, bestRank, referralCount}) => (
+        {list.map(({userId, username, rank, referralCount}) => (
           <tr key={userId}>
+            <td>{rank}</td>
             <td>
               {userId === referrer.userId &&
                 <b>{username || userId}</b> ||
                 username || userId
               }
-          </td>
+            </td>
             <td>{referralCount}</td>
-            <td>{rank}</td>
-            <td>{bestRank}</td>
+            <td>{referralCount}</td>
           </tr>
         ))}
       </tbody>

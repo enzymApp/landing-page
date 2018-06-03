@@ -1,10 +1,11 @@
 import React         from 'react'
 import { Jumbotron } from 'reactstrap'
-import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
+import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
+import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
-import ReferrerLinksContainer     from '/imports/ui/components/ReferrerLinksContainer'
+import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 
-export default ({userId, children}) => (
+export default ({user, children}) => (
   <div>
     <Jumbotron>
       <h1 align="center">Enzym</h1>
@@ -13,15 +14,18 @@ export default ({userId, children}) => (
         Nous sommes en train de concevoir un nouveau réseau social qui ...
       </p>
       <br />
-      {!children && !userId &&
+      {!children && !user &&
         <SubscriptionFormContainer />
       }
+      {!children && user && !user.username &&
+        <AfterSignupForm />
+      }
       {children}
-      {userId &&
+      {user && user.username  &&
         <ReferrerListContainer />
       }
     </Jumbotron>
-    {userId &&
+    {user && user.username &&
       <ReferrerLinksContainer />
     }
   </div>

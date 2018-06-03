@@ -15,17 +15,17 @@ import FacebookLogin  from './FacebookLogin'
 import GoogleLogin    from './GoogleLogin'
 import TwitterLogin   from './TwitterLogin'
 
-emitter.defineVariants('mainButton', ['A', 'B'])
+const BUTTON_TEST = 'mainButton'
+
+emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
 
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      formStep:   1,
+      submitted:  false,
       email:      '',
-      newsletter: '',
-      username:   '',
     }
   }
   componentWillMount() {
@@ -47,12 +47,12 @@ class SubscriptionFormContainer extends React.Component {
     })
   }
   render() {
-    const {formStep} = this.state
+    const {submitted} = this.state
     return (
       <div>
         <FacebookLogin /> <GoogleLogin /> <TwitterLogin />
-        <Form onSubmit={this.handleSubmit()}>
-          {formStep === 1 &&
+        {!submitted &&
+          <Form onSubmit={this.handleSubmit()}>
             <FormGroup row>
               <Col sm={6}>
                 <Input
@@ -63,47 +63,22 @@ class SubscriptionFormContainer extends React.Component {
                 <FormFeedback>Adresse e-mail incorrecte</FormFeedback>
               </Col>
               <Col sm={6}>
-                <Button onClick={this.nextStep('mainButton')}>
-                  <Experiment name="mainButton">
+                <Button type="submit">
+                  <Experiment name={BUTTON_TEST}>
                     <Variant name="A">Participer !</Variant>
                     <Variant name="B">Rejoignez-nous !</Variant>
                   </Experiment>
                 </Button>
               </Col>
             </FormGroup>
-          }
-          {formStep === 2 &&
-            <div>
-              <FormGroup check>
-                <Label check>
-                  <Input
-                    type="checkbox"
-                    onChange={this.handleChange('newsletter')}
-                  /> s'inscrire à la newsletter
-                </Label>
-              </FormGroup>
-              <Button onClick={this.nextStep()}>Continuer</Button>
-            </div>
-          }
-          {formStep === 3 &&
-            <FormGroup>
-              <Label for="username">Un pseudo pour le concours :)</Label>
-              <Input
-                type="text"
-                id="username"
-                placeholder="Pseudo"
-                onChange={this.handleChange('username')}
-              />
-              <Button type="submit">C'est fini !</Button>
-            </FormGroup>
-          }
-          {formStep === 4 &&
-            <div>
-              Nous vous avons envoyé un e-mail pour valider votre adresse.
-              Dès que vous aurez cliqué sur le lien qu'il contient vous pourrez participer au concours de parrainage
-            </div>
-          }
-        </Form>
+          </Form>
+        }
+        {submitted &&
+          <div>
+            Nous vous avons envoyé un e-mail pour valider votre adresse.
+            Dès que vous aurez cliqué sur le lien qu'il contient vous pourrez participer au concours de parrainage
+          </div>
+        }
       </div>
     )
   }
@@ -111,27 +86,19 @@ class SubscriptionFormContainer extends React.Component {
     const value = event.target.value
     this.setState({[key]: value})
   }
-  nextStep = (experiment) => () => {
-    if(experiment) {
-      emitter.emitWin(experiment)
-    }
-    this.setState(({formStep}) => ({formStep: formStep + 1}))
-  }
   handleSubmit = () => async (e) => {
     e.preventDefault()
+    emitter.emitWin(BUTTON_TEST)
     console.log(this.state)
-    const {email, newsletter, username} = this.state
+    const {email} = this.state
     const {referrerToken} = this.props.match.params
-    //emitter.emitWin('mainButton')
     const options = {
       profile: {
-        newsletter:   newsletter === 'on',
         referrerToken,
       },
-      username
     }
     Meteor.sendVerificationCode(email, options)
-    this.nextStep()()
+    this.setState({submitted: true})
   }
 }
 

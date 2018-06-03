@@ -65,7 +65,6 @@ Referrers.defaultSort = {referralCount: -1, rank: 1, bestRank: 1}
 Referrers.publicFields = {
   token:         1,
   rank:          1,
-  bestRank:      1,
   referralCount: 1,
   userId:        1,
 }
