@@ -3,12 +3,12 @@ import React from 'react'
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 
-import {Referrers} from '/imports/api/referrer/Referrers'
+import {Referrers} from '/imports/api/referrers/Referrers'
 import withLoading  from '../helpers/withLoading'
 import ReferrerList from './ReferrerList'
 
 
-const MIN_COUNT = 20
+const MIN_COUNT = 40
 
 export default withTracker(() => {
   Meteor.subscribe('referrers.one')
@@ -34,6 +34,6 @@ export default withTracker(() => {
   return {
     list,
     referrer,
-    loading: list.length === 0
+    loading: list.length < 2
   }
 })(withLoading(ReferrerList))

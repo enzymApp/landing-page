@@ -1,13 +1,10 @@
 import {Meteor}   from 'meteor/meteor'
 
-import '/imports/api/referrer/server/publications'
-import '/imports/api/referrer/server/saveReferrer'
-import '/imports/api/referrer/server/updateRanks'
+import '/imports/api/referrers/server/publications'
+import '/imports/api/referrers/server/saveReferrer'
+import '/imports/api/referrers/server/updateRanks'
 
-import './passwordless-config'
+import './fixtures'
+import './initRanks'
 import './login-config'
-
-Meteor.startup(() => {
-  // code to run on server at startup
-
-})
+import './passwordless-config'

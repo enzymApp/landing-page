@@ -3,7 +3,7 @@ import React from 'react'
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 
-import {Referrers}   from '/imports/api/referrer/Referrers'
+import {Referrers}   from '/imports/api/referrers/Referrers'
 import withLoading   from '../helpers/withLoading'
 import ReferrerLinks from './ReferrerLinks'
 
