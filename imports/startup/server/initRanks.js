@@ -35,7 +35,6 @@ Meteor.startup(() => {
       )
     },
     movedTo({_id, rank, referralCount}, fromIndex, toIndex) {
-      console.log("movedTo", _id, rank, referralCount, "-", fromIndex, toIndex)
       //if(!referralCount) return
       const theOneBefore = Referrers.findOne({
         referralCount: {$gte: referralCount},
@@ -43,7 +42,6 @@ Meteor.startup(() => {
       }, {
         sort: {rank: -1},
       })
-      console.log(theOneBefore)
       const futureRank = (
         !theOneBefore ?
         1 :
@@ -53,15 +51,6 @@ Meteor.startup(() => {
           theOneBefore.rank
         )
       )
-      console.log(futureRank, rank)
-      //Referrers.update(_id, {$set: {rank: futureRank}})
-      if(futureRank != rank) {
-        // if(!Referrers.findOne({rank})) {
-        //   Referrers.update({rank: {$gt: rank}}, {$inc: {rank: -1}})
-        // }
-      } else {
-        // Referrers.update({referralCount: {$lt: referralCount}}, {$inc: {rank: 1}})
-      }
       updateRanks(Referrers, referralCount, futureRank)
     }
   })

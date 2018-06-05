@@ -1,7 +1,8 @@
+import {Email}      from 'meteor/email'
+import {Mongo}      from 'meteor/mongo'
+import {Random}     from 'meteor/random'
+import {Tracker}    from 'meteor/tracker'
 import SimpleSchema from 'simpl-schema'
-import {Mongo}   from 'meteor/mongo'
-import {Tracker} from 'meteor/tracker'
-import {Random}  from 'meteor/random'
 
 import addPaginatedListCentered from './paginatedListCentered'
 
@@ -76,18 +77,27 @@ Referrers.deny({
 })
 
 
-Referrers.createReferrer = (userId) => {
-  const user = Meteor.users.findOne(userId)
-  const {profile: {city, region, country, geoloc}} = user
-
-  Referrers.insert({
+Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) => {
+  const _id = Referrers.insert({
     userId, referrals: [], city, region, country, geoloc
   })
+  return Referrers.findOne(_id)
 }
 
 Referrers.helpers({
   getUrl() {
     const baseUrl = Meteor.absoluteUrl().replace(/\/$/, '')
     return `${baseUrl}/referrer/${this.token}`
+  },
+  sendWelcomeEmail(userId, email) {
+    const referrer = Referrers.findOne({userId})
+    const url = referrer.getUrl()
+    Email.send({
+      to:      email,
+      from:    Meteor.settings.emailFrom,
+      subject: 'Bienvenue !',
+      text:    `
+      Vos liens de parrainage : ${url}`,
+    })
   }
 })

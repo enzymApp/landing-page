@@ -10,7 +10,6 @@ import {Referrers} from '../Referrers'
     if(!rank) {
       rank = (Referrers.findOne({referralCount}, {sort: {rank: 1}}) || {}).rank || 1
     }
-    console.log("updateRanks", referralCount, rank)
     let r = rank
     let c = referralCount
     Referrers.find(
@@ -21,7 +20,6 @@ import {Referrers} from '../Referrers'
         r++
         c = ref.referralCount
       }
-      console.log(ref._id, c, r)
       if(ref.rank != r) {
         Referrers.update(ref._id, {$set: {rank: r}})
       }

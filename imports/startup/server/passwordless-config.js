@@ -4,7 +4,7 @@ import {HTTP}     from 'meteor/http'
 Accounts.passwordless.config = {
   ...Accounts.passwordless.config,
   codeType:            'url',
-  emailFrom:           'no-reply@enzym.io',
+  emailFrom:           Meteor.settings.emailFrom,
   validationRoutePath: '/validation',
   tokenLifeTime:       15 * 60,
 }
