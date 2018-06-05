@@ -1,18 +1,15 @@
-import React from 'react'
-
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
+import React         from 'react'
 
 import {Referrers} from '/imports/api/referrers/Referrers'
 import withLoading  from '../helpers/withLoading'
 import ReferrerList from './ReferrerList'
 
 
-const MIN_COUNT = 40
+const MIN_COUNT = 1000
 
-export default withTracker(() => {
-  Meteor.subscribe('referrers.one')
-  const referrer = Referrers.findOne({userId: Meteor.userId}, Referrers.publicFields)
+export default withTracker(({referrer}) => {
   let list = []
   if(referrer && referrer.rank) {
     const minRank = Math.max(1, referrer.rank - 1)
@@ -32,8 +29,8 @@ export default withTracker(() => {
       })
   }
   return {
+    loading: list.length < 2,
     list,
-    referrer,
-    loading: list.length < 2
+    centerId: referrer && referrer._id,
   }
 })(withLoading(ReferrerList))

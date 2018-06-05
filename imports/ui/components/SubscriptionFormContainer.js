@@ -14,11 +14,11 @@ import {analytics}    from 'meteor/okgrow:analytics'
 import FacebookLogin  from './FacebookLogin'
 import GoogleLogin    from './GoogleLogin'
 import TwitterLogin   from './TwitterLogin'
+import UserPageForm   from './UserPageForm'
+
 
 const BUTTON_TEST = 'mainButton'
-
 emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
-
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
@@ -47,10 +47,12 @@ class SubscriptionFormContainer extends React.Component {
     })
   }
   render() {
-    const {submitted} = this.state
+    const {submitted, userPageForm} = this.state
+    if(userPageForm) return <UserPageForm />
     return (
       <div>
         <FacebookLogin /> <GoogleLogin /> <TwitterLogin />
+        <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
             <FormGroup row>
@@ -81,6 +83,9 @@ class SubscriptionFormContainer extends React.Component {
         }
       </div>
     )
+  }
+  showUserPageForm = () => () => {
+    this.setState({userPageForm: true})
   }
   handleChange = (key) => (event) => {
     const value = event.target.value

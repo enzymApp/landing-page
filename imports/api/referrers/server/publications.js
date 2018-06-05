@@ -3,18 +3,27 @@ import SimpleSchema from 'simpl-schema'
 
 import {Referrers} from '../Referrers'
 
-Meteor.publish('referrers.one', function() {
+Meteor.publishComposite('referrers.one', function(username) {
   const userId = this.userId
-  if(!userId) return this.ready()
-  const cursor = Referrers.find(
-    {userId},
-    {fields: Referrers.publicFields}
-  )
-  if(cursor.count() === 0) {
-    Meteor.defer(() => Referrers.createReferrer(userId))
+  if(!userId && !username) return this.ready()
+  const selector = username ? {username} : userId
+  return {
+    find() {
+      return Meteor.users.find(selector, {fields: {_id: 1, username: 1}})
+    },
+    children: [{
+      find(user) {
+        const cursor = Referrers.find(
+          {userId: user._id},
+          {fields: Referrers.publicFields}
+        )
+        if(cursor.count() === 0 && !username) {
+          Meteor.defer(() => Referrers.createReferrer(userId))
+        }
+        return cursor
+      }
+    }]
   }
-  //console.log(cursor.fetch()[0])
-  return cursor
 })
 
 Meteor.publishComposite('referrers.list', function(minCount, minRank, maxRank) {

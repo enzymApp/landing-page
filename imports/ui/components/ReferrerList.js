@@ -3,12 +3,14 @@ import {Table} from 'reactstrap'
 
 export default class ReferrerList extends React.Component {
   componentDidUpdate(prevProps) {
-    const {referrer} = prevProps
-    document.getElementById(referrer.userId)
-    .scrollIntoView({block: 'center'})
+    const {centerId} = prevProps
+    if(centerId) {
+      document.getElementById(centerId)
+      .scrollIntoView({block: 'center'})
+    }
   }
   render() {
-    const {list, referrer} = this.props
+    const {list, centerId} = this.props
     const tbodyStyle = {
       display:   'block',
       maxHeight: '300px',
@@ -30,13 +32,13 @@ export default class ReferrerList extends React.Component {
           </tr>
         </thead>
         <tbody style={tbodyStyle}>
-          {list.map(({userId, username, rank, referralCount}) => (
-            <tr key={userId} style={trStyle} id={userId}>
+          {list.map(({_id, userId, username, rank, referralCount}) => (
+            <tr key={_id} style={trStyle} id={_id}>
               <td>{rank}</td>
               <td>
-                {userId === referrer.userId &&
-                  <b>{username || userId}</b> ||
-                  username || userId
+                {_id === centerId &&
+                  <b>{username || _id}</b> ||
+                  username || _id
                 }
               </td>
               <td>{referralCount}</td>

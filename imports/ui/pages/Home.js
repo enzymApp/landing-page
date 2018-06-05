@@ -5,7 +5,7 @@ import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksConta
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 
-export default ({user, children}) => (
+export default ({user, children, referrer}) => (
   <div>
     <Jumbotron>
       <h1 align="center">Enzym</h1>
@@ -22,11 +22,11 @@ export default ({user, children}) => (
       }
       {children}
       {user && user.username  &&
-        <ReferrerListContainer />
+        <ReferrerListContainer referrer={referrer} />
       }
     </Jumbotron>
     {user && user.username &&
-      <ReferrerLinksContainer />
+      <ReferrerLinksContainer referrer={referrer} />
     }
   </div>
 )

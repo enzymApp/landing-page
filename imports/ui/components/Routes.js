@@ -27,6 +27,7 @@ export default () => (
     <Switch>
       <Route exact name="home"             path="/"                        component={HomeContainer}/>
       <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={HomeContainer}/>
+      <Route exact name="homeWithUsername" path="/page/:username" component={HomeContainer}/>
       <Route exact name="validation" path="/validation/:token" component={ValidationComponent} />
     </Switch>
   </Router>
