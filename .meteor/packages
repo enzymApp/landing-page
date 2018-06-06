@@ -22,7 +22,6 @@ email
 session
 accounts-base
 mdg:validated-method
-enzym:accounts-passwordless
 u2622:persistent-session
 okgrow:analytics
 mdg:seo
@@ -36,3 +35,4 @@ service-configuration
 accounts-twitter
 accounts-facebook
 splendido:accounts-meld
+enzymapp:accounts-passwordless

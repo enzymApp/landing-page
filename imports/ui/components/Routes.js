@@ -4,7 +4,7 @@ import {Router,
         Switch,
         Redirect}            from 'react-router'
 import createBrowserHistory  from 'history/createBrowserHistory'
-import {withEmailValidation} from 'meteor/enzym:accounts-passwordless'
+import {withEmailValidation} from 'meteor/enzymapp:accounts-passwordless'
 
 import HomeContainer from '/imports/ui/pages/HomeContainer'
 

@@ -9,7 +9,7 @@ import {Form,
 import {withRouter}   from 'react-router'
 import {Experiment,
         Variant,
-        emitter}      from '@marvelapp/react-ab-test'
+        emitter}      from '@enzymapp/react-ab-test'
 import {analytics}    from 'meteor/okgrow:analytics'
 import FacebookLogin  from './FacebookLogin'
 import GoogleLogin    from './GoogleLogin'
