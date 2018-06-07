@@ -12,30 +12,24 @@ import {withRouter}   from 'react-router'
 export default class AfterSignupForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {formStep: 1}
+    this.state = {formStep: 1, username: ''}
   }
   render() {
-    const {formStep} = this.state
+    const {formStep, username} = this.state
     return (
       <Form onSubmit={this.handleSubmit()}>
-        <FormGroup check>
-          <Label check>
-            <Input
-              type="checkbox"
-              onChange={this.handleChange('newsletter')}
-            /> s'inscrire à la newsletter
-          </Label>
-        </FormGroup>
         <FormGroup>
-          <Label for="username">Un pseudo pour le concours :)</Label>
+          <Label for="username">Un pseudo pour le concours ?</Label>
           <Input
             type="text"
             id="username"
             placeholder="Pseudo"
             onChange={this.handleChange('username')}
           />
-          <Button type="submit">C'est fini !</Button>
         </FormGroup>
+        <Button type="submit">
+          {this.hasUsername() && 'Valider' || 'Non merci'}
+        </Button>
       </Form>
     )
   }
@@ -43,13 +37,16 @@ export default class AfterSignupForm extends React.Component {
     const value = event.target.value
     this.setState({[key]: value})
   }
+  hasUsername = () => this.state.username.length >= 3
   handleSubmit = () => async (e) => {
+    const {username} = this.state
     e.preventDefault()
-    const {newsletter, username} = this.state
     Meteor.users.update(
       Meteor.userId(),
-      {$set: {'profile.newsletter': newsletter === 'on'}}
+      {$set: {'profile.contest': this.hasUsername()}}
     )
-    Meteor.setUsername(username)
+    if(username) {
+      Meteor.setUsername(username)
+    }
   }
 }

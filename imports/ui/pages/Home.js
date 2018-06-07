@@ -14,19 +14,31 @@ export default ({user, children, referrer}) => (
         Nous sommes en train de concevoir un nouveau réseau social qui ...
       </p>
       <br />
-      {!children && !user &&
+      {!children && !hasAccount(user) &&
         <SubscriptionFormContainer />
       }
-      {!children && user && !user.username &&
+      {!children && hasAccount(user) && !signupFinished(user) &&
         <AfterSignupForm />
       }
       {children}
-      {user && user.username  &&
+      {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
     </Jumbotron>
-    {user && user.username &&
+    {isReferrer(user) &&
       <ReferrerLinksContainer referrer={referrer} />
     }
   </div>
 )
+
+function hasAccount(user) {
+  return !!user
+}
+
+function signupFinished(user) {
+  return user && user.profile.contest !== undefined
+}
+
+function isReferrer(user) {
+  return user && user.profile.contest
+}
