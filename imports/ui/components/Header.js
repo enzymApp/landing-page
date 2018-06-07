@@ -2,7 +2,7 @@ import React      from 'react'
 import {Row, Col} from 'reactstrap'
 
 
-export default ({text}) => (
+export default () => (
   <Row>
     <Col xs="8">
       <img src="/images/logo_enzym_small_white.png" />

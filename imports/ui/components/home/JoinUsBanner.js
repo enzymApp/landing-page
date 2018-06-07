@@ -2,8 +2,17 @@ import React      from 'react'
 import {Button}   from 'reactstrap'
 
 
-export default ({text}) => (
+export default ({scroll, openChat, text}) => (
   <div>
-    <Button>{text}</Button>
+    <Button onClick={onClick(scroll, openChat)}>{text}</Button>
   </div>
 )
+
+const onClick = (scroll, openChat) => () => {
+  if(scroll) {
+    window.scrollTo(0, 0)
+  }
+  if(openChat) {
+    window.Tawk_API.maximize()
+  }
+}
