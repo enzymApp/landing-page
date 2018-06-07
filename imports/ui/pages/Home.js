@@ -11,6 +11,7 @@ import JoinUsBanner   from '../components/home/JoinUsBanner'
 import TwoTabsBlock   from '../components/home/TwoTabsBlock'
 import GiftsBlock     from '../components/home/GiftsBlock'
 import TeamBlock      from '../components/home/TeamBlock'
+import Header         from '../components/Header'
 import Footer         from '../components/Footer'
 
 const homeStyle = {
@@ -24,7 +25,7 @@ const topStyle = {
 
 export default ({user, children, referrer}) => (
   <div style={homeStyle}>
-    <div>heading</div>
+    <Header />
     <div style={topStyle}>
       <img src="/images/logo_enzym_intro_shadow.png" align="center" />
       <h3 align="center">Rencontre et affronte tes voisins</h3>
