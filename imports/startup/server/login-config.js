@@ -2,6 +2,7 @@ import {Meteor}               from 'meteor/meteor'
 import {ServiceConfiguration} from 'meteor/service-configuration'
 //import 'meteor/splendido:accounts-meld'
 import {Referrers} from '/imports/api/referrers/Referrers'
+import welcomeEmailTemplate from './welcomeEmailTemplate'
 
 const {google, facebook, twitter} = Meteor.settings.oauth
 const loginStyle = 'popup'
@@ -19,17 +20,28 @@ Accounts.onCreateUser((options, user) => {
     } :
     user.emails[0]
   )
+  options.profile = options.profile || {}
   const referrer = Referrers.createReferrer({
     userId:  user._id,
     profile: options.profile
   })
-  referrer.sendWelcomeEmail(user._id, email.address)
+  sendWelcomeEmail(referrer, email.address)
   return {
     ...user,
     //emails: [email],
     profile: socialNetwork ? {} : options.profile
   }
 })
+
+function sendWelcomeEmail(referrer, email) {
+  const url = referrer.getUrl()
+  Email.send({
+    to:      email,
+    from:    Meteor.settings.emailFrom,
+    subject: welcomeEmailTemplate.subject(),
+    text:    welcomeEmailTemplate.text(url),
+  })
+}
 
 
 ServiceConfiguration.configurations.upsert(
