@@ -1,7 +1,7 @@
-const Tawk_API = global.Tawk_API || {}
-const Tawk_LoadStart = new Date()
 
-export default () => {
+export default (window, document) => {
+  //const Tawk_API = window.Tawk_API || {}
+  //const Tawk_LoadStart = new Date()
   const s1 = document.createElement("script")
   const s0 = document.getElementsByTagName("script")[0]
   s1.async = true
