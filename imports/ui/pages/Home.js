@@ -58,9 +58,9 @@ function hasAccount(user) {
 }
 
 function signupFinished(user) {
-  return user && user.profile.contest !== undefined
+  return user && user.profile && user.profile.contest !== undefined
 }
 
 function isReferrer(user) {
-  return user && user.profile.contest
+  return user && user.profile && user.profile.contest
 }
