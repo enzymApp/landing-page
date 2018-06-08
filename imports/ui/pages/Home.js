@@ -5,6 +5,8 @@ import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksConta
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 import TwitterLink               from '/imports/ui/components/TwitterLink'
+import FacebookLink              from '/imports/ui/components/FacebookLink'
+import TelegramLink             from '/imports/ui/components/TelegramLink'
 
 export default ({user, children, referrer}) => (
   <div>
@@ -15,6 +17,9 @@ export default ({user, children, referrer}) => (
         Nous sommes en train de concevoir un nouveau réseau social qui ...
       </p>
       <br />
+      <h6 align="right"><TwitterLink /></h6>
+      <h6 align="right"><FacebookLink /></h6>
+      <h6 align="right"><TelegramLink /></h6>
       {!children && !hasAccount(user) &&
         <SubscriptionFormContainer />
       }
@@ -25,7 +30,6 @@ export default ({user, children, referrer}) => (
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
-      <TwitterLink />
     </Jumbotron>
     {isReferrer(user) &&
       <ReferrerLinksContainer referrer={referrer} />
