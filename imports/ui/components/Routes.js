@@ -7,7 +7,7 @@ import createBrowserHistory  from 'history/createBrowserHistory'
 import {withEmailValidation} from 'meteor/enzymapp:accounts-passwordless'
 
 import HomeContainer from '/imports/ui/pages/HomeContainer'
-
+import Logout        from './Logout'
 
 const browserHistory = createBrowserHistory();
 
@@ -27,8 +27,9 @@ export default () => (
     <Switch>
       <Route exact name="home"             path="/"                        component={HomeContainer}/>
       <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={HomeContainer}/>
-      <Route exact name="homeWithUsername" path="/page/:username" component={HomeContainer}/>
-      <Route exact name="validation" path="/validation/:token" component={ValidationComponent} />
+      <Route exact name="homeWithUsername" path="/page/:username"          component={HomeContainer}/>
+      <Route exact name="logout"           path="/logout"                  component={Logout}/>
+      <Route exact name="validation"       path="/validation/:token"       component={ValidationComponent} />
     </Switch>
   </Router>
 );

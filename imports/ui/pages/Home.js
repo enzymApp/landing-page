@@ -7,7 +7,7 @@ import ReferrerListContainer     from '/imports/ui/components/ReferrerListContai
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 import TwitterLink               from '/imports/ui/components/TwitterLink'
 import FacebookLink              from '/imports/ui/components/FacebookLink'
-import TelegramLink             from '/imports/ui/components/TelegramLink'
+import TelegramLink              from '/imports/ui/components/TelegramLink'
 
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
