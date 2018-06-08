@@ -18,17 +18,14 @@ const homeStyle = {
   width: "100%",
 }
 
-const topStyle = {
-  backgroundImage: "url('/images/photo_intro_fullHD.jpg')",
-  height: "100vh",
-}
-
 export default ({user, children, referrer}) => (
   <div style={homeStyle}>
     <Header />
-    <div style={topStyle}>
-      <img src="/images/logo_enzym_intro_shadow.png" align="center" />
-      <h3 align="center">Rencontre et affronte tes voisins</h3>
+    <div className="background_img_top">
+      <div id="logo_enzym_shadow">
+        <img src="/images/logo_enzym_intro_shadow.png" align="center" />
+      </div>
+      <h3 id="accroche" align="center">Rencontre et affronte tes voisins</h3>
       {!children && !hasAccount(user) &&
         <SubscriptionFormContainer />
       }
