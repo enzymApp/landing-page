@@ -4,7 +4,6 @@ import {Form,
         FormFeedback,
         Input,
         Label,
-        Button,
         Col}          from 'reactstrap'
 import {withRouter}   from 'react-router'
 import {Experiment,
@@ -15,7 +14,9 @@ import FacebookLogin  from './FacebookLogin'
 import GoogleLogin    from './GoogleLogin'
 import TwitterLogin   from './TwitterLogin'
 import UserPageForm   from './UserPageForm'
+import Button   from './Button'
 
+const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
 
 const BUTTON_TEST = 'mainButton'
 emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
@@ -29,6 +30,13 @@ class SubscriptionFormContainer extends React.Component {
     }
   }
   componentWillMount() {
+    grecaptcha.ready(() => {
+      console.log("ready")
+      grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
+      .then((token) => {
+        this.recaptchaToken = token
+      })
+    })
     emitter.addPlayListener((experimentName, variantName) => {
       console.log('experiment play:', experimentName, variantName)
       analytics.track(experimentName, {
@@ -56,22 +64,20 @@ class SubscriptionFormContainer extends React.Component {
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
             <FormGroup row>
-              <Col sm={6}>
-                <Input
+              <div className="top_form">
+                  <Input
                   type="email"
-                  placeholder="Adresse e-mail"
+                  placeholder="Email"
                   onChange={this.handleChange('email')}
-                />
-                <FormFeedback>Adresse e-mail incorrecte</FormFeedback>
-              </Col>
-              <Col sm={6}>
-                <Button type="submit">
-                  <Experiment name={BUTTON_TEST}>
-                    <Variant name="A">Participer !</Variant>
-                    <Variant name="B">Rejoignez-nous !</Variant>
-                  </Experiment>
-                </Button>
-              </Col>
+                  />
+                  <FormFeedback>Adresse e-mail incorrecte</FormFeedback>
+                  <Button type="submit">
+                    <Experiment name={BUTTON_TEST}>
+                      <Variant name="A">Participer !</Variant>
+                      <Variant name="B">Rejoignez-nous !</Variant>
+                    </Experiment>
+                  </Button>
+                </div>
             </FormGroup>
           </Form>
         }
@@ -94,15 +100,13 @@ class SubscriptionFormContainer extends React.Component {
   handleSubmit = () => async (e) => {
     e.preventDefault()
     emitter.emitWin(BUTTON_TEST)
-    console.log(this.state)
     const {email} = this.state
     const {referrerToken} = this.props.match.params
+    const profile = {referrerToken}
     const options = {
-      profile: {
-        referrerToken,
-      },
+      recaptchaToken: this.recaptchaToken
     }
-    Meteor.sendVerificationCode(email, options)
+    Meteor.sendVerificationCode(email, profile, options)
     this.setState({submitted: true})
   }
 }
