@@ -34,7 +34,7 @@ ecmascript-runtime-client@0.6.2
 ecmascript-runtime-server@0.5.0
 ejson@1.1.0
 email@1.2.3
-enzymapp:accounts-passwordless@0.3.3
+enzymapp:accounts-passwordless@0.3.2
 es5-shim@4.7.3
 facebook-oauth@1.4.1
 geojson-utils@1.0.10
