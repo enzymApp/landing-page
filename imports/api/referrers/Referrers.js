@@ -89,15 +89,4 @@ Referrers.helpers({
     const baseUrl = Meteor.absoluteUrl().replace(/\/$/, '')
     return `${baseUrl}/referrer/${this.token}`
   },
-  sendWelcomeEmail(userId, email) {
-    const referrer = Referrers.findOne({userId})
-    const url = referrer.getUrl()
-    Email.send({
-      to:      email,
-      from:    Meteor.settings.emailFrom,
-      subject: 'Bienvenue !',
-      text:    `
-      Vos liens de parrainage : ${url}`,
-    })
-  }
 })

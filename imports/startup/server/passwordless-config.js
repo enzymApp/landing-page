@@ -1,6 +1,8 @@
 import {Accounts} from 'meteor/accounts-base'
 import {HTTP}     from 'meteor/http'
 
+import emailVerificationTemplate from './emailVerificationTemplate'
+
 Accounts.passwordless.config = {
   ...Accounts.passwordless.config,
   codeType:            'url',
@@ -8,9 +10,9 @@ Accounts.passwordless.config = {
   validationRoutePath: '/validation',
   tokenLifeTime:       15 * 60,
 }
-Accounts.passwordless.emailTemplates = {
-  ...Accounts.passwordless.emailTemplates,
-}
+Accounts.passwordless.emailTemplates.sendVerificationUrl = emailVerificationTemplate
+
+
 Accounts.passwordless.handleClientIpAddress = (profile, clientIpAddress) => {
   const token = Meteor.settings.ipinfoToken
   if(clientIpAddress === '127.0.0.1') return profile

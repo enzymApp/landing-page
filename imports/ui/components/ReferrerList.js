@@ -37,7 +37,7 @@ export default class ReferrerList extends React.Component {
               <td>{rank}</td>
               <td>
                 {_id === centerId &&
-                  <b>{username || _id}</b> ||
+                  <b>{username || 'pseudo'}</b> ||
                   username || _id
                 }
               </td>
