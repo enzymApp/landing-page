@@ -10,13 +10,15 @@ import {Experiment,
         Variant,
         emitter}      from '@enzymapp/react-ab-test'
 import {analytics}    from 'meteor/okgrow:analytics'
-import FacebookLogin  from './FacebookLogin'
-import GoogleLogin    from './GoogleLogin'
-import TwitterLogin   from './TwitterLogin'
+import i18n           from 'meteor/universe:i18n'
+import Button         from './Button'
 import UserPageForm   from './UserPageForm'
-import Button   from './Button'
+import SocialLogin    from './SocialLogin'
 
-const BUTTON_TEST = 'mainButton'
+const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
+const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
+const LANG = i18n.getLocale()
+const BUTTON_TEST = `${LANG}-mainButton`
 emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
 
 class SubscriptionFormContainer extends React.Component {
@@ -28,9 +30,10 @@ class SubscriptionFormContainer extends React.Component {
     }
   }
   componentWillMount() {
+    this.loadCaptchaReady()
     emitter.addPlayListener((experimentName, variantName) => {
       console.log('experiment play:', experimentName, variantName)
-      analytics.track(experimentName, {
+      analytics.track(`${LANG}-${experimentName}`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
@@ -38,7 +41,7 @@ class SubscriptionFormContainer extends React.Component {
     })
     emitter.addWinListener((experimentName, variantName) => {
       console.log('experiment win:', experimentName, variantName)
-      analytics.track(`${experimentName}-win`, {
+      analytics.track(`${LANG}-${experimentName}-win`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
@@ -50,7 +53,7 @@ class SubscriptionFormContainer extends React.Component {
     if(userPageForm) return <UserPageForm />
     return (
       <div>
-        <FacebookLogin /> <GoogleLogin /> <TwitterLogin />
+        {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}
         <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
@@ -81,6 +84,17 @@ class SubscriptionFormContainer extends React.Component {
       </div>
     )
   }
+  loadCaptchaReady() {
+    if(!window.grecaptcha) return
+    if(this.recaptchaReady) return
+    grecaptcha.ready(() => {
+      this.recaptchaReady = true
+      grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
+      .then((token) => {
+        this.recaptchaToken = token
+      })
+    })
+  }
   showUserPageForm = () => () => {
     this.setState({userPageForm: true})
   }
@@ -91,15 +105,13 @@ class SubscriptionFormContainer extends React.Component {
   handleSubmit = () => async (e) => {
     e.preventDefault()
     emitter.emitWin(BUTTON_TEST)
-    console.log(this.state)
     const {email} = this.state
     const {referrerToken} = this.props.match.params
+    const profile = {referrerToken}
     const options = {
-      profile: {
-        referrerToken,
-      },
+      recaptchaToken: this.recaptchaToken
     }
-    Meteor.sendVerificationCode(email, options)
+    Meteor.sendVerificationCode(email, profile, options)
     this.setState({submitted: true})
   }
 }

@@ -1,6 +1,12 @@
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
 
+import LanguageFlag from './LanguageFlag'
+
+const LANGS = [
+  {langCode: 'fr', imgSrc: '/images/picto_french.png'},
+  {langCode: 'en', imgSrc: '/images/picto_english.png'},
+]
 
 export default () => (
   <Row id="header">
@@ -10,8 +16,9 @@ export default () => (
       </div>
     </Col>
     <Col xs="4" align="right">
-      <a href="#"><img src="/images/picto_french.png" /></a>
-      <a href="#"><img src="/images/picto_english.png" /></a>
+      {LANGS.map(({langCode, imgSrc}) => (
+        <LanguageFlag {...{langCode, imgSrc}} key={langCode} />
+      ))}
     </Col>
   </Row>
 )

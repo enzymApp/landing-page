@@ -1,9 +1,15 @@
+import i18n       from 'meteor/universe:i18n'
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
 import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
 import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
+import TwitterLink               from '/imports/ui/components/TwitterLink'
+import FacebookLink              from '/imports/ui/components/FacebookLink'
+import TelegramLink              from '/imports/ui/components/TelegramLink'
+import FacebookShare             from '/imports/ui/components/FacebookShare'
+import TwitterShare              from '/imports/ui/components/TwitterShare'
 
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
@@ -18,6 +24,11 @@ const homeStyle = {
   width: "100%",
 }
 
+i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
+i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
+
+const T = i18n.createComponent()
+
 export default ({user, children, referrer}) => (
   <div style={homeStyle}>
     <Header />
@@ -25,7 +36,14 @@ export default ({user, children, referrer}) => (
       <div id="logo_enzym_shadow">
         <img src="/images/logo_enzym_intro_shadow.png" align="center" />
       </div>
-      <h3 id="accroche" align="center">Rencontre et affronte tes voisins</h3>
+      <h3 id="accroche" align="center">
+        <T>teaser</T>
+      </h3>
+      <div align="right">
+        <TwitterLink />
+        <FacebookLink />
+        <TelegramLink />
+      </div>
       {!children && !hasAccount(user) &&
         <SubscriptionFormContainer />
       }
@@ -39,6 +57,8 @@ export default ({user, children, referrer}) => (
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
+      <FacebookShare />
+      <TwitterShare />
     </div>
     <MeetingRow />
     <GamingRow />

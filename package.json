@@ -5,7 +5,7 @@
     "start": "meteor run --settings settings.json"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.36",
+    "@babel/runtime": "^7.0.0-beta.49",
     "@enzymapp/react-ab-test": "^2.1.1",
     "bootstrap": "^4.1.1",
     "history": "^4.7.2",
@@ -17,6 +17,7 @@
     "react-dom": "^16.4.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-share": "^2.2.0",
     "reactstrap": "^6.0.1",
     "semantic-ui-react": "^0.80.2",
     "simpl-schema": "^1.5.0"
