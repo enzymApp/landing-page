@@ -2,7 +2,7 @@ import React      from 'react'
 import {Row, Col} from 'reactstrap'
 
 
-export default ({text}) => (
+export default () => (
   <Row id="header">
     <Col xs="8">
       <div id="logo_top">

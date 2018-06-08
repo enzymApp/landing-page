@@ -42,11 +42,11 @@ export default ({user, children, referrer}) => (
     </div>
     <MeetingRow />
     <GamingRow />
-    <JoinUsBanner text="Rejoignez-nous" />
+    <JoinUsBanner scroll text="Rejoignez-nous" />
     <TwoTabsBlock />
     <GiftsBlock />
     <TeamBlock />
-    <JoinUsBanner text="Envie de contribuer au projet" />
+    <JoinUsBanner openChat text="Envie de contribuer au projet" />
     <Footer />
   </div>
 )
