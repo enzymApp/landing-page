@@ -17,6 +17,8 @@ import TwitterLogin   from './TwitterLogin'
 import UserPageForm   from './UserPageForm'
 
 
+const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
+
 const BUTTON_TEST = 'mainButton'
 emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
 
@@ -29,6 +31,13 @@ class SubscriptionFormContainer extends React.Component {
     }
   }
   componentWillMount() {
+    grecaptcha.ready(() => {
+      console.log("ready")
+      grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
+      .then((token) => {
+        this.recaptchaToken = token
+      })
+    })
     emitter.addPlayListener((experimentName, variantName) => {
       console.log('experiment play:', experimentName, variantName)
       analytics.track(experimentName, {
@@ -94,15 +103,13 @@ class SubscriptionFormContainer extends React.Component {
   handleSubmit = () => async (e) => {
     e.preventDefault()
     emitter.emitWin(BUTTON_TEST)
-    console.log(this.state)
     const {email} = this.state
     const {referrerToken} = this.props.match.params
+    const profile = {referrerToken}
     const options = {
-      profile: {
-        referrerToken,
-      },
+      recaptchaToken: this.recaptchaToken
     }
-    Meteor.sendVerificationCode(email, options)
+    Meteor.sendVerificationCode(email, profile, options)
     this.setState({submitted: true})
   }
 }
