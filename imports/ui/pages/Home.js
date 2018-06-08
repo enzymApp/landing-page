@@ -1,5 +1,5 @@
-import React         from 'react'
-import { Jumbotron } from 'reactstrap'
+import React      from 'react'
+import {Row, Col} from 'reactstrap'
 import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
 import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
@@ -8,18 +8,32 @@ import TwitterLink               from '/imports/ui/components/TwitterLink'
 import FacebookLink              from '/imports/ui/components/FacebookLink'
 import TelegramLink             from '/imports/ui/components/TelegramLink'
 
+import GamingRow      from '../components/home/GamingRow'
+import MeetingRow     from '../components/home/MeetingRow'
+import JoinUsBanner   from '../components/home/JoinUsBanner'
+import TwoTabsBlock   from '../components/home/TwoTabsBlock'
+import GiftsBlock     from '../components/home/GiftsBlock'
+import TeamBlock      from '../components/home/TeamBlock'
+import Header         from '../components/Header'
+import Footer         from '../components/Footer'
+
+const homeStyle = {
+  width: "100%",
+}
+
 export default ({user, children, referrer}) => (
-  <div>
-    <Jumbotron>
-      <h1 align="center">Enzym</h1>
-      <h4 align="center">Un réseau social local pour sortir et rencontrer de nouvelles personnes</h4>
-      <p>
-        Nous sommes en train de concevoir un nouveau réseau social qui ...
-      </p>
-      <br />
-      <h6 align="right"><TwitterLink /></h6>
-      <h6 align="right"><FacebookLink /></h6>
-      <h6 align="right"><TelegramLink /></h6>
+  <div style={homeStyle}>
+    <Header />
+    <div className="background_img_top">
+      <div id="logo_enzym_shadow">
+        <img src="/images/logo_enzym_intro_shadow.png" align="center" />
+      </div>
+      <h3 id="accroche" align="center">Rencontre et affronte tes voisins</h3>
+      <div align="right">
+        <TwitterLink />
+        <FacebookLink />
+        <TelegramLink />
+      </div>
       {!children && !hasAccount(user) &&
         <SubscriptionFormContainer />
       }
@@ -27,13 +41,21 @@ export default ({user, children, referrer}) => (
         <AfterSignupForm />
       }
       {children}
+      {isReferrer(user) &&
+        <ReferrerLinksContainer referrer={referrer} />
+      }
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
-    </Jumbotron>
-    {isReferrer(user) &&
-      <ReferrerLinksContainer referrer={referrer} />
-    }
+    </div>
+    <MeetingRow />
+    <GamingRow />
+    <JoinUsBanner scroll text="Rejoignez-nous" />
+    <TwoTabsBlock />
+    <GiftsBlock />
+    <TeamBlock />
+    <JoinUsBanner openChat text="Envie de contribuer au projet" />
+    <Footer />
   </div>
 )
 

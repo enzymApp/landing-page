@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+/*Yellow : ffd900
+purple : e63b99
+Cyan : 69ddc8*/
+
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.background_img_top{
+background: url('/images/photo_intro_fullHD.jpg') no-repeat center fixed;
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisée */
+height: 100vh;
+}
+
+.top_form{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.purple_buttons {
+background: #e63b99;
+padding:6px;
+border-radius: 6px;
+border: none;
+color:#fff;
+font-weight: 500;
+cursor:pointer;
+}
+
+.top_form .purple_buttons {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.top_form input {
+  width:30vw;
+  border:none;
+  border-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  float:left;
+}
+
+
+
+#loading {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top:50vh;
+}
+
+#header {
+  background: #ffd900;
+  height:40px;
+}
+
+#logo_top{
+  line-height: 40px;
+  margin-left:10px;
+}
+
+.col-4 img {
+  padding:6px 10px;
+}
+
+#logo_top{
+  height:100%;
+}
+
+#logo_top img {
+  line-height: 100%;
+}
+
+#logo_enzym_shadow{
+  padding-top:15vh;
+}
+
+#logo_enzym_shadow img {
+  margin-left: auto;
+	margin-right: auto;
+  display: block;
+  width:40vw;
+}
+
+#accroche{
+  color:#fff;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: 2em;
+}
+
+.col-6{
+  padding: 0;
+}
+
+.col-6 img {
+  width:inherit;
+}
