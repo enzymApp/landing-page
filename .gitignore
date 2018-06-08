@@ -3,3 +3,5 @@ packages
 
 settings.json
 settings-production.json
+
+.DS_Store
