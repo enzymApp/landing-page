@@ -4,6 +4,7 @@ import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
 import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
+import TwitterLink               from '/imports/ui/components/TwitterLink'
 
 export default ({user, children, referrer}) => (
   <div>
@@ -24,6 +25,7 @@ export default ({user, children, referrer}) => (
       {user && user.username  &&
         <ReferrerListContainer referrer={referrer} />
       }
+      <TwitterLink />
     </Jumbotron>
     {user && user.username &&
       <ReferrerLinksContainer referrer={referrer} />
