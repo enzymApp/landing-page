@@ -3,7 +3,7 @@ import Button from '../Button'
 
 
 export default ({scroll, openChat, text}) => (
-  <div>
+  <div className="joinus_banner">
     <Button onClick={onClick(scroll, openChat)}>{text}</Button>
   </div>
 )

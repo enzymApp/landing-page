@@ -6,10 +6,15 @@ Cyan : 69ddc8*/
 
 body{
   font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+}
+
+.row{
+  margin:0;
 }
 
 .background_img_top{
-background: url('/images/photo_intro_fullHD.jpg') no-repeat center fixed;
+background: url('/images/photo_intro.jpg') no-repeat center fixed;
 -webkit-background-size: cover; /* pour anciens Chrome et Safari */
 background-size: cover; /* version standardisée */
 height: 100vh;
@@ -29,6 +34,7 @@ border: none;
 color:#fff;
 font-weight: 500;
 cursor:pointer;
+font-size: 1rem;
 }
 
 .top_form .purple_buttons {
@@ -91,8 +97,10 @@ cursor:pointer;
   color:#fff;
   font-weight: 500;
   letter-spacing: 3px;
-  font-size: 2em;
+  font-size: 2rem;
 }
+
+
 
 .col-6{
   padding: 0;
@@ -100,4 +108,31 @@ cursor:pointer;
 
 .col-6 img {
   width:inherit;
+}
+
+.text_blocks {
+padding:4vw;
+height:100%;
+}
+
+.text_blocks h4 {
+font-size: 2.3rem;
+letter-spacing:6px;
+color: #e63b99;
+text-transform: uppercase;
+padding-bottom:1rem;
+}
+
+.jouez h4 {
+  color: #69ddc8;
+}
+
+.text_blocks p {
+  font-size: 1.1rem;
+  color: #747474;
+  text-align: justify;
+}
+
+.joinus_banner{
+  background:red;
 }
