@@ -7,7 +7,9 @@ import ReferrerListContainer     from '/imports/ui/components/ReferrerListContai
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 import TwitterLink               from '/imports/ui/components/TwitterLink'
 import FacebookLink              from '/imports/ui/components/FacebookLink'
-import TelegramLink             from '/imports/ui/components/TelegramLink'
+import TelegramLink              from '/imports/ui/components/TelegramLink'
+import FacebookShare             from '/imports/ui/components/FacebookShare'
+import TwitterShare              from '/imports/ui/components/TwitterShare'
 
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
@@ -55,6 +57,8 @@ export default ({user, children, referrer}) => (
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
+      <FacebookShare />
+      <TwitterShare />
     </div>
     <MeetingRow />
     <GamingRow />
