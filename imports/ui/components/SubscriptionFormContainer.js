@@ -12,12 +12,10 @@ import {Experiment,
 import {analytics}    from 'meteor/okgrow:analytics'
 import i18n           from 'meteor/universe:i18n'
 import Button         from './Button'
-import FacebookLogin  from './FacebookLogin'
-import GoogleLogin    from './GoogleLogin'
-import TwitterLogin   from './TwitterLogin'
 import UserPageForm   from './UserPageForm'
+import SocialLogin    from './SocialLogin'
 
-
+const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
 const LANG = i18n.getLocale()
 const BUTTON_TEST = `${LANG}-mainButton`
@@ -55,7 +53,7 @@ class SubscriptionFormContainer extends React.Component {
     if(userPageForm) return <UserPageForm />
     return (
       <div>
-        <FacebookLogin /> <GoogleLogin /> <TwitterLogin />
+        {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}
         <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
