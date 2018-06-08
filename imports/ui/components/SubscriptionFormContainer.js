@@ -10,15 +10,17 @@ import {Experiment,
         Variant,
         emitter}      from '@enzymapp/react-ab-test'
 import {analytics}    from 'meteor/okgrow:analytics'
+import i18n           from 'meteor/universe:i18n'
+import Button         from './Button'
 import FacebookLogin  from './FacebookLogin'
 import GoogleLogin    from './GoogleLogin'
 import TwitterLogin   from './TwitterLogin'
 import UserPageForm   from './UserPageForm'
-import Button   from './Button'
+
 
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
-
-const BUTTON_TEST = 'mainButton'
+const LANG = i18n.getLocale()
+const BUTTON_TEST = `${LANG}-mainButton`
 emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
 
 class SubscriptionFormContainer extends React.Component {
@@ -30,16 +32,10 @@ class SubscriptionFormContainer extends React.Component {
     }
   }
   componentWillMount() {
-    grecaptcha.ready(() => {
-      console.log("ready")
-      grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
-      .then((token) => {
-        this.recaptchaToken = token
-      })
-    })
+    this.loadCaptchaReady()
     emitter.addPlayListener((experimentName, variantName) => {
       console.log('experiment play:', experimentName, variantName)
-      analytics.track(experimentName, {
+      analytics.track(`${LANG}-${experimentName}`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
@@ -47,7 +43,7 @@ class SubscriptionFormContainer extends React.Component {
     })
     emitter.addWinListener((experimentName, variantName) => {
       console.log('experiment win:', experimentName, variantName)
-      analytics.track(`${experimentName}-win`, {
+      analytics.track(`${LANG}-${experimentName}-win`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
@@ -89,6 +85,17 @@ class SubscriptionFormContainer extends React.Component {
         }
       </div>
     )
+  }
+  loadCaptchaReady() {
+    if(!window.grecaptcha) return
+    if(this.recaptchaReady) return
+    grecaptcha.ready(() => {
+      this.recaptchaReady = true
+      grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
+      .then((token) => {
+        this.recaptchaToken = token
+      })
+    })
   }
   showUserPageForm = () => () => {
     this.setState({userPageForm: true})

@@ -1,3 +1,4 @@
+import i18n       from 'meteor/universe:i18n'
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
 import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
@@ -21,6 +22,11 @@ const homeStyle = {
   width: "100%",
 }
 
+i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
+i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
+
+const T = i18n.createComponent()
+
 export default ({user, children, referrer}) => (
   <div style={homeStyle}>
     <Header />
@@ -28,7 +34,9 @@ export default ({user, children, referrer}) => (
       <div id="logo_enzym_shadow">
         <img src="/images/logo_enzym_intro_shadow.png" align="center" />
       </div>
-      <h3 id="accroche" align="center">Rencontre et affronte tes voisins</h3>
+      <h3 id="accroche" align="center">
+        <T>teaser</T>
+      </h3>
       <div align="right">
         <TwitterLink />
         <FacebookLink />
