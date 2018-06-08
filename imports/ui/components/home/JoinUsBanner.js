@@ -1,5 +1,5 @@
-import React      from 'react'
-import {Button}   from 'reactstrap'
+import React from 'react'
+import Button from '../Button'
 
 
 export default ({scroll, openChat, text}) => (
