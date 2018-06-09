@@ -9,6 +9,11 @@ body{
   font-size: 12px;
 }
 
+a, a:hover {
+  color:#fff;
+  text-decoration: none;
+}
+
 .row{
   margin:0;
 }
@@ -21,25 +26,26 @@ height: 100vh;
 }
 
 .top_form{
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
+display: block;
+margin-left:auto;
+margin-right:auto;
 }
 
 .purple_buttons {
 background: #e63b99;
-padding:6px;
+padding:6px 10px;
 border-radius: 6px;
 border: none;
 color:#fff;
 font-weight: 500;
 cursor:pointer;
 font-size: 1rem;
+letter-spacing: 2px;
 }
 
 .top_form .purple_buttons {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
 }
 
 .top_form input {
@@ -51,7 +57,70 @@ font-size: 1rem;
   float:left;
 }
 
+.social_links{
+position: fixed;
+top:60px;
+right:-26px;
+transition: 0.2s;
+z-index: 9;
+padding:8px;
 
+}
+
+.social_links:hover{
+  right:0px;
+}
+
+.twitter_icon{
+background: url("/images/twitter.png") 2px 2px no-repeat;
+background-color: #fff;
+width:50px;
+height:50px;
+border-radius: 50%;
+border:5px solid #ffd900;
+transition: 0.4s;
+
+}
+
+.twitter_icon:hover{
+background-image: url("/images/twitterbis.png");
+background-color: #ffd900;
+}
+
+.facebook_icon{
+background: url("/images/facebook.png") 2px 2px no-repeat;
+background-color: #fff;
+width:50px;
+height:50px;
+border-radius: 50%;
+border:5px solid #e63b99;
+transition: 0.4s;
+}
+
+.facebook_icon:hover{
+background-image: url("/images/facebookbis.png");
+background-color: #e63b99;
+}
+
+.telegram_icon{
+background: url("/images/telegram.png") 2px 2px no-repeat;
+background-color: #fff;
+width:50px;
+height:50px;
+border-radius: 50%;
+border:5px solid #69ddc8;
+transition: 0.4s;
+}
+
+.telegram_icon:hover{
+background-image: url("/images/telegrambis.png");
+background-color: #69ddc8;
+}
+
+.social_links a {
+  display: block;
+  margin-bottom:20px;
+}
 
 #loading {
   margin-left: auto;
@@ -71,7 +140,7 @@ font-size: 1rem;
 }
 
 .col-4 img {
-  padding:6px 10px;
+  margin:6px 10px;
 }
 
 #logo_top{
@@ -134,5 +203,156 @@ padding-bottom:1rem;
 }
 
 .joinus_banner{
-  background:red;
+  background-size: cover;
+  background: url('/images/texture.png') no-repeat center fixed;
+  height:150px;
+  line-height:150px;
+  text-align: center;
+}
+
+.joinus_banner button {
+letter-spacing: 6px;
+text-transform: uppercase;
+line-height: 1.2;
+display: inline-block;
+vertical-align:middle;
+padding:10px 40px;
+font-size: 1.4rem;
+box-shadow: 0px 0px 83px -15px rgba(0,0,0,0.75);
+}
+
+.titletab_ethique, .titletab_innovant{
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  color:#fff;
+  background: #69ddc8;
+  text-align: center;
+  height:130px;
+  line-height: 130px;
+  cursor:default;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.titletab_innovant{
+background: #e63b99;
+}
+
+.tab_ethique, .tab_innovant{
+  color:#fff;
+  font-size: 1rem;
+  text-align: justify;
+padding:20px;
+  padding-top:50px;
+  background: #69ddc8;
+
+}
+
+.tab_innovant{
+  background: #e63b99;
+}
+
+.tab_innovant img, .tab_ethique img {
+  height:80%;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.recompenses{
+  background: #ffd900;
+  text-align: justify;
+  color:#fff;
+}
+
+.recompenses .col-4{
+  text-align: center;
+  line-height: 240px;
+}
+
+.recompenses img {
+  max-width: 260px;
+  width:100%;
+  line-height: 240px;
+  padding: 0;
+
+}
+
+.recompenses row {
+  height:260px;
+}
+
+.recompenses h2{
+  text-align: center;
+  text-transform: uppercase;
+  padding:30px 0;
+  letter-spacing: 4px;
+}
+
+.recompenses p {
+  line-height: 260px;
+}
+
+.recompenses span {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding:20px;
+}
+
+.team{
+  background: #e63b99;
+  color: #fff;
+  text-align: center;
+}
+
+.team h2 {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  padding:30px 0;
+}
+
+.team img {
+width:100%;
+background: white;
+margin:20px;
+}
+
+.team p {
+letter-spacing: 4px;
+font-size: 1.2rem;
+}
+
+.team span {
+  font-size: 0.9rem;
+}
+
+.footer {
+  background: #abeadf;
+  color: #fff;
+}
+
+.footer img {
+height:100%;
+}
+
+.footer_links{
+font-weight: 500;
+height:120px;
+line-height: 120px;
+text-align: center;
+letter-spacing: 3px;
+font-size: 1rem;
+}
+
+.logo_enzym_footer{
+padding:16px;
+margin:20px 0;
+background:#fff;
+border-radius: 50%;
+text-align: center;
+height: 80px;
+width:80px;
 }
