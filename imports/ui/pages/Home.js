@@ -39,9 +39,9 @@ export default ({user, children, referrer}) => (
       <h3 id="accroche" align="center">
         <T>teaser</T>
       </h3>
-      <div align="right">
-        <TwitterLink />
+      <div className="social_links" align="right">
         <FacebookLink />
+        <TwitterLink />
         <TelegramLink />
       </div>
       {!children && !hasAccount(user) &&

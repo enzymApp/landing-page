@@ -3,22 +3,24 @@ import {Row, Col} from 'reactstrap'
 
 
 export default ({text}) => (
-  <Row>
+  <Row className="footer">
     <Col xs="10">
-      <Row>
+      <Row className="footer_links">
         <Col xs="4">
-          Lorem trucmuche
+          <a href="#">Lorem trucmuche</a>
         </Col>
         <Col xs="4">
-          Lorem trucmuche
+          <a href="#">Lorem trucmuche</a>
         </Col>
         <Col xs="4">
-          Lorem trucmuche
+          <a href="#">Lorem trucmuche</a>
         </Col>
       </Row>
     </Col>
     <Col xs="2">
-      <img src="/images/logo_enzym_z.png" />
+      <div className="logo_enzym_footer">
+        <img src="/images/logo_enzym_z.png" />
+      </div>
     </Col>
   </Row>
 )
