@@ -50,10 +50,12 @@ export default ({user, children, referrer}) => (
       {isReferrer(user) &&
         <ReferrerLinksContainer referrer={referrer} />
       }
+      {signupFinished(user)  &&
         <div align="center">
           <FacebookShare />
           <TwitterShare />
         </div>
+      }
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
