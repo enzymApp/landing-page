@@ -60,8 +60,8 @@ export default ({user, children, referrer}) => (
       <FacebookShare />
       <TwitterShare />
     </div>
-    <MeetingRow />
     <GamingRow />
+    <MeetingRow />
     <JoinUsBanner scroll text="Rejoignez-nous" />
     <TwoTabsBlock />
     <GiftsBlock />

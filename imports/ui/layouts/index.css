@@ -204,7 +204,7 @@ padding-bottom:1rem;
 
 .joinus_banner{
   background-size: cover;
-  background: url('/images/texture.png') no-repeat center fixed;
+  background: url('/images/texture.png') repeat-x center fixed;
   height:150px;
   line-height:150px;
   text-align: center;

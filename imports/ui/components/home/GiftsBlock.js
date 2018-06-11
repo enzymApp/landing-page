@@ -3,7 +3,7 @@ import {Row, Col} from 'reactstrap'
 
 
 export default ({text}) => (
-  <div class="recompenses">
+  <div className="recompenses">
     <h2>{'Récompenses'}</h2>
     <Row>
       <Col xs="4">
