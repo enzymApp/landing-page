@@ -1,9 +1,7 @@
 import React from 'react'
-import TwitterLink               from '/imports/ui/components/TwitterLink'
-import FacebookLink              from '/imports/ui/components/FacebookLink'
-import TelegramLink              from '/imports/ui/components/TelegramLink'
 import FacebookShare             from '/imports/ui/components/FacebookShare'
 import TwitterShare              from '/imports/ui/components/TwitterShare'
+import SocialLinks               from '../components/SocialLinks'
 
 i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
 i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
@@ -21,9 +19,7 @@ export default ({children}) => {
         <T>teaser</T>
       </h3>
       <div className="social_links" align="right">
-        <FacebookLink />
-        <TwitterLink />
-        <TelegramLink />
+        <SocialLinks />
       </div>
       {children}
       <FacebookShare />

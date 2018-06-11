@@ -5,6 +5,9 @@ import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
 import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
+import FacebookShare             from '/imports/ui/components/FacebookShare'
+import TwitterShare              from '/imports/ui/components/TwitterShare'
+
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
 import JoinUsBanner   from '../components/home/JoinUsBanner'
@@ -29,6 +32,12 @@ export default ({user, children, referrer}) => (
       }
       {isReferrer(user) &&
         <ReferrerLinksContainer referrer={referrer} />
+      }
+      {signupFinished(user)  &&
+        <div align="center">
+          <FacebookShare />
+          <TwitterShare />
+        </div>
       }
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />

@@ -7,7 +7,7 @@ export default (() => (
     quote='enzym'
     className="network__share-button">
 	  <FacebookIcon
-	    size={32}
+	    size={48}
 	    round/>
   </FacebookShareButton>
 ))
