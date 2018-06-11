@@ -1,5 +1,6 @@
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
+import {Link}     from 'react-router-dom'
 
 
 export default ({text}) => (
@@ -7,7 +8,7 @@ export default ({text}) => (
     <Col xs="10">
       <Row className="footer_links">
         <Col xs="4">
-          <a href="#">Lorem trucmuche</a>
+          <Link to="/privacy">Privacy</Link>
         </Col>
         <Col xs="4">
           <a href="#">Lorem trucmuche</a>
