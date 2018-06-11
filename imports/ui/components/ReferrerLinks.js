@@ -5,7 +5,7 @@ export default ({referrer}) => {
   const referrerUrl = referrer.getUrl()
   return (
     <div>
-      URL de parrainage : <Link to={referrerUrl}>{referrerUrl}</Link>
+      Vous êtes inscrit avec l'adresse <Link to={referrerUrl}>{referrerUrl}</Link>
     </div>
   )
 }
