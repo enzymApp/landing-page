@@ -41,11 +41,9 @@ export default ({text}) => (
 function randomlyOrderedSlides(slides) {
   let i = 0
   const ids = new Array(slides.length).fill().map(() => i++)
-  console.log(ids)
   const ordered = []
   while(ordered.length < slides.length) {
     const id = Random.choice(ids)
-    console.log(id, ids)
     ids.splice(ids.indexOf(id), 1)
     ordered.push(slides[id])
   }

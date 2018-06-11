@@ -10,12 +10,12 @@ export default ({text}) => (
         <img src="/images/picto_coin.png" />
       </Col>
       <Col xs="8">
-        <p><span>Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.</span></p>
+        <p><span>{`Si le projet Enzym te plait, tu peux nous rejoindre en nous transmettant ton mail. Tu recevras 1 ZYM. Si tu crois comme nous à la révolution Enzym, tu peux participer au concours de parrainage en recevant 1 ZYM pour chaque filleule parrainé.`}</span></p>
       </Col>
     </Row>
     <Row>
       <Col xs="8">
-        <p><span>Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.</span></p>
+        <p><span>{`emoticons / looting ?`}</span></p>
       </Col>
       <Col xs="4">
         <img src="/images/picto_chest.png" />
@@ -26,7 +26,7 @@ export default ({text}) => (
         <img src="/images/picto_crown.png" />
       </Col>
       <Col xs="8">
-        <p><span>Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.</span></p>
+        <p><span>{`Enzym cherchera  bientôt ses ambassadeurs pour coloniser les zones géographiques socialement pauvres. Le statut d’ambassadeur Enzym sera proposé en priorité aux joueurs les mieux classés au concours de parrainage. L’ambassadeur aura des avantages très intéressant pour la suite ;-) Alors..tu es prêt ?`}</span></p>
       </Col>
     </Row>
   </div>
