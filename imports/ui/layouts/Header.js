@@ -1,7 +1,7 @@
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
 
-import LanguageFlag from './LanguageFlag'
+import LanguageFlag from '../components/LanguageFlag'
 
 const LANGS = [
   {langCode: 'fr', imgSrc: '/images/picto_french.png'},
