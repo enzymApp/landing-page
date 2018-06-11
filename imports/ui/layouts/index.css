@@ -169,7 +169,25 @@ background-color: #69ddc8;
   font-size: 2rem;
 }
 
+.banner_ready{
+  margin-left:auto;
+  margin-right:auto;
+  display: block;
+  width: 80vw;
+  text-align: center;
+}
 
+.tableau {
+  margin-left:auto;
+  margin-right:auto;
+  display: block;
+}
+
+.SocialMediaShareButton {
+display: inline-block;
+margin: 20px;
+cursor: pointer;
+}
 
 .col-6{
   padding: 0;
@@ -306,7 +324,9 @@ margin-right:auto;
   background: #e63b99;
   color: #fff;
   text-align: center;
+  padding:40px;
 }
+
 
 .team h2 {
   text-transform: uppercase;
@@ -316,8 +336,6 @@ margin-right:auto;
 
 .team img {
 width:100%;
-background: white;
-margin:20px;
 }
 
 .team p {
@@ -328,6 +346,12 @@ font-size: 1.2rem;
 .team span {
   font-size: 0.9rem;
 }
+
+.slick-slide{
+  padding:25px;
+}
+
+
 
 .footer {
   background: #abeadf;

@@ -14,6 +14,8 @@ import i18n           from 'meteor/universe:i18n'
 import Button         from './Button'
 import UserPageForm   from './UserPageForm'
 import SocialLogin    from './SocialLogin'
+import BannerReady              from '/imports/ui/components/BannerReady'
+
 
 const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
@@ -76,10 +78,7 @@ class SubscriptionFormContainer extends React.Component {
           </Form>
         }
         {submitted &&
-          <div>
-            Nous vous avons envoyé un e-mail pour valider votre adresse.
-            Dès que vous aurez cliqué sur le lien qu'il contient vous pourrez participer au concours de parrainage
-          </div>
+          <BannerReady />
         }
       </div>
     )

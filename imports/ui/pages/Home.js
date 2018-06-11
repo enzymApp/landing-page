@@ -8,8 +8,7 @@ import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormCo
 import TwitterLink               from '/imports/ui/components/TwitterLink'
 import FacebookLink              from '/imports/ui/components/FacebookLink'
 import TelegramLink              from '/imports/ui/components/TelegramLink'
-import FacebookShare             from '/imports/ui/components/FacebookShare'
-import TwitterShare              from '/imports/ui/components/TwitterShare'
+
 
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
@@ -20,17 +19,13 @@ import TeamBlock      from '../components/home/TeamBlock'
 import Header         from '../components/Header'
 import Footer         from '../components/Footer'
 
-const homeStyle = {
-  width: "100%",
-}
-
 i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
 i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
 
 const T = i18n.createComponent()
 
 export default ({user, children, referrer}) => (
-  <div style={homeStyle}>
+  <div>
     <Header />
     <div className="background_img_top">
       <div id="logo_enzym_shadow">
@@ -57,8 +52,6 @@ export default ({user, children, referrer}) => (
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
-      <FacebookShare />
-      <TwitterShare />
     </div>
     <GamingRow />
     <MeetingRow />
