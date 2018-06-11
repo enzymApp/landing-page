@@ -7,7 +7,7 @@ export default (() => (
     quote='enzym'
     className="network__share-button">
 	  <TelegramIcon
-	    size={32}
+	    size={48}
 	    round/>
 	</TelegramShareButton>
 ))
