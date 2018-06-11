@@ -43,6 +43,9 @@ export default ({user, children, referrer}) => (
         <ReferrerListContainer referrer={referrer} />
       }
     </Main>
+    <div className="social_links">
+      <SocialLink />
+    </div>
     <GamingRow />
     <MeetingRow />
     <JoinUsBanner scroll text="Rejoignez-nous" />

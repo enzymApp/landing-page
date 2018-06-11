@@ -2,24 +2,23 @@ import React from 'react'
 
 const socialNetworks = {
   twitter: {
-    url: "https://twitter.com/https://twitter.com/Enzym_dapp",
-    src: "/images/logo_twitter_close.png"
+    classs: "twitter_icon",
+    url: "https://twitter.com/https://twitter.com/Enzym_dapp"
   },
   facebook: {
-    url: "https://www.facebook.com/Enzym-187654731876815",
-    src: "/images/logo_facebook.png"
+    classs: "facebook_icon",
+    url: "https://www.facebook.com/Enzym-187654731876815"
   },
   telegram: {
-    url: "https://t.me/enzym_app",
-    src: "/images/logo_telegram_close.png"
+    classs: "telegram_icon",
+    url: "https://t.me/enzym_app"
   }
 }
 
 export default ({name}) => {
-  const {url, src} = socialNetworks[name] || {}
+  const {classs, url} = socialNetworks[name] || {}
   return (
-    <a href={url} target="_blank" key={url}>
-      <img src={src} />
+      <a className={classs} href={url} target="_blank" key={url}>
     </a>
   )
 }
