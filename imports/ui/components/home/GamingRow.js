@@ -7,9 +7,11 @@ export default () => (
     <Col xs="6">
       <div className="jouez text_blocks">
         <h4>Jouez</h4>
-          <p>Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.<br/><br/>
-
-  Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.
+          <p>
+            {`Entre le virtuel et le réel, Enzym est avant tout un jeu gratuit qui fonctionne avec un carburant que le joueur gagne en acceptant des défis, en allant le chercher dans des endroits insolites ou en scannant un QR code sur un smartphone d’un autre joueur.`}
+          </p>
+          <p>
+            {` Les joueurs peuvent lancer des défis à un autre joueur ou à un groupe de joueurs, cela peut être un parcours, une rencontre, ou un jeu ludique nécessitant la proximité, le terrain de jeu étant les établissements de monde entier. Es-tu un vrai joueur ?`}
           </p>
       </div>
     </Col>

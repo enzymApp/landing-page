@@ -15,9 +15,11 @@ export default () => (
     <Col xs="6">
       <div className="rencontrez text_blocks">
         <h4><T>home.meet.title</T></h4>
-        <p>Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit.<br/><br/>
-
-Quae dum ita struuntur, indicatum est apud Tyrum indumentum regale textum occulte, incertum quo locante vel cuius usibus apparatum. ideoque rector provinciae tunc pater Apollinaris eiusdem nominis ut conscius ductus est aliique congregati sunt ex diversis civitatibus multi, qui atrocium criminum ponderibus urgebantur.
+        <p>
+          {`Rencontrer de nouvelles personnes n’est pas aisé. Que ce soit en soirée, dans des lieux publics ou sur les réseaux sociaux et apps de rencontre, il n’est pas évident de franchir les barrières de la timidité ou de faire confiance rapidement.`}
+        </p>
+        <p>
+          {`Enzym sera un jeu mobile qui te proposera des défis qui seront un prétexte à interagir physiquement avec d’autres joueurs en temps réel dans le même établissement. Tu pourras noter l’expérience et la concrétiser en demandant en ami les joueurs réellement rencontrés. Es-tu prêt à vivre l’expérience, comme nous ?`}
         </p>
       </div>
     </Col>
