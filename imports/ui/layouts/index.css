@@ -179,6 +179,17 @@ background-color: #69ddc8;
   font-size: 2rem;
 }
 
+.texte_valider_email {
+color:#fff;
+font-size: 1.6rem;
+width:65vw;
+margin-left: auto;
+margin-right: auto;
+display: block;
+font-weight: 600;
+text-align: center;
+}
+
 .banner_ready{
   margin-left:auto;
   margin-right:auto;

@@ -6,6 +6,7 @@ import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksConta
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 import SocialLink               from '/imports/ui/components/SocialLink'
+import SocialShares               from '/imports/ui/components/SocialShares'
 
 
 import GamingRow      from '../components/home/GamingRow'
@@ -30,22 +31,18 @@ export default ({user, children, referrer}) => (
       {hasAccount(user) && !signupFinished(user) &&
         <AfterSignupForm />
       }
+      <div className="banner_ready">
       {isReferrer(user) &&
         <ReferrerLinksContainer referrer={referrer} />
       }
       {signupFinished(user)  &&
-        <div align="center">
-          <FacebookShare />
-          <TwitterShare />
-        </div>
+        <SocialShares />
       }
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
+      </div>
     </Main>
-    <div className="social_links">
-      <SocialLink />
-    </div>
     <GamingRow />
     <MeetingRow />
     <JoinUsBanner scroll text="Rejoignez-nous" />

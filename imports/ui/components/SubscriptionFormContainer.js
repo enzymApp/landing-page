@@ -14,14 +14,16 @@ import i18n           from 'meteor/universe:i18n'
 import Button         from './Button'
 import UserPageForm   from './UserPageForm'
 import SocialLogin    from './SocialLogin'
-import BannerReady              from '/imports/ui/components/BannerReady'
-
 
 const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
 const LANG = i18n.getLocale()
 const BUTTON_TEST = `${LANG}-mainButton`
 emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
+
+i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
+i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
+const T = i18n.createComponent()
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
@@ -55,6 +57,9 @@ class SubscriptionFormContainer extends React.Component {
     if(userPageForm) return <UserPageForm />
     return (
       <div>
+      <h3 id="accroche" align="center">
+        <T>teaser</T>
+      </h3>
         {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}
         <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         {!submitted &&
@@ -78,7 +83,10 @@ class SubscriptionFormContainer extends React.Component {
           </Form>
         }
         {submitted &&
-          <BannerReady />
+          <div className="texte_valider_email">
+            Nous vous avons envoyé un e-mail pour valider votre adresse.
+            Dès que vous aurez cliqué sur le lien qu'il contient vous pourrez participer au concours de parrainage.
+          </div>
         }
       </div>
     )
