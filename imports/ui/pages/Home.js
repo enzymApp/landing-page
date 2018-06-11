@@ -5,15 +5,8 @@ import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
 import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
-<<<<<<< HEAD
-import TwitterLink               from '/imports/ui/components/TwitterLink'
-import FacebookLink              from '/imports/ui/components/FacebookLink'
-import TelegramLink              from '/imports/ui/components/TelegramLink'
+import SocialLink               from '/imports/ui/components/SocialLink'
 
-=======
-import FacebookShare             from '/imports/ui/components/FacebookShare'
-import TwitterShare              from '/imports/ui/components/TwitterShare'
->>>>>>> 7d3b38bad0dadd452c92becb7167ccd75ab7c618
 
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
@@ -26,13 +19,6 @@ import Footer         from '../layouts/Footer'
 import Header         from '../layouts/Header'
 import Main           from '../layouts/Main'
 
-<<<<<<< HEAD
-i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
-i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
-
-const T = i18n.createComponent()
-=======
->>>>>>> 7d3b38bad0dadd452c92becb7167ccd75ab7c618
 
 export default ({user, children, referrer}) => (
   <div>
@@ -56,11 +42,7 @@ export default ({user, children, referrer}) => (
       {signupFinished(user)  &&
         <ReferrerListContainer referrer={referrer} />
       }
-<<<<<<< HEAD
-    </div>
-=======
     </Main>
->>>>>>> 7d3b38bad0dadd452c92becb7167ccd75ab7c618
     <GamingRow />
     <MeetingRow />
     <JoinUsBanner scroll text="Rejoignez-nous" />
