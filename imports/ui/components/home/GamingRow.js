@@ -3,7 +3,10 @@ import {Row, Col} from 'reactstrap'
 
 
 export default () => (
-  <Row>
+  <Row className="gaming_row row_blocks">
+    <Col xs="6">
+      <img src="/images/photo_game.jpg" />
+    </Col>
     <Col xs="6">
       <div className="jouez text_blocks">
         <h4>Jouez</h4>
@@ -14,9 +17,6 @@ export default () => (
             {` Les joueurs peuvent lancer des défis à un autre joueur ou à un groupe de joueurs, cela peut être un parcours, une rencontre, ou un jeu ludique nécessitant la proximité, le terrain de jeu étant les établissements de monde entier. Es-tu un vrai joueur ?`}
           </p>
       </div>
-    </Col>
-    <Col xs="6">
-      <img src="/images/photo_game.jpg" />
     </Col>
   </Row>
 )

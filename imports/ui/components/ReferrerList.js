@@ -24,6 +24,7 @@ export default class ReferrerList extends React.Component {
       tableLayout: 'fixed',
     }
     return (
+    <div>
       <Table striped responsive>
         <thead>
           <tr style={trStyle}>
@@ -47,6 +48,8 @@ export default class ReferrerList extends React.Component {
           ))}
         </tbody>
       </Table>
+    <span className="know_more_gifts">En savoir plus sur le <a href="javascript:;">programme de récompenses</a></span>  
+    </div>
     )
   }
   centerListOn(id) {

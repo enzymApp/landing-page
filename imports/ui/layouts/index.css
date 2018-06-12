@@ -9,6 +9,11 @@ html {
 
 body{
   font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  outline:0 !important;
 }
 
 a, a:hover {
@@ -18,6 +23,10 @@ a, a:hover {
 
 .row{
   margin:0;
+}
+
+.gaming_row {
+  flex-direction: row-reverse;
 }
 
 .background_img_top{
@@ -228,7 +237,7 @@ margin-bottom: 20px;
   line-height: 34px;
   white-space: nowrap;
   border-radius: 0.2em;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #FFF;
 }
 .loginBtn:before {
@@ -311,17 +320,19 @@ text-align: center;
 }
 
 .referral_text {
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 500;
+  margin-top: 5vh;
 
 }
 
 .referral_text span{
-  font-size: 1.3rem;
+  font-size: 16px;
 }
 
 .referral_text a {
-font-size: 1.1rem;
+  color:#ffd900;
+font-size: 13px;
 }
 
 .referral_text a:hover{
@@ -344,13 +355,14 @@ font-size: 1.1rem;
   color: #000;
   font-weight: 500;
   line-height:0.2;
-  width:60%;
+  width:80%;
   margin: 0 auto;
   overflow: hidden;
+  margin-top: 5vh;
 }
 
 tbody {
-  max-height: 142px !important;
+  max-height: 212px !important;
 }
 
 .table-responsive th {
@@ -380,7 +392,7 @@ tbody {
 }
 
 .table-responsive th{
-  width:65px;
+  width:75px;
 }
 
 .table-responsive th:nth-of-type(2){
@@ -388,7 +400,7 @@ tbody {
 }
 
 .table-responsive tbody tr td{
-width:65px;
+width:75px;
 }
 
 .table-responsive tbody tr td:nth-of-type(2){
@@ -397,6 +409,20 @@ width:auto;
 
 .table-striped tbody tr:nth-of-type(odd) {
 background:#F2F2F2;
+}
+
+.know_more_gifts {
+  font-size: 1.2rem;
+  line-height:40px;
+}
+
+.know_more_gifts a{
+color:#ffd900;
+font-weight: 700;
+}
+
+.know_more_gifts a:hover{
+  text-decoration: underline;
 }
 
 .SocialMediaShareButton {
@@ -431,9 +457,13 @@ padding-bottom:1rem;
 }
 
 .text_blocks p {
-  font-size: 1.1rem;
+  font-size: 1.45rem;
   color: #747474;
   text-align: justify;
+}
+
+.text_blocks p:last-of-type{ /* just in case */
+  margin-bottom:0;
 }
 
 .joinus_banner{
@@ -477,7 +507,7 @@ background: #e63b99;
 
 .tab_ethique, .tab_innovant{
   color:#fff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: justify;
 padding:20px;
   padding-top:50px;
@@ -490,7 +520,9 @@ padding:20px;
 }
 
 .tab_innovant img, .tab_ethique img {
-  height:80%;
+  width:80%;
+  max-width:300px;
+padding-bottom:4vh;
 display:block;
 margin: 0 auto;
 }
@@ -542,7 +574,7 @@ margin: 0 auto;
   background: #e63b99;
   color: #fff;
   text-align: center;
-  padding:40px;
+  padding:0 40px;
 }
 
 
@@ -559,6 +591,7 @@ width:100%;
 .team p {
 letter-spacing: 4px;
 font-size: 1.2rem;
+margin-top: 1.5vh;
 }
 
 .team span {
@@ -599,21 +632,78 @@ height: 80px;
 width:80px;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 1421px) {
+html {
+  font-size:18px;
+}
+
+}
+
+@media screen and (max-width: 1420px) {
+html {
+  font-size:16px;
+}
+
+}
+
+@media screen and (max-width: 1279px) {
 html {
   font-size:14px;
 }
 
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 1102px) {
   html {
     font-size:12px;
   }
 
 }
 
-@media screen and (max-width: 500px) {
-.table-responsive {
-  font-size: 8px;
+@media screen and (max-width: 950px) {
+  html {
+    font-size:10px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+
+.row_blocks{
+  flex-direction: column-reverse !important;
+}
+
+.row_blocks .col-6 {
+  max-width: 85%;
+  flex: 0 0 85%;
+  text-align: center;
+  margin:0 auto;
+}
+
+.row_blocks .col-6 img {
+  max-width: 90%;
+  flex: 0 0 90%;
+  margin-top:15px;
+  margin-bottom:60px;
+  border-bottom:1px solid #ccc;
+  padding-bottom: 30px;
+}
+
+.row_blocks .col-6 p {
+  font-size:1.6rem;
+  text-align: center;
+}
+
+.jouez h4 {
+  margin-top:40px;
+}
+
+}
+
+@media screen and (max-width: 650px) {
+.logo_enzym_footer {
+  padding: 12px;
+  margin: 35px 0;
+  height: 50px;
+  width: 50px;
+}
 }

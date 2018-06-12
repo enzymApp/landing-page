@@ -11,7 +11,7 @@ export default ({referrer}) => {
           Partagez votre intérêt avec le lien ci-dessous ou sur les réseaux sociaux, et gagnez des cadeaux !
         </span>
       </p>
-      <Link to={referrerUrl}>{referrerUrl}</Link>
+      <b><Link to={referrerUrl}>{referrerUrl}</Link></b>
     </div>
   )
 }

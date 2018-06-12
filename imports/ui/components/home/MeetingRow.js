@@ -8,7 +8,7 @@ i18n.addTranslations('en', 'home.meet.title', 'Meet')
 const T = i18n.createComponent()
 
 export default () => (
-  <Row>
+  <Row className="meeting_row row_blocks">
     <Col xs="6">
       <img src="/images/photo_rencontre.jpg" />
     </Col>
