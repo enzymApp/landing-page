@@ -1,13 +1,11 @@
 import React from 'react'
-import {TwitterShareButton, TwitterIcon} from 'react-share'
+import {TwitterShareButton} from 'react-share'
 
 export default (() => (
 	<TwitterShareButton
     url='https://www.enzym.io'
     quote='enzym'
     className="network__share-button">
-	  <TwitterIcon
-	    size={48}
-	    round/>
+	  <img src='images/logo_twitter_share.png' />
   </TwitterShareButton>
 ))

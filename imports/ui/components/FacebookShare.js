@@ -1,13 +1,11 @@
 import React from 'react'
-import {FacebookShareButton, FacebookIcon} from 'react-share'
+import {FacebookShareButton} from 'react-share'
 
 export default (() => (
 	<FacebookShareButton
     url='https://www.enzym.io'
     quote='enzym'
     className="network__share-button">
-	  <FacebookIcon
-	    size={48}
-	    round/>
+	  <img src='images/logo_facebook_share.png' />
   </FacebookShareButton>
 ))
