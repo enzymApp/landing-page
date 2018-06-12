@@ -2,12 +2,13 @@ import React from 'react'
 import {Table} from 'reactstrap'
 
 export default class ReferrerList extends React.Component {
-  componentDidUpdate(prevProps) {
-    const {centerId} = prevProps
-    if(centerId) {
-      document.getElementById(centerId)
-      .scrollIntoView({block: 'center'})
-    }
+  componentDidUpdate(nextProps) {
+    const {centerId} = nextProps
+    this.centerListOn(centerId)
+  }
+  componentDidMount() {
+    const {centerId} = this.props
+    this.centerListOn(centerId)
   }
   render() {
     const {list, centerId} = this.props
@@ -47,5 +48,10 @@ export default class ReferrerList extends React.Component {
         </tbody>
       </Table>
     )
+  }
+  centerListOn(id) {
+    if(!id) return
+    document.getElementById(id)
+    .scrollIntoView({block: 'center'})
   }
 }
