@@ -3,7 +3,6 @@
 /*Yellow : ffd900
 purple : e63b99
 Cyan : 69ddc8*/
-
 html {
   font-size: 16px;
 }
@@ -26,12 +25,34 @@ background: url('/images/photo_intro.jpg') no-repeat center fixed;
 -webkit-background-size: cover; /* pour anciens Chrome et Safari */
 background-size: cover; /* version standardisée */
 height: 100vh;
+
+}
+
+.background_img_top_filtered{
+  -webkit-filter: brightness(60%); /* Safari 6.0 - 9.0 */
+      filter: brightness(60%);
+}
+
+.outer-div
+{
+     display: table;
+     position: absolute;
+     height: 100%;
+     width: 100%;
+}
+.mid-div
+{
+     display: table-cell;
+     vertical-align: middle;
+}
+.center-div
+{
+     margin: 0 auto;
 }
 
 .top_form{
 display: block;
-margin-left:auto;
-margin-right:auto;
+margin:0 auto;
 }
 
 .purple_buttons {
@@ -77,7 +98,6 @@ right:-26px;
 transition: 0.2s;
 z-index: 9;
 padding:8px;
-
 }
 
 .social_links:hover{
@@ -92,7 +112,6 @@ height:50px;
 border-radius: 50%;
 border:5px solid #ffd900;
 transition: 0.4s;
-
 }
 
 .twitter_icon:hover{
@@ -136,8 +155,7 @@ background-color: #69ddc8;
 }
 
 #loading {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   display: block;
   margin-top:50vh;
 }
@@ -145,6 +163,10 @@ background-color: #69ddc8;
 #header {
   background: #ffd900;
   height:40px;
+  position: fixed;
+  width:100%;
+  z-index: 99;
+  border-bottom:1px solid #e5c300;
 }
 
 #logo_top{
@@ -165,14 +187,14 @@ background-color: #69ddc8;
 }
 
 #logo_enzym_shadow{
-  padding-top:15vh;
+  padding-top:40px;
 }
 
 #logo_enzym_shadow img {
-  margin-left: auto;
-	margin-right: auto;
+  margin: 0 auto;
   display: block;
-  width:40vw;
+  width:36vw;
+  min-width: 360px;
 }
 
 #accroche{
@@ -180,12 +202,17 @@ background-color: #69ddc8;
   font-weight: 500;
   letter-spacing: 3px;
   font-size: 2rem;
+  margin-bottom: 15vh;
 }
 
 .social_logins {
 text-align: center;
 margin-top:50px;
 margin-bottom: 20px;
+}
+
+.social_logins a:hover {
+  text-decoration: underline;
 }
 
 /* Shared */
@@ -277,16 +304,32 @@ margin-bottom: 20px;
 color:#fff;
 font-size: 1.6rem;
 width:65vw;
-margin-left: auto;
-margin-right: auto;
+margin: 0 auto;
 display: block;
 font-weight: 600;
 text-align: center;
 }
 
+.referral_text {
+  font-size: 0.8rem;
+  font-weight: 500;
+
+}
+
+.referral_text span{
+  font-size: 1.3rem;
+}
+
+.referral_text a {
+font-size: 1.1rem;
+}
+
+.referral_text a:hover{
+  text-decoration: underline;
+}
+
 .banner_ready{
-  margin-left:auto;
-  margin-right:auto;
+  margin: 0 auto;
   display: block;
   width: 80vw;
   text-align: center;
@@ -302,14 +345,12 @@ text-align: center;
   font-weight: 500;
   line-height:0.2;
   width:60%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-
 tbody {
-  max-height: 190px !important;
+  max-height: 142px !important;
 }
 
 .table-responsive th {
@@ -336,6 +377,22 @@ tbody {
 
 .table-striped tbody tr {
   background: #fff;
+}
+
+.table-responsive th{
+  width:65px;
+}
+
+.table-responsive th:nth-of-type(2){
+  width:auto;
+}
+
+.table-responsive tbody tr td{
+width:65px;
+}
+
+.table-responsive tbody tr td:nth-of-type(2){
+width:auto;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -435,8 +492,7 @@ padding:20px;
 .tab_innovant img, .tab_ethique img {
   height:80%;
 display:block;
-margin-left:auto;
-margin-right:auto;
+margin: 0 auto;
 }
 
 .recompenses{
@@ -555,4 +611,9 @@ html {
     font-size:12px;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+.table-responsive {
+  font-size: 8px;
 }
