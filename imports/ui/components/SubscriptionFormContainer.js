@@ -60,8 +60,10 @@ class SubscriptionFormContainer extends React.Component {
       <h3 id="accroche" align="center">
         <T>teaser</T>
       </h3>
-        {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}
-        <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
+        <div className="social_logins">
+          {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}<br/>
+          <a href="javascript:;" onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
+        </div>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
             <FormGroup row>

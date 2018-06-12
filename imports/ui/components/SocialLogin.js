@@ -11,9 +11,11 @@ export default withTracker(({name}) => ({
 }))
 (({loading, name}) => {
   if(loading) return null
+  const classForLoginBtn = "loginBtn loginBtn--"+name;
+
   return (
-    <button onClick={oauthCall(name)}>
-      {name}
+    <button className={classForLoginBtn} onClick={oauthCall(name)}>
+      Login with {name}
     </button>
   )
 })
