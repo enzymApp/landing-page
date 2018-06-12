@@ -11,7 +11,7 @@ export default ({text}) => (
           <Link to="/privacy">Privacy</Link>
         </Col>
         <Col xs="4">
-          <a href="#">Lorem trucmuche</a>
+          <Link to="/terms">Mentions légales</Link>
         </Col>
         <Col xs="4">
           <a href="#">Lorem trucmuche</a>
