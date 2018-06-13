@@ -333,7 +333,7 @@ text-align: center;
 .referral_text {
   font-size: 14px;
   font-weight: 500;
-  margin-top: 3vh;
+  margin-top: 2vh;
 
 }
 
@@ -370,7 +370,7 @@ font-size: 20px;
   max-width: 860px;
   margin: 0 auto;
   overflow: hidden;
-  margin-top: 3vh;
+  margin-top: 2vh;
   font-size: 0.8rem;
 }
 
@@ -580,7 +580,7 @@ padding-bottom:4vh;
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
   padding:20px;
 }
@@ -714,8 +714,12 @@ html {
   flex: 0 0 90%;
   margin-top:15px;
   margin-bottom:60px;
-  border-bottom:1px solid #ccc;
+  border-bottom:1px solid #69ddc8;
   padding-bottom: 30px;
+}
+
+.row_blocks .col-6 img:first-of-type{
+  border-bottom:1px solid #e63b99;
 }
 
 .row_blocks .col-6 p {
@@ -736,6 +740,11 @@ html {
   height: 50px;
   width: 50px;
 }
+
+.referral_text span {
+  font-size: 20px;
+}
+
 }
 
 .grecaptcha-badge {
