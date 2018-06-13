@@ -617,8 +617,30 @@ margin-top: 1.5vh;
   padding:25px;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev, .slick-next {
+  height:auto;
+  width:auto;
+  z-index:99;
+}
+
+.slick-next{
+right:-30px;
+}
+
+.slick-prev{
+left:-30px;
+}
+
+/*.slick-prev:before, .slick-next:before {
   font-size: 28px;
+}*/
+
+.slick-prev:before {
+  content: url("/images/fleche_gauche.png");
+}
+
+.slick-next:before {
+  content: url("/images/fleche_droite.png");
 }
 
 .slick-dots {display: none;}
