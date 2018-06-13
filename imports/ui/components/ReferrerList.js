@@ -48,7 +48,7 @@ export default class ReferrerList extends React.Component {
           ))}
         </tbody>
       </Table>
-    <span className="know_more_gifts">En savoir plus sur le <a href="javascript:;">programme de récompenses</a></span>  
+    <span className="know_more_gifts">En savoir plus sur le <a href="javascript:;" onClick={onClick()}>programme de récompenses</a></span>
     </div>
     )
   }
@@ -57,4 +57,8 @@ export default class ReferrerList extends React.Component {
     document.getElementById(id)
     .scrollIntoView({block: 'center'})
   }
+}
+
+const onClick = () => () => {
+document.getElementsByClassName('recompenses')[0].scrollIntoView({ behavior: 'smooth', block: 'start' })
 }

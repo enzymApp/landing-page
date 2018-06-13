@@ -10,7 +10,7 @@ export default ({scroll, openChat, text}) => (
 
 const onClick = (scroll, openChat) => () => {
   if(scroll) {
-    window.scrollTo(0, 0)
+    document.getElementById('app').scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
   if(openChat) {
     window.Tawk_API.maximize()
