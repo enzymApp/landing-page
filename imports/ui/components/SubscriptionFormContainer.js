@@ -17,12 +17,6 @@ import SocialLogin    from './SocialLogin'
 
 const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
-const LANG = i18n.getLocale()
-const BUTTON_TEST = `${LANG}-mainButton`
-emitter.defineVariants(BUTTON_TEST, ['A', 'B'])
-
-i18n.addTranslations('en-US', 'teaser', 'Meet and face your neighbors')
-i18n.addTranslations('fr', 'teaser', 'Rencontre et affronte tes voisins')
 const T = i18n.createComponent()
 
 class SubscriptionFormContainer extends React.Component {
@@ -32,20 +26,23 @@ class SubscriptionFormContainer extends React.Component {
       submitted:  false,
       email:      '',
     }
+    this.LANG = i18n.getLocale()
+    this.BUTTON_TEST = `${this.LANG}-mainButton`
+    this.TEASER_TEST = `${this.LANG}-teaser`
+    emitter.defineVariants(this.BUTTON_TEST, ['A', 'B'])
+    emitter.defineVariants(this.TEASER_TEST, ['FAUX_PROFILS', 'JOUE', 'JOUER_SEUL', 'BAVARDAGES', 'VOL_DONNÉES', 'JEU_LOCAL'])
   }
   componentWillMount() {
     this.loadCaptchaReady()
     emitter.addPlayListener((experimentName, variantName) => {
-      console.log('experiment play:', experimentName, variantName)
-      analytics.track(`${LANG}-${experimentName}`, {
+      analytics.track(`${this.LANG}-${experimentName}`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
       })
     })
     emitter.addWinListener((experimentName, variantName) => {
-      console.log('experiment win:', experimentName, variantName)
-      analytics.track(`${LANG}-${experimentName}-win`, {
+      analytics.track(`${this.LANG}-${experimentName}-win`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
@@ -57,12 +54,29 @@ class SubscriptionFormContainer extends React.Component {
     if(userPageForm) return <UserPageForm />
     return (
       <div>
-      <h3 id="accroche" align="center">
-        <T>teaser</T>
-      </h3>
+        <h3 id="accroche" align="center">
+          <Experiment name={this.TEASER_TEST}>
+            <Variant name="FAUX_PROFILS">Tu en as marre des faux profils sur les réseaux sociaux ?</Variant>
+            <Variant name="JOUE">Joue sur ton smartphone pour rencontrer des inconnus dans le monde réel</Variant>
+            <Variant name="JOUER_SEUL">Tu en as marre de jouer tout seul sur ton téléphone ?</Variant>
+            <Variant name="BAVARDAGES">Recontruisez une société de partages et de bavardages !</Variant>
+            <Variant name="VOL_DONNÉES">Ras-le-bol de te faire voler tes données sur les réseaux sociaux ?</Variant>
+            <Variant name="JEU_LOCAL">Rejoins le premier Jeu qui se vit près de chez soi !</Variant>
+          </Experiment>
+        </h3>
+        <h4>
+          <Experiment name={this.TEASER_TEST}>
+            <Variant name="FAUX_PROFILS">Rejoins Enzym, le jeu qui te fait sortir près de chez toi</Variant>
+            <Variant name="JOUE">Rejoins Enzym, le réseau social pour sortir avec ses potes et faire de nouvelles rencontres</Variant>
+              <Variant name="JOUER_SEUL">Rejoins Enzym, le jeu qui te fait rencontrer du monde</Variant>
+              <Variant name="BAVARDAGES">Enzym, l'application qui invite à la rencontre en bas de chez soi</Variant>
+              <Variant name="VOL_DONNÉES">Rejoins Enzym, le Jeu local qui décentralise et protège tes données</Variant>
+              <Variant name="JEU_LOCAL">Du virtuel au réel, Enzym revisite l'art de la rencontre</Variant>
+          </Experiment>
+        </h4>
         <div className="social_logins">
           {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}<br/>
-          <a href="javascript:;" onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
+          <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         </div>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
@@ -75,9 +89,9 @@ class SubscriptionFormContainer extends React.Component {
                   />
                   <FormFeedback>Adresse e-mail incorrecte</FormFeedback>
                   <Button type="submit">
-                    <Experiment name={BUTTON_TEST}>
+                    <Experiment name={this.BUTTON_TEST}>
                       <Variant name="A">Participer !</Variant>
-                      <Variant name="B">Rejoignez-nous !</Variant>
+                      <Variant name="B">Rejoins-nous !</Variant>
                     </Experiment>
                   </Button>
                 </div>
@@ -86,8 +100,8 @@ class SubscriptionFormContainer extends React.Component {
         }
         {submitted &&
           <div className="texte_valider_email">
-            Nous vous avons envoyé un e-mail pour valider votre adresse.
-            Dès que vous aurez cliqué sur le lien qu'il contient vous pourrez participer au concours de parrainage.
+            Nous t'avons envoyé un e-mail pour valider ton adresse.
+            Dès que tu auras cliqué sur le lien qu'il contient tu pourras participer au concours de parrainage.
           </div>
         }
       </div>
@@ -113,7 +127,8 @@ class SubscriptionFormContainer extends React.Component {
   }
   handleSubmit = () => async (e) => {
     e.preventDefault()
-    emitter.emitWin(BUTTON_TEST)
+    emitter.emitWin(this.BUTTON_TEST)
+    emitter.emitWin(this.TEASER_TEST)
     const {email} = this.state
     const {referrerToken} = this.props.match.params
     const profile = {referrerToken}
