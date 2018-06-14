@@ -24,7 +24,7 @@ import Main           from '../layouts/Main'
 export default ({user, children, referrer}) => (
   <div>
     <Header />
-    <Main>
+    <Main isUserPage={isReferrer(user, referrer)}>
       {!hasAccount(user) &&
         <SubscriptionFormContainer />
       }
@@ -35,10 +35,10 @@ export default ({user, children, referrer}) => (
       {isReferrer(user, referrer) &&
         <ReferrerLinksContainer user={user} referrer={referrer} />
       }
-      {signupFinished(user)  &&
+      {signupFinished(user) &&
         <SocialShares />
       }
-      {signupFinished(user)  &&
+      {signupFinished(user) &&
         <ReferrerListContainer referrer={referrer} />
       }
       </div>
