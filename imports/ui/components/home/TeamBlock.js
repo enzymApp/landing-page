@@ -7,9 +7,10 @@ import 'slick-carousel/slick/slick-theme.css'
 
 
 const settings = {
-  dots:         true,
-  infinite:     true,
-  slidesToShow: 3,
+  dots:           true,
+  infinite:       true,
+  slidesToShow:   3,
+  slidesToScroll: 3,
 }
 const slides = [
   {photoSrc: '/images/team_jeremy.jpg',  name: 'Jeremy',  job: 'CMO'},
