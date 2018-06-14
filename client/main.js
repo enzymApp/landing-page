@@ -1,1 +1,2 @@
-import '/imports/startup/client/index'
+import '/imports/startup/client'
+import '/imports/startup/both'

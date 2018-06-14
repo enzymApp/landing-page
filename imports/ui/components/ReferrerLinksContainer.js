@@ -7,9 +7,10 @@ import withLoading   from '../helpers/withLoading'
 import ReferrerLinks from './ReferrerLinks'
 
 
-export default withTracker(({referrer}) => {
+export default withTracker(({referrer, user}) => {
   return {
-    referrer,
     loading: !referrer,
+    referrer,
+    user,
   }
 })(withLoading(ReferrerLinks))

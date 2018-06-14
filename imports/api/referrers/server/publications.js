@@ -9,7 +9,7 @@ Meteor.publishComposite('referrers.one', function(username) {
   const selector = username ? {username} : userId
   return {
     find() {
-      return Meteor.users.find(selector, {fields: {_id: 1, username: 1}})
+      return Meteor.users.find(selector, {fields: {_id: 1, username: 1, profile: 1, registered_emails: 1}})
     },
     children: [{
       find(user) {

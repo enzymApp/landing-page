@@ -32,8 +32,8 @@ export default ({user, children, referrer}) => (
         <AfterSignupForm />
       }
       <div className="banner_ready">
-      {isReferrer(user) &&
-        <ReferrerLinksContainer referrer={referrer} />
+      {isReferrer(user, referrer) &&
+        <ReferrerLinksContainer user={user} referrer={referrer} />
       }
       {signupFinished(user)  &&
         <SocialShares />
@@ -67,6 +67,6 @@ function signupFinished(user) {
   return user && user.profile && user.profile.contest !== undefined
 }
 
-function isReferrer(user) {
-  return user && user.profile && user.profile.contest
+function isReferrer(user, referrer) {
+  return user && referrer && referrer.userId === user._id
 }
