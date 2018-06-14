@@ -12,30 +12,20 @@ export default class ReferrerList extends React.Component {
   }
   render() {
     const {list, centerId} = this.props
-    const tbodyStyle = {
-      display:   'block',
-      maxHeight: '300px',
-      overflowY: 'scroll',
-      width:     '100%',
-    }
-    const trStyle = {
-      display:     'table',
-      width:       '100%',
-      tableLayout: 'fixed',
-    }
+
     return (
     <div>
       <Table striped responsive>
         <thead>
-          <tr style={trStyle}>
+          <tr>
             <th>Rank</th>
             <th>Username</th>
             <th>Points</th>
           </tr>
         </thead>
-        <tbody style={tbodyStyle}>
+        <tbody>
           {list.map(({_id, userId, username, rank, referralCount}) => (
-            <tr key={_id} style={trStyle} id={_id}>
+            <tr key={_id} className={_id === centerId && "centered-user"} id={_id}>
               <td>{rank}</td>
               <td>
                 {_id === centerId &&
@@ -59,6 +49,6 @@ export default class ReferrerList extends React.Component {
   }
 }
 
-const onClick = () => () => {
+const onClick = () => {
 document.getElementsByClassName('recompenses')[0].scrollIntoView({ behavior: 'smooth', block: 'start' })
 }

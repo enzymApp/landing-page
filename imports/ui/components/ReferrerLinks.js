@@ -9,7 +9,7 @@ export default ({referrer, user}) => {
       <p>
         {email && <span>Vous êtes inscrit avec l'adresse {email.address}.</span>}
         <br/>
-        <span>
+        <span className="share_text">
           Partagez votre intérêt avec le lien ci-dessous ou sur les réseaux sociaux, et gagnez des cadeaux !
         </span>
       </p>

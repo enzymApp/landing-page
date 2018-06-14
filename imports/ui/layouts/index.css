@@ -37,9 +37,8 @@ height: 100vh;
 
 }
 
-.background_img_top_filtered{
-  -webkit-filter: brightness(60%); /* Safari 6.0 - 9.0 */
-      filter: brightness(60%);
+.active-black{
+background: linear-gradient( rgba(20,20,20, .5), rgba(20,20,20, .5));
 }
 
 .outer-div
@@ -331,14 +330,14 @@ text-align: center;
 }
 
 .referral_text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   margin-top: 2vh;
 
 }
 
-.referral_text span{
-  font-size: 24px;
+.referral_text .share_text{
+  font-size: 22px;
 }
 
 .referral_text a {
@@ -376,6 +375,10 @@ font-size: 20px;
 
 tbody {
   max-height: 148px !important;
+  display:block;
+  max-height:300px;
+  overflow-y:scroll;
+  width:100%;
 }
 
 .table-responsive th {
@@ -400,6 +403,12 @@ tbody {
   background:#ccc;
 }
 
+.table-responsive tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}
+
 .table-striped tbody tr {
   background: #fff;
 }
@@ -422,6 +431,11 @@ width:auto;
 
 .table-striped tbody tr:nth-of-type(odd) {
 background:#F2F2F2;
+}
+
+.centered-user {
+background: #e63b99 !important;
+color:#fff;
 }
 
 .know_more_gifts {
