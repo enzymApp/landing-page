@@ -14,7 +14,7 @@ export default ({text}) => (
           <Link to="/terms">Mentions légales</Link>
         </Col>
         <Col xs="4">
-          <a href="#">Lorem trucmuche</a>
+
         </Col>
       </Row>
     </Col>
