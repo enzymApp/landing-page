@@ -35,20 +35,16 @@ background: url('/images/photo_intro.jpg') no-repeat center fixed;
 -webkit-background-size: cover; /* pour anciens Chrome et Safari */
 background-size: cover; /* version standardisée */
 height: 100vh;
-
 }
 
-.active-black{
-background: linear-gradient( rgba(20,20,20, .5), rgba(20,20,20, .5));
-}
 
-.outer-div
-{
+.outer-div {
      display: table;
      position: absolute;
-     height: 100%;
+     height: 100vh;
      width: 100%;
 }
+
 .mid-div
 {
      display: table-cell;
@@ -57,6 +53,14 @@ background: linear-gradient( rgba(20,20,20, .5), rgba(20,20,20, .5));
 .center-div
 {
      margin: 0 auto;
+}
+
+.background_img_top .outer-div {
+  background: linear-gradient( rgba(20,20,20, .2), rgba(20,20,20, .2));
+}
+
+.active-black{
+background: linear-gradient( rgba(20,20,20, .5), rgba(20,20,20, .5));
 }
 
 .top_form{
@@ -212,15 +216,18 @@ background-color: #69ddc8;
   line-height: 100%;
 }
 
-#logo_enzym_shadow{
-  padding-top:40px;
+#logo_enzym_shadow a {
+  margin: 0 auto;
+    display: block;
+    width: 36vw;
+    min-width: 260px;
 }
 
 #logo_enzym_shadow img {
   margin: 0 auto;
   display: block;
   width:36vw;
-  min-width: 360px;
+  min-width: 260px;
 }
 
 #accroche, #accrochebis{
@@ -233,7 +240,7 @@ background-color: #69ddc8;
 
 #accrochebis {
   font-size:1.8rem;
-  margin-bottom: 12vh;
+  margin-bottom: 9vh;
 letter-spacing: 2px;
 
 }
@@ -246,6 +253,7 @@ margin-bottom: 20px;
 
 .social_logins a {
 font-size:16px;
+outline: none;
 }
 
 .social_logins a:hover {
@@ -464,6 +472,7 @@ font-weight: 700;
 .know_more_gifts a{
 color:#ffd900;
 font-weight: 700;
+outline: none;
 }
 
 .know_more_gifts a:hover{
@@ -740,7 +749,7 @@ html {
   font-size:10px;
 }
 
-#bloc_accroches{
+#top_bloc {
   padding: 0 20px;
 }
 
@@ -762,6 +771,23 @@ html {
 .team span {
   letter-spacing: 1px;
 }
+
+#accroche {
+  letter-spacing: 2px;
+}
+
+#accrochebis {
+  letter-spacing: 1px;
+}
+
+}
+
+
+@media screen and (max-width: 710px) {
+
+  #accroche {
+    letter-spacing: 1px;
+  }
 
 }
 
@@ -830,9 +856,30 @@ html {
 .slick-prev {
   left:-40px;
 }
+}
+
+@media screen and (max-height: 600px) {
+
+.background_img_top {
+  height:130vh;
+}
+
+.background_img_top .outer-div {
+  height:130vh;
+}
+
+@media screen and (max-height: 400px) {
+
+.background_img_top {
+  height:200vh;
+}
+
+.background_img_top .outer-div {
+  height:200vh;
+}
 
 }
 
 .grecaptcha-badge {
-display:none;
+  display:none;
 }
