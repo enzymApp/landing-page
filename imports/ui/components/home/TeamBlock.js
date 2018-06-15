@@ -12,6 +12,11 @@ const settings = {
   slidesToShow:   3,
   slidesToScroll: 3,
 }
+const settingsSmall = {
+  ...settings,
+  slidesToShow:   1,
+  slidesToScroll: 1,
+}
 const slides = [
   {photoSrc: '/images/team_jeremy.jpg',  name: 'Jeremy',  job: 'CMO'},
   {photoSrc: '/images/team_alfred.jpg',  name: 'Alfred',  job: 'Artistic Director'},
@@ -21,12 +26,24 @@ const slides = [
   {photoSrc: '/images/team_pauline.jpg', name: 'Pauline', job: 'Community Manager'},
   {photoSrc: '/images/team_pascal.jpg',  name: 'Pascal',  job: 'Full-stack developer'},
 ]
+const orderedSlides = randomlyOrderedSlides(slides)
 
 export default ({text}) => (
   <div className="team">
     <h2>{'L\'équipe'}</h2>
-    <Slider {...settings}>
-      {randomlyOrderedSlides(slides).map(({photoSrc, name, job}) => (
+    <Slider {...settings} className="d-none d-md-block">
+      {orderedSlides.map(({photoSrc, name, job}) => (
+        <div className="slide" key={name}>
+          <img src={photoSrc} />
+          <p>
+            {name}<br/>
+            <span>{` - ${job} - `}</span>
+          </p>
+        </div>
+      ))}
+    </Slider>
+    <Slider {...settingsSmall} className="d-block d-md-none">
+      {orderedSlides.map(({photoSrc, name, job}) => (
         <div className="slide" key={name}>
           <img src={photoSrc} />
           <p>
