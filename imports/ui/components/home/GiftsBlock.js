@@ -32,7 +32,7 @@ export default ({text}) => (
         </div></div></div>
       </Col>
       <Col xs="8">
-        <p><span>{`Différents statuts, en particulier le statut d’ambassadeur, sera proposé en priorité aux joueurs les mieux classés au concours de parrainage. Ces statuts offriront des avantages particulièrement intéressants pour la suite ! Alors… tu es prêt ?`}</span></p>
+        <p><span>{`Différents statuts, en particulier le statut d’ambassadeur, seront proposés en priorité aux joueurs les mieux classés au concours de parrainage. Ces statuts offriront des avantages particulièrement intéressants pour la suite ! Alors… tu es prêt ?`}</span></p>
       </Col>
     </Row>
   </div>
