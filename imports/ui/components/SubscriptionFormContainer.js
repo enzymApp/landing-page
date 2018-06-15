@@ -76,7 +76,7 @@ class SubscriptionFormContainer extends React.Component {
         </h4>
         <div className="social_logins">
           {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}<br/>
-          <a role="button" tabindex="0" onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
+          <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         </div>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
