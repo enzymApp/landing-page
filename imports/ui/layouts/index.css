@@ -107,6 +107,11 @@ border-bottom-left-radius: 0;
   padding: 7.5px;
 }
 
+.col-sm-6 input {
+border-bottom-right-radius: 0;
+border-top-right-radius: 0;
+}
+
 .social_links{
 position: fixed;
 top:60px;

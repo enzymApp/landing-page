@@ -6,6 +6,6 @@ export default (() => (
     url='https://www.enzym.io'
     quote='enzym'
     className="network__share-button">
-	  <img src='images/logo_telegram_share.png' />
+	  <img src='/images/logo_telegram_share.png' />
 	</TelegramShareButton>
 ))

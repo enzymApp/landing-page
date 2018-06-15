@@ -27,17 +27,15 @@ class SubscriptionFormContainer extends React.Component {
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
             <FormGroup row>
-              <Col sm={6}>
+              <div className="top_form">
                 <Input
                   type="text"
                   placeholder="Pseudo"
                   onChange={this.handleChange('username')}
                 />
-              </Col>
-              <Col sm={6}>
                 <Button type="submit">Envoyer</Button>
-              </Col>
-            </FormGroup>
+                </div>
+              </FormGroup>
           </Form>
         }
       </div>
