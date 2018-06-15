@@ -1,5 +1,6 @@
 import React from 'react'
 import {Table} from 'reactstrap'
+import SetUsername from './SetUsername'
 
 export default class ReferrerList extends React.Component {
   componentDidUpdate(nextProps) {
@@ -25,13 +26,10 @@ export default class ReferrerList extends React.Component {
         </thead>
         <tbody>
           {list.map(({_id, userId, username, rank, referralCount}) => (
-            <tr key={_id} className={_id === centerId && "centered-user"} id={_id}>
+            <tr key={_id} className={_id === centerId ? "centered-user" : ""} id={_id}>
               <td>{rank}</td>
               <td>
-                {_id === centerId &&
-                  <b>{username || 'pseudo'}</b> ||
-                  username || _id
-                }
+                {username || _id === centerId && <SetUsername /> || 'pseudo'}
               </td>
               <td>{referralCount}</td>
             </tr>

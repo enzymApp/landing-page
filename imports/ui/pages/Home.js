@@ -1,12 +1,11 @@
 import i18n       from 'meteor/universe:i18n'
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
-import AfterSignupForm           from '/imports/ui/components/AfterSignupForm'
 import ReferrerLinksContainer    from '/imports/ui/components/ReferrerLinksContainer'
 import ReferrerListContainer     from '/imports/ui/components/ReferrerListContainer'
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
-import SocialLink               from '/imports/ui/components/SocialLink'
-import SocialShares               from '/imports/ui/components/SocialShares'
+import SocialLink                from '/imports/ui/components/SocialLink'
+import SocialShares              from '/imports/ui/components/SocialShares'
 
 
 import GamingRow      from '../components/home/GamingRow'
@@ -28,17 +27,14 @@ export default ({user, children, referrer}) => (
       {!hasAccount(user) &&
         <SubscriptionFormContainer />
       }
-      {hasAccount(user) && !signupFinished(user) &&
-        <AfterSignupForm />
-      }
       <div className="banner_ready">
       {isReferrer(user, referrer) &&
         <ReferrerLinksContainer user={user} referrer={referrer} />
       }
-      {signupFinished(user) &&
+      {hasAccount(user) &&
         <SocialShares />
       }
-      {signupFinished(user) &&
+      {hasAccount(user) &&
         <ReferrerListContainer referrer={referrer} />
       }
       </div>
