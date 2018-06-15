@@ -2,6 +2,7 @@ import React      from 'react'
 import {Row, Col} from 'reactstrap'
 
 import LanguageFlag from '../components/LanguageFlag'
+import UsersCount   from '../components/UsersCount'
 
 const LANGS = [
   {langCode: 'fr', imgSrc: '/images/picto_french.png'},
@@ -19,6 +20,7 @@ export default () => (
       {LANGS.map(({langCode, imgSrc}) => (
         <LanguageFlag {...{langCode, imgSrc}} key={langCode} />
       ))}
+      <UsersCount />
     </Col>
   </Row>
 )
