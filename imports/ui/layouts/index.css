@@ -736,6 +736,10 @@ html {
   font-size:10px;
 }
 
+#bloc_accroches{
+  padding: 0 20px;
+}
+
 #accroche {
   font-size: 22px;
 }
