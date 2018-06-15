@@ -3,6 +3,11 @@
 /*Yellow : ffd900
 purple : e63b99
 Cyan : 69ddc8*/
+
+.grecaptcha-badge {
+  display:none;
+}
+
 html {
   font-size: 16px;
 }
@@ -41,7 +46,7 @@ height: 100vh;
 .outer-div {
      display: table;
      position: absolute;
-     height: 100vh;
+     height: 100%;
      width: 100%;
 }
 
@@ -57,6 +62,7 @@ height: 100vh;
 
 .background_img_top .outer-div {
   background: linear-gradient( rgba(20,20,20, .2), rgba(20,20,20, .2));
+  height:100vh;
 }
 
 .active-black{
@@ -396,7 +402,7 @@ font-size: 20px;
   margin: 0 auto;
   overflow: hidden;
   margin-top: 2vh;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 tbody {
@@ -622,7 +628,7 @@ padding-bottom:4vh;
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 500;
   padding:20px;
 }
@@ -867,19 +873,15 @@ html {
 .background_img_top .outer-div {
   height:130vh;
 }
-
-@media screen and (max-height: 400px) {
-
-.background_img_top {
-  height:200vh;
 }
 
-.background_img_top .outer-div {
-  height:200vh;
-}
+@media screen and (max-height: 420px) {
 
-}
+  .background_img_top {
+    height:225vh;
+  }
 
-.grecaptcha-badge {
-  display:none;
+  .background_img_top .outer-div {
+    height:225vh;
+  }
 }
