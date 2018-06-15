@@ -19,10 +19,10 @@ export default class TwoTabsBlock extends React.Component {
           <Row className="tab_ethique">
             <Col xs="8">
               <p>
-                {`Le projet Enzym est un fabuleux challenge ! Nous avons l’ambition de proposer un Jeu gratuit provoquant des interactions humaines quasi instantanément tout en respectant notre communauté. Enzym n’utilisera pas vos données à des fins commerciales car elle ne veut pas les détenir (voir “innovant). Nous voulons créer, avec votre aide, une application pouvant fonctionner sans accès à internet en mettant en avant les établissements locaux.`}
+                {`Le projet Enzym est un fabuleux challenge ! Nous avons l’ambition de proposer un Jeu gratuit favorisant des interactions humaines quasi instantanées tout en respectant notre communauté. Chez Enzym, nous tenons à ce que vos données restent les vôtres. Non seulement, nous n’y aurons techniquement pas accès (voir « innovant ») mais elles seront également chiffrées pour garantir leur sécurité.`}
               </p>
               <p>
-                {`Nous sommes conscients que les mentalités ne sont pas encore prêtes pour adhérer brusquement  à ce changement de vision de cet usage d’internet, mais il y a tellement d’enjeux pour le futur que nous comptons sur vous pour colporter cette vision qui est la nôtre, qui est la votre.`}
+                {`Nous sommes conscients que c’est un nouvel usage d’internet, mais l’enjeu est important et nous comptons sur vous pour diffuser cette vision qui est la nôtre, qui est la vôtre.`}
               </p>
             </Col>
             <Col xs="4">
@@ -37,10 +37,10 @@ export default class TwoTabsBlock extends React.Component {
             </Col>
             <Col xs="8">
               <p>
-                {`L’application Enzym sera la premier jeu donnant un prétexte à la rencontre entre le virtuel et le réel. Enzym sera décentralisée et fonctionnera avec une technologie Blockchain. La Data des profils et des actions seront décentralisées et chiffrées, de cette façon personne ne détiendra les données de la communauté.`}
+                {`Le projet Enzym est décentralisé, ce qui signifie que les données des utilisateurs ne sont pas stockées dans une base de données d’Enzym mais via la technologie d’échange Blockchain. La Data des profils et des actions étant décentralisée, personne ne détient les données de la communauté Enzym.`}
               </p>
               <p>
-                {`Le ZYM sera le carburant de la dapp (Token Ethereum) et assura par la qualité de ses transferts (QR-codes), la bonne existence des membres de la communauté. De plus des technologie de pointe comme IPFS, pour les contenus et les notifications locales, ainsi que le Bluetooth Low Energy seront utilisées.`}
+                {`Le ZYM est le carburant de la dapp (Token Ethereum) et assure par la qualité de ses transferts (QR-codes) l’existence réelle des membres de la communauté. De plus, des technologies de pointe comme IPFS, pour les contenus et les notifications locales, ainsi que le Bluetooth Low Energy, sont utilisés.`}
               </p>
             </Col>
           </Row>

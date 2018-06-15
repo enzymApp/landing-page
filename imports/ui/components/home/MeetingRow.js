@@ -16,10 +16,13 @@ export default () => (
       <div className="rencontrez text_blocks">
         <h4><T>home.meet.title</T></h4>
         <p>
-          {`Rencontrer de nouvelles personnes n’est pas aisé. Que ce soit en soirée, dans des lieux publics ou sur les réseaux sociaux et apps de rencontre, il n’est pas évident de franchir les barrières de la timidité ou de faire confiance rapidement.`}
+          {`Qui n’a jamais été pris d’une soudaine envie de rencontrer de nouvelles personnes ? L'ADN d'Enzym c'est une promesse, celle de réunir ses utilisateurs en leur proposant de vivre des rencontres immédiatement en bas de chez eux.`}
         </p>
         <p>
-          {`Enzym sera un jeu mobile qui te proposera des défis qui seront un prétexte à interagir physiquement avec d’autres joueurs en temps réel dans le même établissement. Tu pourras noter l’expérience et la concrétiser en demandant en ami les joueurs réellement rencontrés. Es-tu prêt à vivre l’expérience, comme nous ?`}
+          {`Que ce soit pour une heure, un jour ou pour la vie ; pour rigoler, philosopher ou plus si affinités, Enzym offre l’opportunité de faire des rencontres naturelles et spontanées dans un cadre convivial. Encadrée par le jeu, la notoriété d’un joueur évolue au gré des rencontres, assure sa progression et oriente ses rencontres futures pour qu'elles restent toujours propices au plaisir et à la découverte de l'autre.`}
+        </p>
+        <p>
+          {`Prêt à vivre une nouvelle aventure ?`}
         </p>
       </div>
     </Col>

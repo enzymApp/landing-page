@@ -11,10 +11,13 @@ export default () => (
       <div className="jouez text_blocks">
         <h4>Jouez</h4>
           <p>
-            {`Entre le virtuel et le réel, Enzym est avant tout un jeu gratuit qui fonctionne avec un carburant que le joueur gagne en acceptant des défis, en allant le chercher dans des endroits insolites ou en scannant un QR code sur un smartphone d’un autre joueur.`}
+            {`Enzym est un jeu gratuit qui invite à naviguer entre le réel et le virtuel. Le joueur accepte des défis qui le conduisent dans des endroits insolites et à rencontrer d’autres joueurs. Source de carburant, les défis remportés lui permettent de débloquer de nouvelles fonctionnalités dans le jeu et de continuer sa progression.`}
           </p>
           <p>
-            {` Les joueurs peuvent lancer des défis à un autre joueur ou à un groupe de joueurs, cela peut être un parcours, une rencontre, ou un jeu ludique nécessitant la proximité, le terrain de jeu étant les établissements de monde entier. Es-tu un vrai joueur ?`}
+            {`Chaque défi est différent. Il peut se jouer à deux ou plus, avec des inconnus ou avec des amis, sur quelques heures ou plusieurs jours… L’expérience est renouvelée en permanence grâce à la personnalité des joueurs et à un terrain de jeu sans limite : le monde réel.`}
+          </p>
+          <p>
+            {`Alors, prêt à jouer ?`}
           </p>
       </div>
     </Col>

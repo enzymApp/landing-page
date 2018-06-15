@@ -4,11 +4,10 @@ import {Form,
         FormFeedback,
         Input,
         Label,
-        Button,
         Col}          from 'reactstrap'
 import {Redirect}     from 'react-router-dom'
 import {analytics}    from 'meteor/okgrow:analytics'
-
+import Button         from './Button'
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class SubscriptionFormContainer extends React.Component {
                 />
               </Col>
               <Col sm={6}>
-                <Button type="submit">Go !</Button>
+                <Button type="submit">Envoyer</Button>
               </Col>
             </FormGroup>
           </Form>

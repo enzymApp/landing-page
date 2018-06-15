@@ -64,7 +64,7 @@ class SubscriptionFormContainer extends React.Component {
             <Variant name="JEU_LOCAL">Rejoins le premier Jeu qui se vit près de chez soi !</Variant>
           </Experiment>
         </h3>
-        <h4>
+        <h4 id="accrochebis" align="center">
           <Experiment name={this.TEASER_TEST}>
             <Variant name="FAUX_PROFILS">Rejoins Enzym, le jeu qui te fait sortir près de chez toi</Variant>
             <Variant name="JOUE">Rejoins Enzym, le réseau social pour sortir avec ses potes et faire de nouvelles rencontres</Variant>
@@ -76,7 +76,7 @@ class SubscriptionFormContainer extends React.Component {
         </h4>
         <div className="social_logins">
           {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}<br/>
-          <a onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
+          <a role="button" tabindex="0" onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
         </div>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>

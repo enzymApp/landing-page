@@ -7,14 +7,11 @@ export default ({text}) => (
   <Row className="footer">
     <Col xs="10">
       <Row className="footer_links">
-        <Col xs="4">
+        <Col xs="6">
           <Link to="/privacy">Privacy</Link>
         </Col>
-        <Col xs="4">
+        <Col xs="6">
           <Link to="/terms">Mentions légales</Link>
-        </Col>
-        <Col xs="4">
-
         </Col>
       </Row>
     </Col>
