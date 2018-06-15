@@ -1,5 +1,4 @@
 import React  from 'react'
-import {Link} from 'react-router-dom'
 
 export default ({referrer, user}) => {
   const referrerUrl = referrer.getUrl()
@@ -7,13 +6,13 @@ export default ({referrer, user}) => {
   return (
     <div className="referral_text">
       <p>
-        {email && <span>Vous êtes inscrit avec l'adresse {email.address}.</span>}
+        {email && <span>Tu es inscrit avec l'adresse {email.address}.</span>}
         <br/>
         <span className="share_text">
-          Partagez votre intérêt avec le lien ci-dessous ou sur les réseaux sociaux, et gagnez des cadeaux !
+          Partage ton intérêt avec le lien ci-dessous ou sur les réseaux sociaux, et gagne des cadeaux !
         </span>
       </p>
-      <b><Link to={referrerUrl}>{referrerUrl}</Link></b>
+      <b><a href={referrerUrl}>{referrerUrl}</a></b>
     </div>
   )
 }
