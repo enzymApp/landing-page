@@ -53,7 +53,7 @@ class SubscriptionFormContainer extends React.Component {
     const {submitted, userPageForm} = this.state
     if(userPageForm) return <UserPageForm />
     return (
-      <div id="bloc_accroches">
+      <div id="top_bloc">
         <h3 id="accroche" align="center">
           <Experiment name={this.TEASER_TEST}>
             <Variant name="FAUX_PROFILS">Tu en as marre des faux profils sur les réseaux sociaux ?</Variant>
