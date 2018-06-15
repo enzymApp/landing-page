@@ -12,7 +12,7 @@ export default ({text}) => (
         </div></div></div>
       </Col>
       <Col xs="8">
-        <p><span>{`Si le projet Enzym te plait, tu peux nous rejoindre en indiquant ton email et tu recevras 1 ZYM tout de suite.<br/>Si tu trouves le projet inspirant, tu peux participer au concours de parrainage et recevoir 1 ZYM pour chaque filleule parrainé.`}</span></p>
+        <p><span>{`Si le projet Enzym te plait, tu peux nous rejoindre en indiquant ton email et tu recevras 1 ZYM tout de suite. Si tu trouves le projet inspirant, tu peux participer au concours de parrainage et recevoir 1 ZYM pour chaque filleule parrainé.`}</span></p>
       </Col>
     </Row>
     <Row>
