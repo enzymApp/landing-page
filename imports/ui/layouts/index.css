@@ -201,7 +201,11 @@ background-color: #69ddc8;
   margin-left:10px;
 }
 
-#header .col-4 img {
+#header .right-side {
+  text-align: right;
+}
+
+#header .right-side img {
   margin:6px 10px;
 }
 
