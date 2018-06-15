@@ -11,7 +11,8 @@ import addReCaptcha from './addReCaptcha'
 
 
 console.log(getLang())
-i18n.setLocale(getLang())
+//i18n.setLocale(getLang())
+i18n.setLocale('en-US')
 
 Meteor.startup(() => {
   render(<AppContainer />, document.getElementById('app'))
