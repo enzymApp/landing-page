@@ -17,7 +17,7 @@ export default (Referrers) => {
       },
     }).validate({minCount, minRank, maxRank})
 
-    let min = maxRank - minRank >= 2 ? minRank : Math.min(1, minRank - 1)
+    let min = maxRank - minRank >= 2 ? minRank : Math.max(1, minRank - 1)
     let max = maxRank - minRank >= 2 ? maxRank : maxRank + 1
     let prevMin, prevMax
     let count = 0, prevCount = -1
