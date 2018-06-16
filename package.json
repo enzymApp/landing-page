@@ -15,11 +15,13 @@
     "react": "^16.4.0",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^16.4.0",
+    "react-markdown": "^3.3.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-share": "^2.2.0",
     "react-slick": "^0.23.1",
     "reactstrap": "^6.0.1",
+    "remark-breaks": "^1.0.0",
     "semantic-ui-react": "^0.80.2",
     "simpl-schema": "^1.5.0",
     "slick-carousel": "^1.8.1"

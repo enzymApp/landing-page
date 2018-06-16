@@ -7,6 +7,7 @@ import {Form,
         Button,
         Label,
         Col}          from 'reactstrap'
+import T from './Translator'
 
 
 export default class SetUsername extends React.Component {
@@ -27,13 +28,13 @@ export default class SetUsername extends React.Component {
             />
           </FormGroup>
           <Button type="submit" disabled={!this.hasUsername()}>
-            Valider
+            <T>Common.submit</T>
           </Button>
         </Form>
       )
     }
     return (
-      <a onClick={() => this.setState({form: true})}>Choisir un pseudo ?</a>
+      <a onClick={() => this.setState({form: true})}><T>Common.chooseUsername.text</T></a>
     )
   }
   handleChange = (key) => (event) => {

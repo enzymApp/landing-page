@@ -2,11 +2,12 @@ import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 import React         from 'react'
 import {Counters} from '/imports/api/counters/Counters'
+import T          from './Translator'
 
 const UsersCount = ({count}) => {
   if(!count) return null
   return (
-    <span>{count} inscrits</span>
+    <span><T count={count}>Common.usersCount</T></span>
   )
 }
 

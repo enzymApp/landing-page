@@ -4,7 +4,7 @@ import Slider     from 'react-slick'
 import {Row, Col} from 'reactstrap'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-
+import T from '../Translator'
 
 const settings = {
   dots:           true,
@@ -30,7 +30,7 @@ const orderedSlides = randomlyOrderedSlides(slides)
 
 export default ({text}) => (
   <div className="team">
-    <h2>{'L\'équipe'}</h2>
+    <h2><T>Home.team.title</T></h2>
     <Slider {...settings} className="d-none d-md-block">
       {orderedSlides.map(({photoSrc, name, job}) => (
         <div className="slide" key={name}>

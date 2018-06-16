@@ -8,6 +8,7 @@ import {Form,
 import {Redirect}     from 'react-router-dom'
 import {analytics}    from 'meteor/okgrow:analytics'
 import Button         from './Button'
+import T              from './Translator'
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class SubscriptionFormContainer extends React.Component {
                   placeholder="Pseudo"
                   onChange={this.handleChange('username')}
                 />
-                <Button type="submit">Envoyer</Button>
+                <Button type="submit"><T>Common.submit</T></Button>
                 </div>
               </FormGroup>
           </Form>

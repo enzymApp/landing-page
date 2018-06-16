@@ -1,4 +1,5 @@
 import React  from 'react'
+import T from './Translator'
 
 export default ({referrer, user}) => {
   const referrerUrl = referrer.getUrl()
@@ -6,10 +7,10 @@ export default ({referrer, user}) => {
   return (
     <div className="referral_text">
       <p>
-        {email && <span>Tu es inscrit avec l'adresse {email.address}.</span>}
+        {email && <span><T email={email.address}>Common.signup.loggedInWithEmail</T></span>}
         <br/>
         <span className="share_text">
-          Partage ton intérêt avec le lien ci-dessous ou sur les réseaux sociaux, et gagne des cadeaux !
+          <T>Common.referrer.shareLink</T>
         </span>
       </p>
       <b><a href={referrerUrl}>{referrerUrl}</a></b>

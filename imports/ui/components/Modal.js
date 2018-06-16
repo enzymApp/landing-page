@@ -16,8 +16,6 @@ const MyModal = ({children, history, title, outRoute}) => {
         {children}
       </ModalBody>
       <ModalFooter>
-        <Button color="primary">Do Something</Button>{' '}
-        <Button color="secondary">Cancel</Button>
       </ModalFooter>
     </Modal>
   )

@@ -1,0 +1,34 @@
+_namespace: Home
+
+buttons:
+  joinUs: Rejoignez-nous !
+  contribute: Envie de contribuer au projet ?
+
+meet:
+  title: Rencontrez
+  p1: "Qui n’a jamais été pris d’une soudaine envie de rencontrer de nouvelles personnes ? L'ADN d'Enzym c'est une promesse, celle de réunir ses utilisateurs en leur proposant de vivre des rencontres immédiatement en bas de chez eux."
+  p2: "Que ce soit pour une heure, un jour ou pour la vie ; pour rigoler, philosopher ou plus si affinités, Enzym offre l’opportunité de faire des rencontres naturelles et spontanées dans un cadre convivial. Encadrée par le jeu, la notoriété d’un joueur évolue au gré des rencontres, assure sa progression et oriente ses rencontres futures pour qu'elles restent toujours propices au plaisir et à la découverte de l'autre."
+  p3: "Prêt à vivre une nouvelle aventure ?"
+
+gaming:
+  title: Jouez
+  p1: "Enzym est un jeu gratuit qui invite à naviguer entre le réel et le virtuel. Le joueur accepte des défis qui le conduisent dans des endroits insolites et à rencontrer d’autres joueurs. Source de carburant, les défis remportés lui permettent de débloquer de nouvelles fonctionnalités dans le jeu et de continuer sa progression."
+  p2: "Chaque défi est différent. Il peut se jouer à deux ou plus, avec des inconnus ou avec des amis, sur quelques heures ou plusieurs jours… L’expérience est renouvelée en permanence grâce à la personnalité des joueurs et à un terrain de jeu sans limite : le monde réel."
+  p3: "Alors, prêt à jouer ?"
+
+gifts:
+  coin: "Si le projet Enzym te plait, tu peux nous rejoindre en indiquant ton email et tu recevras 1 ZYM tout de suite. Si tu trouves le projet inspirant, tu peux participer au concours de parrainage et recevoir 1 ZYM pour chaque filleul parrainé."
+  chest: "En plus de recevoir des ZYM, tu recevras des cadeaux inédits en fonction de tes progrès dans le classement. Tu pourrais obtenir un accès anticipé au prototype d’Enzym ou des boosts pour te propulser au lancement de l’app."
+  crown: "Différents statuts, en particulier le statut d’ambassadeur, seront proposés en priorité aux joueurs les mieux classés au concours de parrainage. Ces statuts offriront des avantages particulièrement intéressants pour la suite ! Alors… tu es prêt ?"
+
+ethics:
+  title: Éthique
+  p1: "Le projet Enzym est un fabuleux challenge ! Nous avons l’ambition de proposer un Jeu gratuit favorisant des interactions humaines quasi instantanées tout en respectant notre communauté. Chez Enzym, nous tenons à ce que vos données restent les vôtres. Non seulement, nous n’y aurons techniquement pas accès (voir « innovant ») mais elles seront également chiffrées pour garantir leur sécurité."
+  p2: "Nous sommes conscients que c’est un nouvel usage d’internet, mais l’enjeu est important et nous comptons sur vous pour diffuser cette vision qui est la nôtre, qui est la vôtre."
+
+innov:
+  title: Innovant
+  p1: "Le projet Enzym est décentralisé, ce qui signifie que les données des utilisateurs ne sont pas stockées dans une base de données d’Enzym mais via la technologie d’échange Blockchain. La Data des profils et des actions étant décentralisée, personne ne détient les données de la communauté Enzym."
+  p2: "Le ZYM est le carburant de la dapp (Token Ethereum) et assure par la qualité de ses transferts (QR-codes) l’existence réelle des membres de la communauté. De plus, des technologies de pointe comme IPFS, pour les contenus et les notifications locales, ainsi que le Bluetooth Low Energy, sont utilisés."
+
+team.title: L'équipe
