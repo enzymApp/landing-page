@@ -1,17 +1,17 @@
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
 import {Link}     from 'react-router-dom'
-
+import T from '../components/Translator'
 
 export default ({text}) => (
   <Row className="footer">
     <Col xs="10">
       <Row className="footer_links">
         <Col xs="6">
-          <Link to="/privacy">Privacy</Link>
+          <Link to="/privacy"><T>Common.footer.privacy</T></Link>
         </Col>
         <Col xs="6">
-          <Link to="/terms">Mentions légales</Link>
+          <Link to="/terms"><T>Common.footer.terms</T></Link>
         </Col>
       </Row>
     </Col>

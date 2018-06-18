@@ -2,6 +2,10 @@ import {Meteor} from 'meteor/meteor'
 
 Meteor.users.helpers({
   email() {
-    return this.registered_emails && this.registered_emails[0]
+    return (
+      this.registered_emails ?
+        this.registered_emails[0] :
+        this.emails && this.emails[0]
+    )
   }
 })

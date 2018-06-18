@@ -1,6 +1,8 @@
 import React from 'react'
 import {Table} from 'reactstrap'
 import SetUsername from './SetUsername'
+import T from './Translator'
+
 
 export default class ReferrerList extends React.Component {
   componentDidUpdate(nextProps) {
@@ -13,15 +15,14 @@ export default class ReferrerList extends React.Component {
   }
   render() {
     const {list, centerId} = this.props
-
     return (
     <div>
       <Table striped responsive>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Username</th>
-            <th>Points</th>
+            <th><T>Referrer.table.rank</T></th>
+            <th><T>Referrer.table.username</T></th>
+            <th><T>Referrer.table.points</T></th>
           </tr>
         </thead>
         <tbody>
@@ -29,14 +30,20 @@ export default class ReferrerList extends React.Component {
             <tr key={_id} className={_id === centerId ? "centered-user" : ""} id={_id}>
               <td>{rank}</td>
               <td>
-                {username || _id === centerId && <SetUsername /> || 'pseudo'}
+                {username || _id === centerId && <SetUsername /> || <T>Referrer.username</T>}
               </td>
               <td>{referralCount}</td>
             </tr>
           ))}
         </tbody>
       </Table>
-    <span className="know_more_gifts">En savoir plus sur le <a role="button" tabIndex="0" onClick={this.scrollToGifts}>programme de récompenses</a></span>
+    <span className="know_more_gifts">
+      <T>
+        Referrer.giftsLink.before
+        <a role="button" tabIndex="0" onClick={this.scrollToGifts}><T>Referrer.giftsLink.text</T></a>
+        Referrer.giftsLink.after
+      </T>
+    </span>
     </div>
     )
   }

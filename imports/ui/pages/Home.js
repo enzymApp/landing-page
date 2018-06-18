@@ -41,11 +41,11 @@ export default ({user, children, referrer}) => (
     </Main>
     <GamingRow />
     <MeetingRow />
-    <JoinUsBanner scroll text="Rejoignez-nous !" />
+    <JoinUsBanner scroll text="Home.buttons.joinUs" />
     <TwoTabsBlock />
     <GiftsBlock />
     <TeamBlock />
-    <JoinUsBanner openChat text="Envie de contribuer au projet ?" />
+    <JoinUsBanner openChat text="Home.buttons.contribute" />
     <Footer />
     <div className="social_links" align="right">
       <SocialLink name="facebook" />

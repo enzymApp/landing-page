@@ -1,18 +1,24 @@
 import React  from 'react'
 import {Link} from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
+import breaks        from 'remark-breaks'
 import HomeContainer from './HomeContainer'
 import Modal         from '../components/Modal'
 
-export default () => (
-  <Modal title="Mentions légales" outRoute="/">
-    <p>
-      Le présent site est exploité par la société ENZYM, SAS au capital de 38 100€ immatriculée sous le numéro 830 854 618 au RCS de GRENOBLE dont le siège social est situé 8 C Avenue Pierre de Coubertin 38170 SEYSSINET PARISET et représentée par son Président Yannick Barnel.
-    </p>
-    <p>
-      Notre Service Visiteurs se tient à votre disposition pour toute information nécessaire via le Chat disponible en bas et à droite de la page.
-    </p>
-    <p>
-      Nous vous invitons également à consulter notre <Link to="/privacy">Politique de Confidentialité</Link> pour toutes précisions concernant le site et le concept d’Enzym.
-    </p>
-  </Modal>
-)
+
+const renderers = {
+  link: ({href, children}) => {
+    if(!href) return children
+    if(href[0] === '/') return <Link to={href}>{children}</Link>
+    return <a href={href}>{children}</a>
+  }
+}
+
+export default () => {
+  const input = i18n.__('Terms.legal')
+  return (
+    <Modal title="Mentions légales" outRoute="/">
+      <ReactMarkdown source={input} plugins={[breaks]} renderers={renderers} />
+    </Modal>
+  )
+}

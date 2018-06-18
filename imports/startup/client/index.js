@@ -1,18 +1,22 @@
-import { Meteor } from 'meteor/meteor'
-
-import React      from 'react'
-import { render } from 'react-dom'
-import i18n       from 'meteor/universe:i18n'
+import { Meteor }   from 'meteor/meteor'
+import i18n         from 'meteor/universe:i18n'
+import React        from 'react'
+import { render }   from 'react-dom'
+import smoothscroll from 'smoothscroll-polyfill'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AppContainer from '/imports/ui/layouts/AppContainer'
 import addHotjar    from './addHotjar'
 import addTawkChat  from './addTawkChat'
 import addReCaptcha from './addReCaptcha'
 
+smoothscroll.polyfill()
 
 console.log(getLang())
-//i18n.setLocale(getLang())
-i18n.setLocale('en-US')
+i18n.setLocale(getLang())
+i18n.setOptions({
+  defaultLocale: 'fr',
+  sameLocaleOnServerConnection: true,
+})
 
 Meteor.startup(() => {
   render(<AppContainer />, document.getElementById('app'))

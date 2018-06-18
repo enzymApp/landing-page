@@ -14,10 +14,11 @@ import i18n           from 'meteor/universe:i18n'
 import Button         from './Button'
 import UserPageForm   from './UserPageForm'
 import SocialLogin    from './SocialLogin'
+import T              from './Translator'
 
 const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
-const T = i18n.createComponent()
+const ABTestingIndex = 2
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class SubscriptionFormContainer extends React.Component {
       email:      '',
     }
     this.LANG = i18n.getLocale()
-    this.BUTTON_TEST = `${this.LANG}-mainButton`
-    this.TEASER_TEST = `${this.LANG}-teaser`
-    emitter.defineVariants(this.BUTTON_TEST, ['A', 'B'])
+    this.BUTTON_TEST = `${this.LANG}-mainButton-${ABTestingIndex}`
+    this.TEASER_TEST = `${this.LANG}-teaser-${ABTestingIndex}`
+    emitter.defineVariants(this.BUTTON_TEST, ['PARTICIPER', 'REJOINS_NOUS'])
     emitter.defineVariants(this.TEASER_TEST, ['FAUX_PROFILS', 'JOUE', 'JOUER_SEUL', 'BAVARDAGES', 'VOL_DONNÉES', 'JEU_LOCAL'])
   }
   componentWillMount() {
@@ -56,27 +57,29 @@ class SubscriptionFormContainer extends React.Component {
       <div id="top_bloc">
         <h3 id="accroche" align="center">
           <Experiment name={this.TEASER_TEST}>
-            <Variant name="FAUX_PROFILS">Tu en as marre des faux profils sur les réseaux sociaux ?</Variant>
-            <Variant name="JOUE">Joue sur ton smartphone pour rencontrer des inconnus dans le monde réel</Variant>
-            <Variant name="JOUER_SEUL">Tu en as marre de jouer tout seul sur ton téléphone ?</Variant>
-            <Variant name="BAVARDAGES">Recontruisez une société de partages et de bavardages !</Variant>
-            <Variant name="VOL_DONNÉES">Ras-le-bol de te faire voler tes données sur les réseaux sociaux ?</Variant>
-            <Variant name="JEU_LOCAL">Rejoins le premier Jeu qui se vit près de chez soi !</Variant>
+            <Variant name="FAUX_PROFILS"><T>ABTesting.fakeProfiles.big</T></Variant>
+            <Variant name="JOUE">        <T>ABTesting.play.big</T>        </Variant>
+            <Variant name="JOUER_SEUL">  <T>ABTesting.playAlone.big</T>   </Variant>
+            <Variant name="BAVARDAGES">  <T>ABTesting.cheapChat.big</T>   </Variant>
+            <Variant name="VOL_DONNÉES"> <T>ABTesting.dataStealing.big</T></Variant>
+            <Variant name="JEU_LOCAL">   <T>ABTesting.localGame.big</T>   </Variant>
           </Experiment>
         </h3>
         <h4 id="accrochebis" align="center">
           <Experiment name={this.TEASER_TEST}>
-            <Variant name="FAUX_PROFILS">Rejoins Enzym, le jeu qui te fait sortir près de chez toi</Variant>
-            <Variant name="JOUE">Rejoins Enzym, le réseau social pour sortir avec ses potes et faire de nouvelles rencontres</Variant>
-              <Variant name="JOUER_SEUL">Rejoins Enzym, le jeu qui te fait rencontrer du monde</Variant>
-              <Variant name="BAVARDAGES">Enzym, l'application qui invite à la rencontre en bas de chez soi</Variant>
-              <Variant name="VOL_DONNÉES">Rejoins Enzym, le Jeu local qui décentralise et protège tes données</Variant>
-              <Variant name="JEU_LOCAL">Du virtuel au réel, Enzym revisite l'art de la rencontre</Variant>
+            <Variant name="FAUX_PROFILS"><T>ABTesting.fakeProfiles.small</T></Variant>
+            <Variant name="JOUE">        <T>ABTesting.play.small</T>        </Variant>
+            <Variant name="JOUER_SEUL">  <T>ABTesting.playAlone.small</T>   </Variant>
+            <Variant name="BAVARDAGES">  <T>ABTesting.cheapChat.small</T>   </Variant>
+            <Variant name="VOL_DONNÉES"> <T>ABTesting.dataStealing.small</T></Variant>
+            <Variant name="JEU_LOCAL">   <T>ABTesting.localGame.small</T>   </Variant>
           </Experiment>
         </h4>
         <div className="social_logins">
           {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}<br/>
-          <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>Déjà inscrit ?</a>
+          <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
+            <T>Common.signup.alreadySubscribed</T>
+          </a>
         </div>
         {!submitted &&
           <Form onSubmit={this.handleSubmit()}>
@@ -87,11 +90,11 @@ class SubscriptionFormContainer extends React.Component {
                   placeholder="Email"
                   onChange={this.handleChange('email')}
                   />
-                  <FormFeedback>Adresse e-mail incorrecte</FormFeedback>
+                <FormFeedback><T>Common.signup.incorrectEmailAdress</T></FormFeedback>
                   <Button type="submit">
                     <Experiment name={this.BUTTON_TEST}>
-                      <Variant name="A">Participer !</Variant>
-                      <Variant name="B">Rejoins-nous !</Variant>
+                      <Variant name="PARTICIPER"><T>ABTesting.engageButton.participate</T></Variant>
+                      <Variant name="REJOINS_NOUS"><T>ABTesting.engageButton.joinUs</T></Variant>
                     </Experiment>
                   </Button>
                 </div>
@@ -100,8 +103,7 @@ class SubscriptionFormContainer extends React.Component {
         }
         {submitted &&
           <div className="texte_valider_email">
-            Nous t'avons envoyé un e-mail pour valider ton adresse.
-            Dès que tu auras cliqué sur le lien qu'il contient tu pourras participer au concours de parrainage.
+            <T>Common.signup.emailSent</T>
           </div>
         }
       </div>

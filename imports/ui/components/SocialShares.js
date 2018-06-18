@@ -1,7 +1,7 @@
 import React from 'react'
 import FacebookShare             from '/imports/ui/components/FacebookShare'
+import TelegramShare             from '/imports/ui/components/TelegramShare'
 import TwitterShare              from '/imports/ui/components/TwitterShare'
-import TelegramShare              from '/imports/ui/components/TelegramShare'
 
 export default () => {
   return (
