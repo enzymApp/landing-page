@@ -550,7 +550,7 @@ box-shadow: 0px 0px 83px -15px rgba(0,0,0,0.75);
 
 .titletab_ethique, .titletab_innovant{
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.8rem;
   color:#fff;
   background: #69ddc8;
   text-align: center;
@@ -616,7 +616,7 @@ padding-bottom:4vh;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-size:4rem;
+  font-size:3.6rem;
 }
 
 .recompenses p {
@@ -628,7 +628,7 @@ padding-bottom:4vh;
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 500;
   padding:20px;
 }
@@ -659,6 +659,10 @@ margin-top: 1.5vh;
 
 .team span {
   font-size: 1.1rem;
+}
+
+.team h2 {
+  font-size: 2.8rem;
 }
 
 .slick-slide{
@@ -743,62 +747,6 @@ html {
 }
 }
 
-@media screen and (max-width:980px){
-  .loginBtn{
-    font-size: 16px;
-    line-height:30px;
-  }
-}
-
-@media screen and (max-width: 830px) {
-html {
-  font-size:10px;
-}
-
-#top_bloc {
-  padding: 0 20px;
-}
-
-#accroche {
-  font-size: 22px;
-}
-
-#accrochebis {
-  font-size: 18px;
-}
-
-}
-
-@media screen and (max-width: 760px) {
-html {
-  font-size:8px;
-}
-
-.team span {
-  letter-spacing: 1px;
-}
-
-#accroche {
-  letter-spacing: 2px;
-}
-
-#accrochebis {
-  letter-spacing: 1px;
-}
-
-}
-
-
-@media screen and (max-width: 710px) {
-
-  #accroche {
-    letter-spacing: 1px;
-  }
-
-}
-
-
-
 @media screen and (max-width: 1102px) {
 
 .row_blocks{
@@ -826,17 +774,67 @@ html {
 }
 
 .row_blocks .col-6 p {
-  font-size:22px;
+  font-size:20px;
   text-align: center;
 }
 
 .row_blocks .col-6 h4 {
-  font-size:32px;
+  font-size:30px;
 }
 
 .jouez h4 {
   margin-top:40px;
 }
+}
+
+@media screen and (max-width:980px){
+  .loginBtn{
+    font-size: 16px;
+    line-height:30px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+html {
+  font-size:10px;
+}
+
+#top_bloc {
+  padding: 0 20px;
+}
+
+#accroche {
+  font-size: 22px;
+}
+
+#accrochebis {
+  font-size: 18px;
+}
+}
+
+@media screen and (max-width: 760px) {
+html {
+  font-size:8px;
+}
+
+.team span {
+  letter-spacing: 1px;
+}
+
+#accroche {
+  letter-spacing: 2px;
+}
+
+#accrochebis {
+  letter-spacing: 1px;
+}
+}
+
+@media screen and (max-width: 710px) {
+
+  #accroche {
+    letter-spacing: 1px;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -862,6 +860,30 @@ html {
 .slick-prev {
   left:-40px;
 }
+
+.form-control {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.joinus_banner button{
+  letter-spacing: 2px;
+  padding:10px 30px;
+}
+
+.top_form .purple_buttons {
+    font-size: 16px;
+    letter-spacing: normal;
+}
+
+.purple_buttons:hover {
+  letter-spacing: 4px;
+}
+
+.top_form .purple_buttons:hover {
+  letter-spacing: 2px;
+}
+
 }
 
 @media screen and (max-height: 600px) {
