@@ -5,7 +5,7 @@ Meteor.users.helpers({
     return (
       this.registered_emails ?
         this.registered_emails[0] :
-        this.emails[0]
+        this.emails && this.emails[0]
     )
   }
 })
