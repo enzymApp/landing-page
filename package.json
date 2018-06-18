@@ -2,7 +2,7 @@
   "name": "enzym_landingpage",
   "private": true,
   "scripts": {
-    "start": "meteor run --settings settings.json"
+    "start": "UNIVERSE_I18N_LOCALES='fr,en' meteor run --settings settings.json"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.49",
@@ -24,6 +24,7 @@
     "remark-breaks": "^1.0.0",
     "semantic-ui-react": "^0.80.2",
     "simpl-schema": "^1.5.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "smoothscroll-polyfill": "^0.4.3"
   }
 }
