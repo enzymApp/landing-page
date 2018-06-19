@@ -17,8 +17,8 @@ Meteor.startup(() => {
   Referrers.find(
     {},
     {
-      sort: Referrers.defaultSort,
-      fields: {_id: 1, rank: 1, referralCount: 1},
+      sort:   Referrers.defaultSort,
+      fields: {rank: 1, referralCount: 1},
       //disableOplog: true,
       //pollingIntervalMs: 10000,
     }
@@ -26,11 +26,11 @@ Meteor.startup(() => {
   .observe({
     added({_id, rank}) {
       if(rank) return
-      //console.log("added", _id)
+      //console.log("added", _id, Referrers.findOne({referralCount: 0, rank: {$exists: true}}))
       Referrers.update(
-        {_id},
+        _id,
         {$set: {
-          rank: (Referrers.findOne({referralCount: 0}) || {}).rank || 1
+          rank: (Referrers.findOne({referralCount: 0, rank: {$exists: true}}) || {}).rank || 1
         }}
       )
     },
@@ -42,6 +42,7 @@ Meteor.startup(() => {
       }, {
         sort: {rank: -1},
       })
+      //console.log("theOneBefore", theOneBefore && theOneBefore.rank)
       const futureRank = (
         !theOneBefore ?
         1 :

@@ -3,13 +3,16 @@ import {Meteor}  from 'meteor/meteor'
 import {Referrers} from '../Referrers'
 
   export default function updateRanks(Referrers, referralCount, rank) {
+    console.log("updateRanks", referralCount, rank)
     if(referralCount === undefined) {
       referralCount = (Referrers.findOne({}, {sort: {referralCount: -1}}) || {}).referralCount || 0
       rank = 1
     }
+    console.log("referralCount", referralCount)
     if(!rank) {
       rank = (Referrers.findOne({referralCount}, {sort: {rank: 1}}) || {}).rank || 1
     }
+    console.log("rank", rank)
     let r = rank
     let c = referralCount
     Referrers.find(
