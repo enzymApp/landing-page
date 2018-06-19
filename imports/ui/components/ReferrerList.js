@@ -49,8 +49,9 @@ export default class ReferrerList extends React.Component {
   }
   centerListOn(id) {
     if(!id) return
-    document.getElementById(id)
-    .scrollIntoView({block: 'center'})
+    const elm = document.getElementById(id)
+    if(!elm) return
+    elm.scrollIntoView({block: 'center'})
   }
   scrollToGifts() {
     document.getElementsByClassName('recompenses')[0].scrollIntoView({ behavior: 'smooth', block: 'start' })
