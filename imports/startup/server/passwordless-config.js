@@ -15,19 +15,6 @@ Accounts.passwordless.config = {
 }
 Accounts.passwordless.emailTemplates.sendVerificationUrl = emailVerificationTemplate
 
-
-Accounts.passwordless.handleClientIpAddress = (profile, clientIpAddress) => {
-  const token = Meteor.settings.ipinfoToken
-  if(clientIpAddress === '127.0.0.1') return profile
-  const {data} = HTTP.call('GET', `https://ipinfo.io/${clientIpAddress}?token=${token}`)
-  const {ip, bogon, city, region, country, loc, org} = data
-  if(bogon) {
-    console.error(ip, city, region, country, loc, org)
-    return
-  }
-  return {...profile, city, region, country, geoloc: loc}
-}
-
 Accounts.passwordless.onSendVerificationCode = (
   selector, username, profile, options, connection
 ) => {

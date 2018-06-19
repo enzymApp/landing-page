@@ -25,6 +25,7 @@ export default class SetUsername extends React.Component {
               id="username"
               placeholder="Pseudo"
               onChange={this.handleChange('username')}
+              autoFocus={true}
             />
           </FormGroup>
           <Button type="submit" disabled={!this.hasUsername()}>

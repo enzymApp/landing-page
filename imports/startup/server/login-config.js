@@ -1,6 +1,7 @@
 import {Meteor}               from 'meteor/meteor'
 import {ServiceConfiguration} from 'meteor/service-configuration'
 //import 'meteor/splendido:accounts-meld'
+import saveLocation from '/imports/api/users/saveLocation'
 
 
 const {google, facebook, twitter} = Meteor.settings.oauth
@@ -27,6 +28,11 @@ Accounts.onCreateUser((options, user) => {
   }
 })
 
+
+Accounts.onLogin(({type, allowed, user, connection}) => {
+  console.log("onLogin", type, allowed, user, connection)
+  saveLocation(user, connection)
+})
 
 ServiceConfiguration.configurations.upsert(
   { service: 'google' },
