@@ -17,13 +17,14 @@ gaming:
   p3: "Alors, prêt à jouer ?"
 
 gifts:
+  title: Récompenses
   coin: "Si le projet Enzym te plait, tu peux nous rejoindre en indiquant ton email et tu recevras 1 ZYM tout de suite. Si tu trouves le projet inspirant, tu peux participer au concours de parrainage et recevoir 1 ZYM pour chaque filleul parrainé."
   chest: "En plus de recevoir des ZYM, tu recevras des cadeaux inédits en fonction de tes progrès dans le classement. Tu pourrais obtenir un accès anticipé au prototype d’Enzym ou des boosts pour te propulser au lancement de l’app."
   crown: "Différents statuts, en particulier le statut d’ambassadeur, seront proposés en priorité aux joueurs les mieux classés au concours de parrainage. Ces statuts offriront des avantages particulièrement intéressants pour la suite ! Alors… tu es prêt ?"
 
 ethics:
   title: Éthique
-  p1: "Le projet Enzym est un fabuleux challenge ! Nous avons l’ambition de proposer un Jeu gratuit favorisant des interactions humaines quasi instantanées tout en respectant notre communauté. Chez Enzym, nous tenons à ce que vos données restent les vôtres. Non seulement, nous n’y aurons techniquement pas accès (voir « innovant ») mais elles seront également chiffrées pour garantir leur sécurité."
+  p1: "Le projet Enzym est un fabuleux challenge ! Nous avons l’ambition de proposer un Jeu gratuit favorisant des interactions humaines quasi instantanées tout en respectant notre communauté. Chez Enzym, nous tenons à ce que vos données restent les vôtres. Non seulement, nous n’y aurons techniquement pas accès (voir « INNOVANT ») mais elles seront également chiffrées pour garantir leur sécurité."
   p2: "Nous sommes conscients que c’est un nouvel usage d’internet, mais l’enjeu est important et nous comptons sur vous pour diffuser cette vision qui est la nôtre, qui est la vôtre."
 
 innov:

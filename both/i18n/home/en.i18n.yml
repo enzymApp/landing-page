@@ -17,13 +17,14 @@ gaming:
   p3: "So, ready to play?"
 
 gifts:
+  title: Rewards
   coin: "You like Enzym project and want to join? Simply enter your email address and you will receive 1 ZYM right away. If you find the project inspiring you can enter our sponsorship contest and get 1 ZYM for every sponsored user."
   chest: "In addition to ZYM you will get cool gifts based on your progress in the sponsorship chart. You could get early access to the Enzym beta version or boosts to fast-forward you when the app is launched."
   crown: "Users ranked at the top of the sponsorship contest list will be offered different positions, such as Ambassador, with special features and perks. So… Are you ready?"
 
 ethics:
   title: Ethics
-  p1: "The Enzym project is a fabulous challenge! We have the ambition to offer a free game promoting almost instantaneous human interactions while respecting our community. At Enzym, we want your data to stay yours. Not only will we not technically have access to it (see "innovative") but it will also be encrypted to ensure its security."
+  p1: "The Enzym project is a fabulous challenge! We have the ambition to offer a free game promoting almost instantaneous human interactions while respecting our community. At Enzym, we want your data to stay yours. Not only will we not technically have access to it (see \"INNOVATIVE\") but it will also be encrypted to ensure its security."
   p2: "We are aware this is a new use of the Internet, but the stakes are high and we really count on you to share/spread our vision, your vision."
 
 innov:
