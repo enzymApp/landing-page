@@ -1,7 +1,34 @@
 _namespace: Home
 
-buttons.joinUs: Join us!
+buttons:
+  joinUs: Join us!
+  contribute: Want to contribute to the project?
 
-meet.title: Meet
+meet:
+  title: Meet
+  p1: "Who has never been struck by the sudden desire to meet someone new? Enzym’s DNA is a promise to gather users through IRL instant encounters."
+  p2: "An hour, a day or forever, to share a laugh, an idea, or more, Enzym is all about making spontaneous friendly encounters. Players reputation evolves depending on the quality of its interactions, it affects the user ingame progress and guides its future encounters, so that it always stays fun and games!"
+  p3: "Ready for a new adventure?"
 
-team.title: Team
+gaming:
+  title: Play
+  p1: "Enzym is a free to play game inviting you to navigate between real world and virtual world. Fun challenges take the player to new places where he meets other users. Winning those challenges allows him to unlock new features and continue his ingame progress."
+  p2: "Every challenge is different and can be played by 2 users or more, with strangers or friends, for a few hours or a few days… A constantly renewed gaming experience made possible by the infinity of users personalities and a limitless playing field: the real world."
+  p3: "So, ready to play?"
+
+gifts:
+  coin: "You like Enzym project and want to join? Simply enter your email address and you will receive 1 ZYM right away. If you find the project inspiring you can enter our sponsorship contest and get 1 ZYM for every sponsored user."
+  chest: "In addition to ZYM you will get cool gifts based on your progress in the sponsorship chart. You could get early access to the Enzym beta version or boosts to fast-forward you when the app is launched."
+  crown: "Users ranked at the top of the sponsorship contest list will be offered different positions, such as Ambassador, with special features and perks. So… Are you ready?"
+
+ethics:
+  title: Ethics
+  p1: "The Enzym project is a fabulous challenge! We have the ambition to offer a free game promoting almost instantaneous human interactions while respecting our community. At Enzym, we want your data to stay yours. Not only will we not technically have access to it (see "innovative") but it will also be encrypted to ensure its security."
+  p2: "We are aware this is a new use of the Internet, but the stakes are high and we really count on you to share/spread our vision, your vision."
+
+innov:
+  title: Innovative
+  p1: "The Enzym project is decentralised, meaning user data is not stored in an Enzym database but through the Blockchain technology. No one holds the Enzym community data."
+  p2: "ZYM is the in-app currency (Ethereum token). Its transfer quality (by QR codes) is the guarantee of the IRL existence of every community member. Moreover,  hi-tech features, such as IPFS for contents and local notifications, as well as Low Energy Bluetooth are used."
+
+team.title: The team

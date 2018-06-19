@@ -10,6 +10,7 @@
     "@enzymapp/react-ab-test": "^2.1.1",
     "bootstrap": "^4.1.1",
     "history": "^4.7.2",
+    "i18n": "^0.8.3",
     "meteor-node-stubs": "^0.3.2",
     "passwordless": "^1.1.2",
     "passwordless-mongostore": "^0.1.4",
