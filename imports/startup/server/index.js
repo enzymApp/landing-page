@@ -14,6 +14,8 @@ import './initRanks'
 import './login-config'
 import './passwordless-config'
 
+Counters.init(Meteor.users)
+
 onUserCreate('saveRefferer', saveReferrer)
 onUserCreate('createRefferer', (_id, user) => {
   const referrer = Referrers.createReferrer({

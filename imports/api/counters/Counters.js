@@ -11,6 +11,19 @@ Counters.schema = new SimpleSchema({
 })
 Counters.attachSchema(Counters.schema)
 
+Counters.init = (Collection) => {
+  const count = Collection.find({}, {fields: {}}).count()
+  return Counters.upsert(
+    {key: Collection._name},
+    {
+      $set: {
+        countedAt: new Date(),
+        value:     count,
+      }
+    }
+  )
+}
+
 Counters.upsertCollectionCount = (Collection) => {
   const date = (
     Counters.findOne({key: Collection._name}) || {}
