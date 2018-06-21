@@ -1,10 +1,13 @@
 import {Referrers} from '../Referrers'
 
 export default function(_id, {username, profile}) {
-  //console.log("added", _id, username)
+  console.log("added", _id, profile)
   const {referrerToken} = profile || {}
   //console.log(referrerToken)
-  if(!referrerToken) return
+  if(!referrerToken) {
+    console.log("no referrerToken")
+    return
+  }
   const referrer = Referrers.findOne(
     {referrals: {$elemMatch: {$eq: _id}}}
   )

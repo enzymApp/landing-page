@@ -3,7 +3,7 @@ const token = Meteor.settings.ipinfoToken
 
 export default function saveLocation(user, {clientAddress}) {
   if(clientAddress === '127.0.0.1') return
-  if(user && user.profile && user.profile.city) return
+  if(user && user.profile && (user.profile.city || user.profile.geoloc)) return
   console.log("missing localization data", clientAddress)
   const {data} = HTTP.call('GET', `https://ipinfo.io/${clientAddress}?token=${token}`)
   const {ip, bogon, city, region, country, loc, org} = data

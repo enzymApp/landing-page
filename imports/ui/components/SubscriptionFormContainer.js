@@ -36,7 +36,7 @@ class SubscriptionFormContainer extends React.Component {
   componentWillMount() {
     this.loadCaptchaReady()
     emitter.addPlayListener((experimentName, variantName) => {
-      analytics.track(`${this.LANG}-${experimentName}`, {
+      analytics.track(experimentName, {
         category: 'AB testing',
         label:    variantName,
         value:    1,
