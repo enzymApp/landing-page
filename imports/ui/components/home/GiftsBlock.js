@@ -4,7 +4,7 @@ import T from '../Translator'
 
 export default ({text}) => (
   <div className="recompenses">
-    <T>Home.gifts.title</T>
+    <h2><T>Home.gifts.title</T></h2>
     <Row>
       <Col xs="4">
         <div className="outer-div"><div className="mid-div"><div className="center-div">
