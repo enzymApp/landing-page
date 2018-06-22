@@ -32,7 +32,7 @@ export default ({user, children, referrer}) => (
         <ReferrerLinksContainer user={user} referrer={referrer} />
       }
       {hasAccount(user) &&
-        <SocialShares />
+        <SocialShares referrer={referrer}/>
       }
       {hasAccount(user) &&
         <ReferrerListContainer referrer={referrer} />
