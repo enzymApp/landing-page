@@ -1,5 +1,6 @@
 import { Meteor }   from 'meteor/meteor'
 import i18n         from 'meteor/universe:i18n'
+import {Accounts}   from 'meteor/accounts-base'
 import React        from 'react'
 import { render }   from 'react-dom'
 import smoothscroll from 'smoothscroll-polyfill'
@@ -23,6 +24,12 @@ Meteor.startup(() => {
   addHotjar(window, document)
   addReCaptcha(window, document)
   addTawkChat(window, document)
+  Accounts.onLogin(() => {
+    const user = Meteor.user()
+    if(user && user.profile && user.profile.lang) {
+      i18n.setLocale(user.profile.lang)
+    }
+  })
 })
 
 function getLang () {
