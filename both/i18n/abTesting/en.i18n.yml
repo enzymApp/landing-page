@@ -1,0 +1,29 @@
+_namespace: ABTesting
+
+engageButton:
+  participate: Participate!
+  joinUs:      Join us!
+
+fakeProfiles:
+  big:   Are you fed up with fake profiles on social networks?
+  small: Join Enzym, the game that makes you go out near by your house
+
+play:
+  big:   Play on your smartphone to meet strangers in real life
+  small: Join Enzym, the social network to hang out with your friends and meet new people
+
+playAlone:
+  big:   Are you tired to play alone on your smartphone?
+  small: Join Enzym, the game that makes you meet many people
+
+cheapChat:
+  big:   Rebuild a society of sharing and talking!
+  small: Enzym, the app that invites you to meet people in your neighborhood
+
+dataStealing:
+  big:   Fed up to get your data stolen on social networks?
+  small: Join Enzym, the local game that decentralizes and protects your data
+
+localGame:
+  big:   Join the first game that one lives close to home!
+  small: From virtual to real, Enzym revisits the art of dating
