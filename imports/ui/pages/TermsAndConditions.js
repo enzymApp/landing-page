@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import breaks        from 'remark-breaks'
 import HomeContainer from './HomeContainer'
 import Modal         from '../components/Modal'
+import T             from '../components/Translator'
 
 
 const renderers = {
@@ -17,8 +18,10 @@ const renderers = {
 export default () => {
   const input = i18n.__('Terms.legal')
   return (
-    <Modal title="Mentions légales" outRoute="/">
-      <ReactMarkdown source={input} plugins={[breaks]} renderers={renderers} />
-    </Modal>
+    <T _translateProps={['title', 'children']}>
+      <Modal title="Terms.title.legal" outRoute="/">
+        <ReactMarkdown source={input} plugins={[breaks]} renderers={renderers} />
+      </Modal>
+    </T>
   )
 }
