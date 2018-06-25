@@ -33,6 +33,7 @@ class SubscriptionFormContainer extends React.Component {
                   type="text"
                   placeholder="Pseudo"
                   onChange={this.handleChange('username')}
+                  autoFocus={true}
                 />
                 <Button type="submit"><T>Common.submit</T></Button>
                 </div>

@@ -626,7 +626,7 @@ padding-bottom:4vh;
   margin-bottom:0;
 }
 
-.recompenses span {
+.recompenses span span {
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
@@ -803,7 +803,7 @@ html {
     background-attachment: scroll;
   }
 
-  .recompenses span {
+  .recompenses span span {
 font-size: 2.2rem;
 }
 }

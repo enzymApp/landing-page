@@ -51,6 +51,7 @@ class SubscriptionFormContainer extends React.Component {
     })
   }
   render() {
+    const {referrerToken} = this.props.match.params
     const {submitted, userPageForm} = this.state
     if(userPageForm) return <UserPageForm />
     return (
@@ -76,7 +77,7 @@ class SubscriptionFormContainer extends React.Component {
           </Experiment>
         </h4>
         <div className="social_logins">
-          {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name}} key={name} />)}<br/>
+          {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
           <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
             <T>Common.signup.alreadySubscribed</T>
           </a>
