@@ -1,0 +1,17 @@
+_namespace: Blockchain
+
+itsMe: It's me!
+getMyTokens: Get my ZYMs
+
+ethAddress:   Ethereum address
+addressSaved: Your Ethereum address has been saved. We have just sent your ZYMs to this address. Depending on the blockchain current load it could take from seconds to hours to be done
+
+nbOfTokensDistributed: You have already received {$tokens} ZYMs
+nbOfTokensWaiting:     "{$tokens} ZYMs are waiting for you"
+
+sessionExpired: Your session has expired. To get your ZYMs, you need to login again {#via} from
+via_facebook: with Facebook
+via_google:   with Google
+via_twitter:  with Twitter
+via_email:    using the same e-mail address
+homePageLink: the home page
