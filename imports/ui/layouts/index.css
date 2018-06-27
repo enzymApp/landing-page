@@ -126,7 +126,7 @@ border-top-right-radius: 0;
 .social_links{
 position: fixed;
 top:60px;
-right:-26px;
+right:-34px;
 transition: 0.2s;
 z-index: 9;
 padding:8px;
@@ -137,10 +137,10 @@ padding:8px;
 }
 
 .twitter_icon{
-background: url("/images/twitter.png") 2px 2px no-repeat;
+background: url("/images/twitter.png") 5px 7px no-repeat;
 background-color: #fff;
-width:50px;
-height:50px;
+width:57px;
+height:57px;
 border-radius: 50%;
 border:5px solid #ffd900;
 transition: 0.4s;
@@ -152,10 +152,10 @@ background-color: #ffd900;
 }
 
 .facebook_icon{
-background: url("/images/facebook.png") 2px 2px no-repeat;
+background: url("/images/facebook.png") 5px 5px no-repeat;
 background-color: #fff;
-width:50px;
-height:50px;
+width:57px;
+height:57px;
 border-radius: 50%;
 border:5px solid #e63b99;
 transition: 0.4s;
@@ -167,10 +167,10 @@ background-color: #e63b99;
 }
 
 .telegram_icon{
-background: url("/images/telegram.png") 2px 2px no-repeat;
+background: url("/images/telegram.png") 4px 5px no-repeat;
 background-color: #fff;
-width:50px;
-height:50px;
+width:57px;
+height:57px;
 border-radius: 50%;
 border:5px solid #69ddc8;
 transition: 0.4s;
@@ -380,6 +380,10 @@ font-size: 20px;
 
 .referral_text a:hover{
   text-decoration: underline;
+}
+
+.social_shares img {
+    width: 55px;
 }
 
 .banner_ready{
