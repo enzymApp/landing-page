@@ -2,6 +2,10 @@ _namespace: Terms
 
 test: titi
 
+title:
+  legal: Legal Notice
+  privacy: Privacy Policy
+
 legal: |
   This site is operated by ENZYM SAS company with a capital of € 38,100 registered under number 830 854 618 RCS GRENOBLE whose head office is located 8 Avenue Pierre de Coubertin 38170 SEYSSINET PARISET, FRANCE and represented by its President Yannick Barnel.
 
