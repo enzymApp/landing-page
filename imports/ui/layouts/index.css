@@ -189,7 +189,7 @@ a, a:hover {
 .social_links a img{
   height: 70%;
 }
-}
+
 
 #loading {
   margin: 0 auto;
@@ -882,6 +882,23 @@ font-size: 28px;
 }
 
 @media screen and (max-width: 650px) {
+
+  .social_shares img {
+      width: 40px;
+  }
+
+  .referral_text{
+    padding: 0 6px;
+    font-size: 12px;
+  }
+  .referral_text a {
+    font-size: 12px;
+  }
+
+  .referral_text .share_text {
+    font-size: 18px;
+  }
+
   .logo_enzym_footer {
     padding: 12px;
     margin: 35px 0;
@@ -889,9 +906,7 @@ font-size: 28px;
     width: 50px;
   }
 
-  .referral_text span {
-    font-size: 20px;
-  }
+
 
   .slick-slide {
     padding:10px;
