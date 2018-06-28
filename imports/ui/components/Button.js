@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default ({children, onClick}) => (
-  <button className="purple_buttons" onClick={onClick}>
+const Button = ({children, onClick, type}) => (
+  <button className="purple_buttons" {...{type, onClick}}>
 {children}
   </button>
 )
+
+Button.defaultProps = {
+  type: 'button',
+}
+
+export default Button

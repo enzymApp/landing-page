@@ -9,6 +9,7 @@ import {onUserCreate,
 import saveReferrer   from '/imports/api/referrers/server/saveReferrer'
 import {Counters}     from '/imports/api/counters/Counters'
 import {Referrers}    from '/imports/api/referrers/Referrers'
+import '/imports/api/referrers/methods'
 import welcomeEmailTemplate from './welcomeEmailTemplate'
 //import './fixtures'
 import './initRanks'

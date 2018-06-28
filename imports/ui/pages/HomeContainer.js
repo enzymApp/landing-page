@@ -11,9 +11,13 @@ export default HomeContainer = withRouter(withTracker(({children, match}) => {
   const username = match.params.username
   const handler = Meteor.subscribe('referrers.one', username)
   const user = !username ? Meteor.user() : Meteor.users.findOne({username})
+  const referrerFields = (user && user._id === Meteor.userId() ?
+    Referrers.allFields :
+    Referrers.publicFields
+  )
   const referrer = user && Referrers.findOne(
     {userId: user._id},
-    {fields: Referrers.publicFields}
+    {fields: referrerFields}
   )
   return {
     user,

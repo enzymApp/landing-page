@@ -5,6 +5,10 @@ import SimpleSchema from 'simpl-schema'
 const Schemas = {};
 
 Schemas.UserProfile = new SimpleSchema({
+  referrerToken: {
+    type:     String,
+    optional: true,
+  },
   contest: {
     type: Boolean,
     optional: true,
@@ -63,7 +67,8 @@ Schemas.User = new SimpleSchema({
   },
   profile: {
     type: Schemas.UserProfile,
-    optional: true
+    optional: true,
+    defaultValue: {},
   },
   services: {
     type: Object,
@@ -80,6 +85,7 @@ Schemas.User = new SimpleSchema({
       if(services.facebook) return 'facebook'
       if(services.google)   return 'google'
       if(services.twitter)  return 'twitter'
+      return 'email'
     },
   },
   // Add `roles` to your schema if you use the meteor-roles package.

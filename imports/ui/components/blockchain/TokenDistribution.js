@@ -5,9 +5,16 @@ import GetTokens         from './GetTokens'
 
 export default ({referrer, user}) => (
   <div>
-    <DistributedTokens hasAddress={!!referrer.ethAddress} tokens={referrer.tokens} />
+    <DistributedTokens
+      hasAddress={!!referrer.ethAddress}
+      tokens={referrer.tokens}
+    />
     {!referrer.ethAddress &&
-      <GetTokens isReferrer={referrer.userId === Meteor.userId()} authMean={user.authMean} />
+      <GetTokens
+        referrerId={referrer._id}
+        isReferrer={referrer.userId === Meteor.userId()}
+        authMean={user.authMean}
+      />
     }
   </div>
 )

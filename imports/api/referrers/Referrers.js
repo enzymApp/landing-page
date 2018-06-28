@@ -27,7 +27,7 @@ Referrers.schema = new SimpleSchema({
   'referrals.$': {
     type: String,
   },
-  ethAddress: {type: String, optional: true},
+  ethAddress: {type: String, optional: true, regEx: /0x[0-9a-z]{40}/i},
   referralCount:  {
     type:         SimpleSchema.Integer,
     optional:     true,
@@ -35,8 +35,16 @@ Referrers.schema = new SimpleSchema({
       this.unset()
       //FIXME: can't decrease count to 0, will stop to 1
       if(!this.field('referrals').isSet) return
-      console.log("referrals", this.field('referrals').value)
       return this.field('referrals').value.length
+    }
+  },
+  tokens: {
+    type:         SimpleSchema.Integer,
+    optional:     true,
+    autoValue() {
+      if(this.isSet) return
+      if(!this.field('referralCount').isSet) return
+      return this.field('referralCount').value + 1
     }
   },
   rank: {
@@ -69,14 +77,19 @@ Referrers.publicFields = {
   rank:          1,
   referralCount: 1,
   userId:        1,
+  tokens:        1,
+}
+
+Referrers.allFields = {
+  ...Referrers.publicFields,
+  ethAddress: 1,
 }
 
 Referrers.deny({
   insert: () => true,
-  update: () => true,
+  //update: () => true,
   remove: () => true,
 })
-
 
 Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) => {
   const _id = Referrers.insert({

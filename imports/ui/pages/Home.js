@@ -22,20 +22,20 @@ export default ({user, children, referrer}) => (
   <div>
     <Header />
     <Main isUserPage={isReferrer(user, referrer)}>
-      {!hasAccount(user) &&
+      {!hasAccount(user, referrer) &&
         <SubscriptionFormContainer />
       }
       <div className="banner_ready">
       {isReferrer(user, referrer) &&
         <ReferrerLinksContainer user={user} referrer={referrer} />
       }
-      {hasAccount(user) &&
+      {hasAccount(user, referrer) &&
         <TokenDistribution {...{referrer, user}} />
       }
-      {hasAccount(user) &&
+      {hasAccount(user, referrer) &&
         <SocialShares referrer={referrer}/>
       }
-      {hasAccount(user) &&
+      {hasAccount(user, referrer) &&
         <ReferrerListContainer referrer={referrer} />
       }
       </div>
@@ -56,8 +56,8 @@ export default ({user, children, referrer}) => (
   </div>
 )
 
-function hasAccount(user) {
-  return !!user
+function hasAccount(user, referrer) {
+  return !!user && !!referrer
 }
 
 function signupFinished(user) {

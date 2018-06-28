@@ -26,6 +26,7 @@
     "semantic-ui-react": "^0.80.2",
     "simpl-schema": "^1.5.0",
     "slick-carousel": "^1.8.1",
-    "smoothscroll-polyfill": "^0.4.3"
+    "smoothscroll-polyfill": "^0.4.3",
+    "web3": "^0.20.6"
   }
 }
