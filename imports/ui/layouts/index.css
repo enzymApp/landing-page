@@ -371,8 +371,6 @@ a, a:hover {
 .referral_text {
   font-size: 16px;
   font-weight: 500;
-  margin-top: 2vh;
-
 }
 
 .referral_text .share_text{
@@ -498,8 +496,8 @@ border-bottom-right-radius: 0px;
 
 .SocialMediaShareButton {
   display: inline-block;
-  margin: 20px;
-  cursor: pointer;
+    margin: 0.6rem 20px;
+    cursor: pointer;
 }
 
 .col-6{
