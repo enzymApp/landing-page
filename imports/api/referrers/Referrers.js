@@ -27,6 +27,7 @@ Referrers.schema = new SimpleSchema({
   'referrals.$': {
     type: String,
   },
+  ethAddress: {type: String, optional: true},
   referralCount:  {
     type:         SimpleSchema.Integer,
     optional:     true,
