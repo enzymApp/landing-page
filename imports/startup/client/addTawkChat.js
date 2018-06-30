@@ -1,12 +1,13 @@
 import i18n       from 'meteor/universe:i18n'
 
-const API_KEY = Meteor.settings.public.tawk.apiKey
+ Meteor.settings.public.tawk.apiKey
 const langToTawkWidget = {
   fr: 'default',
   en: '1cg1cva5q',
 }
 
-export default (window, document) => {
+export default (window, document, config) => {
+  const API_KEY = config.apiKey
   const lang = i18n.getLocale().split('-')[0]
   const s1 = document.createElement("script")
   if(s1.lang === lang) return

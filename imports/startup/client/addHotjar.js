@@ -1,6 +1,6 @@
-const API_KEY = Meteor.settings.public.hotjar.apiKey
 
-export default (window, document) => {
+export default (window, document, config) => {
+  const API_KEY = config.apiKey;
   (function(h,o,t,j,a,r){
       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
       h._hjSettings={hjid:API_KEY,hjsv:6};

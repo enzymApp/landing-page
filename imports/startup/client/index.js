@@ -20,10 +20,11 @@ i18n.setOptions({
 })
 
 Meteor.startup(() => {
+  const config = Meteor.settings.public
   render(<AppContainer />, document.getElementById('app'))
-  addHotjar(window, document)
-  addReCaptcha(window, document)
-  addTawkChat(window, document)
+  if(config.hotjar)    addHotjar   (window, document, config.hotjar)
+  if(config.recaptcha) addReCaptcha(window, document, config.recaptcha)
+  if(config.tawk)      addTawkChat (window, document, config.tawk)
   Accounts.onLogin(() => {
     const user = Meteor.user()
     if(user && user.profile && user.profile.lang) {
