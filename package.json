@@ -4,7 +4,7 @@
   "scripts": {
     "start": "UNIVERSE_I18N_LOCALES='fr,en' meteor run --settings settings.json",
     "deploy": "UNIVERSE_I18N_LOCALES='fr,en' DEPLOY_HOSTNAME=eu-west-1.galaxy.meteor.com meteor deploy www.enzym.io --settings ./settings-production.json ; date",
-    "preprod": "UNIVERSE_I18N_LOCALES='fr,en' DEPLOY_HOSTNAME=eu-west-1.galaxy.meteor.com meteor deploy preprod.enzym.io --settings ./settings-preprod.json ; date"
+    "deploy-preprod": "UNIVERSE_I18N_LOCALES='fr,en' DEPLOY_HOSTNAME=us-east-1.galaxy.meteor.com meteor deploy preprod.enzym.io --settings ./settings-preprod.json ; date"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.49",

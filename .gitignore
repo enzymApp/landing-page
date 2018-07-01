@@ -2,6 +2,7 @@ node_modules/
 packages
 
 settings.json
+settings-preprod.json
 settings-production.json
 
 .DS_Store
