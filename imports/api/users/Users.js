@@ -81,7 +81,7 @@ Schemas.User = new SimpleSchema({
       this.unset()
       if(!this.field('services').isSet) return
       const services = this.field('services').value
-      if(!services)         return 'email' 
+      if(!services)         return 'email'
       if(services.facebook) return 'facebook'
       if(services.google)   return 'google'
       if(services.twitter)  return 'twitter'
@@ -121,6 +121,15 @@ Schemas.User = new SimpleSchema({
 Meteor.users.attachSchema(Schemas.User);
 
 
+Meteor.users.getFromEmail = (address, options) => Meteor.users.find({
+  $or: [
+    {registered_emails: {$elemMatch: {address}}},
+    {emails: {$elemMatch: {address}}},
+    {'services.facebook.email': address},
+    {'services.google.email': address},
+    {'services.twitter.email': address},
+  ]
+}, options)
 
 Meteor.users.helpers({
   email() {

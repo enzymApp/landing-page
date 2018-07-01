@@ -1,1 +1,2 @@
+import './getForPrototype'
 import './setEthAddress'

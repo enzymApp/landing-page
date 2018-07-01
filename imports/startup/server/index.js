@@ -15,6 +15,9 @@ import welcomeEmailTemplate from './welcomeEmailTemplate'
 import './initRanks'
 import './login-config'
 import './passwordless-config'
+import prototypeDdpConnection from './prototypeDdpConnection'
+
+prototypeDdpConnection(Meteor.settings.prototypeDdp)
 
 Counters.init(Meteor.users)
 
