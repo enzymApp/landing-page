@@ -1,5 +1,7 @@
 #!/bin/bash
-MONGO_URL=$(grep -Eo '"MONGO_URL": ".*?[^\\]",?' settings-preprod.json | sed "s/.*: \"\(.*\)\".*/\1/")
+BASE_PATH=$(dirname $0)/..
+SETTINGS_PATH=$BASE_PATH/settings-preprod.json
+MONGO_URL=$(grep -Eo '"MONGO_URL": ".*?[^\\]",?' $SETTINGS_PATH | sed "s/.*: \"\(.*\)\".*/\1/")
+BACKUP_FOLDER=$1
 DB_NAME=$(echo $MONGO_URL | sed "s/.*\/\(.*\)/\1/")
-BACKUP_NAME=$1
-mongorestore --uri $MONGO_URL -d $DB_NAME $BACKUP_NAME
+mongorestore --drop --uri $MONGO_URL -d $DB_NAME $BACKUP_FOLDER
