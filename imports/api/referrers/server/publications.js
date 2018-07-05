@@ -25,13 +25,13 @@ Meteor.publishComposite('referrers.one', function(username) {
           {userId: user._id},
           {fields: Referrers.publicFields}
         )
-        if(cursor.count() === 0 && !username) {
+        /*if(cursor.count() === 0 && !username) {
           //Meteor.defer(() => Referrers.createReferrer(userId))
           return Referrers.find(
             {},
             {fields: Referrers.publicFields, sort: Referrers.defaultSort, limit: 1}
           )
-        }
+        }*/
         return cursor
       }
     }]

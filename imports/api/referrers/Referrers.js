@@ -42,6 +42,11 @@ Referrers.schema = new SimpleSchema({
     type:     SimpleSchema.Integer,
     optional: true,
   },
+  city:    {type: String, optional: true},
+  country: {type: String, optional: true},
+  geoloc:  {type: String, optional: true},
+  region:  {type: String, optional: true},
+
   bestRank: {
     type:       SimpleSchema.Integer,
     optional:   true,
@@ -53,15 +58,19 @@ Referrers.schema = new SimpleSchema({
       return {$min: rank}
     }
   },
-  city:    {type: String, optional: true},
-  region:  {type: String, optional: true},
-  country: {type: String, optional: true},
-  geoloc:  {type: String, optional: true},
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if(this.isInsert) return new Date()
+      if(this.isUpsert) return {$setOnInsert: new Date()}
+      this.unset()
+    }
+  },
 })
 
 Referrers.attachSchema(Referrers.schema)
 
-Referrers.defaultSort = {referralCount: -1, rank: 1, bestRank: 1}
+Referrers.rankBaseSort = {referralCount: -1, createdAt: 1}
 
 Referrers.publicFields = {
   token:         1,
@@ -78,8 +87,9 @@ Referrers.deny({
 
 
 Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) => {
+  const rank = 1 + ((Referrers.findOne({}, {sort: {rank: -1}}) || {}).rank || 0)
   const _id = Referrers.insert({
-    userId, referrals: [], city, region, country, geoloc
+    userId, rank, referrals: [], city, region, country, geoloc
   })
   return Referrers.findOne(_id)
 }

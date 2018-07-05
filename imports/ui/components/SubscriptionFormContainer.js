@@ -43,7 +43,7 @@ class SubscriptionFormContainer extends React.Component {
       })
     })
     emitter.addWinListener((experimentName, variantName) => {
-      analytics.track(`${this.LANG}-${experimentName}-win`, {
+      analytics.track(`${experimentName}-win`, {
         category: 'AB testing',
         label:    variantName,
         value:    1,

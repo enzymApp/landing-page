@@ -1,5 +1,5 @@
 node_modules/
-packages
+/packages/
 
 settings.json
 settings-preprod.json
