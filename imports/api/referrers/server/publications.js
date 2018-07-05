@@ -29,12 +29,12 @@ Meteor.publishComposite('referrers.one', function(username) {
           {userId: user._id},
           {fields}
         )
-        if(cursor.count() === 0 && !username) {
+        /*if(cursor.count() === 0 && !username) {
           return Referrers.find(
             {},
             {fields, sort: Referrers.defaultSort, limit: 1}
           )
-        }
+        }*/
         return cursor
       }
     }]

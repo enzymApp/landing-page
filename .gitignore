@@ -1,7 +1,10 @@
 node_modules/
-packages
+/packages/
 
 settings.json
+settings-preprod.json
 settings-production.json
 
 .DS_Store
+
+dumps

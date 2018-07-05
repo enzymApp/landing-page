@@ -1,6 +1,6 @@
-const API_PUB_KEY = Meteor.settings.public.recaptchaKey
 
-export default (window, document) => {
+export default (window, document, config) => {
+  const API_PUB_KEY = config.recaptchaKey
   const parent = document.getElementsByTagName('head')[0]
   const script = document.createElement("script")
   script.async = true
