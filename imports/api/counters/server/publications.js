@@ -1,6 +1,7 @@
 import {Meteor}     from 'meteor/meteor'
-import {Counters} from '../Counters'
+import {Referrers} from '/imports/api/referrers/Referrers'
+import {Counters}  from '../Counters'
 
-Meteor.publish('users.count', function() {
-  return Counters.getCollectionCount(Meteor.users)
+Meteor.publish('referrers.count', function() {
+  return Counters.getCollectionCount(Referrers)
 })

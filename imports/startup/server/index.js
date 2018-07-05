@@ -15,7 +15,7 @@ import './initRanks'
 import './login-config'
 import './passwordless-config'
 
-Counters.init(Meteor.users)
+Counters.init(Referrers)
 
 onUserChange('saveReferrer', saveReferrer)
 onUserCreate('saveReferrer', saveReferrer)
@@ -26,7 +26,7 @@ onUserCreate('createRefferer', (_id, user) => {
   })
   sendWelcomeEmail(referrer, user.email().address)
 })
-onUserCreate('updateCounter', () => Counters.upsertCollectionCount(Meteor.users))
+onUserCreate('updateCounter', () => Counters.upsertCollectionCount(Referrers))
 
 
 function sendWelcomeEmail(referrer, email) {

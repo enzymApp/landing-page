@@ -1,7 +1,8 @@
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 import React         from 'react'
-import {Counters} from '/imports/api/counters/Counters'
+import {Counters}  from '/imports/api/counters/Counters'
+import {Referrers} from '/imports/api/referrers/Referrers'
 import T          from './Translator'
 
 const UsersCount = ({count}) => {
@@ -12,8 +13,8 @@ const UsersCount = ({count}) => {
 }
 
 export default withTracker(() => {
-  Meteor.subscribe('users.count')
+  Meteor.subscribe('referrers.count')
   return {
-    count: (Counters.getCollectionCount(Meteor.users).fetch()[0] || {}).value
+    count: (Counters.getCollectionCount(Referrers).fetch()[0] || {}).value
   }
 })(UsersCount)
