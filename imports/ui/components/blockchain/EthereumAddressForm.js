@@ -1,45 +1,31 @@
 import React from 'react'
-import web3  from 'web3'
+import Web3  from 'web3'
 import setEthAddress from '/imports/api/referrers/methods/setEthAddress'
 import Button from '../Button'
 import T      from '../Translator'
 
 
 export default class EthereumAddressForm extends React.Component {
-  static getDerivedStateFromProps(props, {ethAddress, submitted}) {
-    if(submitted || ethAddress) return
+  /*static getDerivedStateFromProps(props, {account, submitted}) {
+    if(submitted || account) return
     console.log(this)
     const res = EthereumAddressForm.getFromMetaMask()
     console.log(res)
     return res
-  }
-  static getFromMetaMask = () => {
-    const web3 = window.web3
-    //const isMist = typeof window.mist !== 'undefined'
-    let ethAddress
-    try {
-      if(web3 && web3.eth) {
-        ethAddress = web3.eth.accounts[0] || ''
-      }
-    } catch(e) {
-      //MetaMask/Mist temporary network error could throw exception
-    }
-    const hasMetaMask = web3 && web3.currentProvider && web3.currentProvider.isMetaMask
-    return {
-      ethAddress,
-      hasMetaMask,
-      metaMaskLoggedOut: hasMetaMask && !ethAddress,
-    }
-  }
+  }*/
   constructor(props) {
     super(props)
+    this.accountInterval = setInterval(this.getFromInjectedWeb3, 1000)
     this.state = {
-      ethAddress: '',
+      account: '',
       submitted:  false,
     }
   }
-  render() {    
-    const {ethAddress, metaMaskLoggedOut, submitted} = this.state
+  componentWillUnmount() {
+    this.accountInterval.stop()
+  }
+  render() {
+    const {account, metaMaskLoggedOut, submitted} = this.state
     console.log(metaMaskLoggedOut)
     if(submitted) {
       return (
@@ -49,9 +35,9 @@ export default class EthereumAddressForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label><T>Blockchain.ethAddress</T></label>
+          <label><T>Blockchain.account</T></label>
           <input
-            size="42" type="text" value={ethAddress}
+            size="42" type="text" value={account}
             onChange={e => this.updateAddress(e.target.value)}
           />
           <Button type="submit"><T>Common.submit</T></Button>
@@ -59,19 +45,36 @@ export default class EthereumAddressForm extends React.Component {
         {metaMaskLoggedOut &&
           <div>
             <T>Blockchain.metaMaskLoggedOut</T>
-            <Button onClick={this.reload}><T>Blockchain.reload</T></Button>
           </div>
         }
       </form>
     )
   }
-  updateAddress = (ethAddress) => this.setState({ethAddress})
+  getFromInjectedWeb3 = async () => {
+    if(window.web3 && window.web3.currentProvider) {
+      this.web3 = new Web3(window.web3.currentProvider)
+      try {
+        //const isMist = typeof window.mist !== 'undefined'
+        const account = (await this.web3.eth.getAccounts())[0] || ''
+        const metaMaskLoggedOut = this.web3.currentProvider.isMetaMask && !account
+        if (account !== this.state.account) {
+          this.setState({account, metaMaskLoggedOut})
+        } else if(metaMaskLoggedOut !== this.state.metaMaskLoggedOut) {
+          this.setState({metaMaskLoggedOut})
+        }
+      } catch(e) {
+        console.log(e)
+        //MetaMask/Mist temporary network error could throw exception
+      }
+    }
+  }
+  updateAddress = (account) => this.setState({account})
   handleSubmit = e => {
     e.preventDefault()
-    console.log(this.state.ethAddress)
+    console.log(this.state.account)
     this.setState({submitted: true})
     setEthAddress.call({
-      ethAddress: this.state.ethAddress,
+      account: this.state.account,
       referrerId: this.props.referrerId,
     })
   }

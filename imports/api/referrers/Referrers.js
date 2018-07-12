@@ -27,24 +27,14 @@ Referrers.schema = new SimpleSchema({
   'referrals.$': {
     type: String,
   },
-  ethAddress: {type: String, optional: true, regEx: /0x[0-9a-z]{40}/i},
-  referralCount:  {
-    type:         SimpleSchema.Integer,
-    optional:     true,
-    autoValue() {
-      this.unset()
-      //FIXME: can't decrease count to 0, will stop to 1
-      if(!this.field('referrals').isSet) return
-      return this.field('referrals').value.length
-    }
-  },
-  tokens: {
+  account: {type: String, optional: true, regEx: /0x[0-9a-z]{40}/i},
+  zyms:  {
     type:         SimpleSchema.Integer,
     optional:     true,
     autoValue() {
       if(this.isSet) return
-      if(!this.field('referralCount').isSet) return
-      return this.field('referralCount').value + 1
+      if(!this.field('referrals').isSet) return
+      return 1 + this.field('referrals').value.length
     }
   },
   rank: {
@@ -79,24 +69,23 @@ Referrers.schema = new SimpleSchema({
 
 Referrers.attachSchema(Referrers.schema)
 
-Referrers.rankBaseSort = {referralCount: -1, createdAt: 1}
+Referrers.rankBaseSort = {zyms: -1, createdAt: 1}
 
 Referrers.publicFields = {
   token:         1,
   rank:          1,
-  referralCount: 1,
   userId:        1,
-  tokens:        1,
+  zyms:          1,
 }
 
 Referrers.allFields = {
   ...Referrers.publicFields,
-  ethAddress: 1,
+  account: 1,
 }
 
 Referrers.deny({
   insert: () => true,
-  //update: () => true,
+  update: () => true,
   remove: () => true,
 })
 

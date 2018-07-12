@@ -2,7 +2,7 @@ import web3, {getContract, gasPrice} from '/imports/blockchain/web3'
 import {Referrers} from '../Referrers'
 
 
-export default function(_id, {profile}) {
+export default async function(_id, {profile}) {
   if(!profile) return
   const {referrerToken} = profile || {}
   if(!referrerToken) {
@@ -23,16 +23,25 @@ export default function(_id, {profile}) {
       futureReferrer._id,
       {$set: {referrals: [...futureReferrer.referrals, _id]}}
     )
-    
+
+    const referrerTokenHex = web3.utils.toHex(referrerToken)
+    const amount = web3.utils.toWei('1', 'ether')
+    console.log(referrerTokenHex, amount)
     const contract = getContract('referring')
-    const referrerTokenHex = web3.toHex(referrerToken)
-    const amount = web3.toWei(1, 'ether')
-    const res = contract.transferOrIncrease(referrerTokenHex, amount, {
-      gas: 60000,
-      gasPrice
-    })
+    contract.methods.transferOrIncrease(referrerTokenHex, amount)
+      .send({gas: 100000}, (err, res) => {
+        err && console.log("error", err)
+        console.log(res)
+      })
+
     console.log(referrerTokenHex)
-    console.log(contract.referrers(referrerTokenHex))
-    console.log(contract.referrerAmounts(referrerTokenHex).toString())
+    contract.methods.referrers(referrerTokenHex).call((err, res) => {
+      err && console.log("error", err)
+      console.log(res)
+    })
+    contract.methods.referrerAmounts(referrerTokenHex).call((err, res) => {
+      err && console.log("error", err)
+      console.log(res)
+    })
   }
 }
