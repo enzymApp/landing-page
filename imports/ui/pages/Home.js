@@ -18,6 +18,7 @@ import Modal          from '../components/Modal'
 import Footer         from '../layouts/Footer'
 import Header         from '../layouts/Header'
 import Main           from '../layouts/Main'
+import Video          from '../components/home/Video'
 
 
 export default ({user, children, referrer}) => (
@@ -39,6 +40,7 @@ export default ({user, children, referrer}) => (
       }
       </div>
     </Main>
+    <Video />
     <GamingRow />
     <MeetingRow />
     <JoinUsBanner scroll text="Home.buttons.joinUs" />
