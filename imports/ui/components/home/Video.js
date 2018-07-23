@@ -10,8 +10,7 @@ export default () => (
         <img src="/images/view.png" />
       </div>
       <div className="textPresentation">
-        <p>Enzym est le premier jeu mobile gratuit à mettre le virtuel au service du réel !<br/><br/>
-        Le joueur répond à des défis qui le conduisent dans des endroits insolites et à faire la rencontre d'autres joueurs.</p>
+        <p><T>Home.textpresentation</T><br/><br/><T>Home.textpresentationbis</T></p>
       </div>
     </div>
     <div className="videoContainer">
