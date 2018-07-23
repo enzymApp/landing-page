@@ -14,11 +14,12 @@ import JoinUsBanner   from '../components/home/JoinUsBanner'
 import TwoTabsBlock   from '../components/home/TwoTabsBlock'
 import GiftsBlock     from '../components/home/GiftsBlock'
 import TeamBlock      from '../components/home/TeamBlock'
+import Video          from '../components/home/Video'
+import TableStats     from '../components/home/TableStats'
 import Modal          from '../components/Modal'
 import Footer         from '../layouts/Footer'
 import Header         from '../layouts/Header'
 import Main           from '../layouts/Main'
-import Video          from '../components/home/Video'
 
 
 export default ({user, children, referrer}) => (
@@ -33,7 +34,7 @@ export default ({user, children, referrer}) => (
         <ReferrerLinksContainer user={user} referrer={referrer} />
       }
       {hasAccount(user) &&
-        <SocialShares referrer={referrer}/>
+        <SocialShares referrer={referrer} />
       }
       {hasAccount(user) &&
         <ReferrerListContainer referrer={referrer} />
@@ -46,6 +47,7 @@ export default ({user, children, referrer}) => (
     <JoinUsBanner scroll text="Home.buttons.joinUs" />
     <TwoTabsBlock />
     <GiftsBlock />
+    <TableStats />
     <TeamBlock />
     <JoinUsBanner openChat text="Home.buttons.contribute" />
     <Footer />

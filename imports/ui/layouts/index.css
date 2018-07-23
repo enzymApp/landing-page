@@ -43,7 +43,6 @@ a, a:hover {
   height: 100vh;
 }
 
-
 .outer-div {
   display: table;
   position: absolute;
@@ -189,7 +188,6 @@ a, a:hover {
 .social_links a img{
   height: 70%;
 }
-
 
 #loading {
   margin: 0 auto;
@@ -498,6 +496,47 @@ border-bottom-right-radius: 0px;
   display: inline-block;
     margin: 0.6rem 20px;
     cursor: pointer;
+}
+
+.video {
+  background: #e63b99;
+  padding-top:2rem;
+}
+
+.videoContainer{
+  width:82%;
+  left:9%;
+  position: relative;
+  padding-bottom: 4%;
+  padding-top:2rem;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video h2 {
+  color: #fff;
+  text-transform: uppercase;
+letter-spacing: 4px;
+text-align: center;
+font-size: 2.6rem;
+margin:0;
+}
+
+.video iframe {
+margin-left:auto;
+margin-right:auto;
+display: block;
 }
 
 .col-6{
