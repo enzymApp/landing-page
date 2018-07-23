@@ -16,7 +16,6 @@ export default class ReferrerList extends React.Component {
   render() {
     const {list, centerId} = this.props
     return (
-    <div>
       <Table striped responsive>
         <thead>
           <tr>
@@ -37,14 +36,7 @@ export default class ReferrerList extends React.Component {
           ))}
         </tbody>
       </Table>
-    <span className="know_more_gifts">
-      <T>
-        Referrer.giftsLink.before
-        <a role="button" tabIndex="0" onClick={this.scrollToGifts}><T>Referrer.giftsLink.text</T></a>
-        Referrer.giftsLink.after
-      </T>
-    </span>
-    </div>
+
     )
   }
   centerListOn(id) {

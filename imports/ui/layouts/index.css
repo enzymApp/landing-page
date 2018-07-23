@@ -396,6 +396,10 @@ a, a:hover {
   color:#fff;
 }
 
+.table th {
+  border-top:0;
+}
+
 .table {margin-bottom:-2px;}
 
 .table-responsive {
@@ -422,11 +426,16 @@ tbody {
 
 .table-responsive th {
   border-top-right-radius: 10px;
+  text-align: center;
 }
 
 .table-responsive th:first-of-type {
   border-top-left-radius: 10px;
   border-top-right-radius: 0px;
+}
+
+.table-responsive td {
+  text-align: center;
 }
 
 /*.tableau tr {
@@ -500,15 +509,54 @@ border-bottom-right-radius: 0px;
 
 .video {
   background: #e63b99;
-  padding-top:2rem;
+  padding-top:3rem;
+  padding-bottom:2rem;
+}
+
+.screenContainer {
+  display:flex;
+  flex:1;
+  flex-direction: row;
+  padding:4rem;
+  padding-bottom: 0;
+
+}
+
+.screen {
+  display:flex;
+  flex:1.8;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen img {
+  width:100%;
+}
+
+.textPresentation{
+  flex:1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color:#fff;
+  padding-right:4rem;
+  font-weight: 400;
+}
+
+.textPresentation p {
+  margin:0;
+  padding-bottom: 5rem;
 }
 
 .videoContainer{
-  width:82%;
-  left:9%;
-  position: relative;
-  padding-bottom: 4%;
-  padding-top:2rem;
+  margin:10rem;
+  margin-bottom:2rem;
+  margin-top:0rem;
+  padding:4rem;
+  border:1px solid #fff;
 }
 
 .videoWrapper {
@@ -615,7 +663,7 @@ display: block;
 
 .tab_ethique, .tab_innovant{
   color:#fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: justify;
   padding:20px;
   padding-top:50px;
@@ -632,7 +680,7 @@ display: block;
 
 .tab_innovant img, .tab_ethique img {
   width:80%;
-  max-width:300px;
+  max-width:260px;
   display:block;
   margin: 0 auto;
   padding-bottom:4vh;
@@ -642,7 +690,8 @@ display: block;
   background: #ffd900;
   text-align: justify;
   color:#fff;
-  padding:40px 10px;
+  padding:10px;
+  padding-top:40px;
 }
 
 .recompenses .col-4{
@@ -651,7 +700,7 @@ display: block;
 }
 
 .recompenses img {
-  max-width: 200px;
+  max-width: 180px;
   width:100%;
   padding: 0;
 
@@ -669,7 +718,7 @@ display: block;
 }
 
 .recompenses p {
-  line-height: 200px;
+  line-height: 180px;
   margin-bottom:0;
 }
 
@@ -682,13 +731,37 @@ display: block;
   padding:1.6rem;
 }
 
+.tableStats {
+background: #ffd900;
+padding-bottom: 2rem;
+border-top: 1px solid #fff;
+}
+
+.tableStats tbody {
+    max-height: 230px !important;
+}
+
+.tableStats h2 {
+  color: #fff;
+  text-transform: uppercase;
+letter-spacing: 2px;
+text-align: center;
+font-size: 1.4rem;
+margin:0;
+line-height: 6rem;
+}
+
+.tableStats .table-responsive {
+  margin-top:0;
+  border: 10px solid #69ddc8;
+}
+
 .team{
   background: #e63b99;
   color: #fff;
   text-align: center;
   padding:20px 50px;
 }
-
 
 .team h2 {
   text-transform: uppercase;
@@ -860,7 +933,7 @@ font-size: 28px;
   }
 
   .recompenses span span {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -998,6 +1071,10 @@ border-width: 2px;
 }
 
 @media screen and (max-height: 600px) {
+
+html {
+  font-size:7px;
+}
 
   .background_img_top {
     height:130vh;

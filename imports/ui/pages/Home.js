@@ -6,6 +6,7 @@ import ReferrerListContainer     from '/imports/ui/components/ReferrerListContai
 import SubscriptionFormContainer from '/imports/ui/components/SubscriptionFormContainer'
 import SocialLink                from '/imports/ui/components/SocialLink'
 import SocialShares              from '/imports/ui/components/SocialShares'
+import T                         from '/imports/ui/components/Translator'
 
 
 import GamingRow      from '../components/home/GamingRow'
@@ -37,7 +38,16 @@ export default ({user, children, referrer}) => (
         <SocialShares referrer={referrer} />
       }
       {hasAccount(user) &&
+        <div>
         <ReferrerListContainer referrer={referrer} />
+          <span className="know_more_gifts">
+            <T>
+              Referrer.giftsLink.before
+              <a role="button" tabIndex="0" onClick={this.scrollToGifts}><T>Referrer.giftsLink.text</T></a>
+              Referrer.giftsLink.after
+            </T>
+          </span>
+        </div>
       }
       </div>
     </Main>
