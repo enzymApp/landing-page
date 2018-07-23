@@ -518,6 +518,7 @@ border-bottom-right-radius: 0px;
   flex:1;
   flex-direction: row;
   padding:4rem;
+  padding-top:2rem;
   padding-bottom: 0;
 
 }
