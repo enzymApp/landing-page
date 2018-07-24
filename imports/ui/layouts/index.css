@@ -543,7 +543,7 @@ border-bottom-right-radius: 0px;
   font-size: 1.8rem;
   line-height: 3rem;
   color:#fff;
-  padding-right:4rem;
+  padding-right:5.5rem;
   font-weight: 400;
 }
 
@@ -965,6 +965,8 @@ font-size: 28px;
     font-size: 1.8rem;
   }
 
+
+
 }
 
 @media screen and (max-width: 760px) {
@@ -990,6 +992,23 @@ font-size: 28px;
   #accroche {
     letter-spacing: 1px;
   }
+
+.screenContainer {
+  flex-direction: column-reverse;
+
+}
+
+.textPresentation {
+font-size: 2.3rem;
+margin-top:6rem;
+margin-bottom:-5.5rem;
+padding-right:0;
+}
+
+.screenContainer {
+  margin-bottom:4rem;
+}
+
 }
 
 @media screen and (max-width: 650px) {
