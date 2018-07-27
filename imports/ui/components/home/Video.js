@@ -4,13 +4,13 @@ import T from '../Translator'
 
 export default () => (
   <div className="video">
-    <h2><T>Home.videotitle</T></h2>
+    <h2><T>Home.videoTitle</T></h2>
     <div className="screenContainer">
       <div className="screen">
         <img src="/images/view.png" />
       </div>
       <div className="textPresentation">
-        <p><T>Home.textpresentation</T><br/><br/><T>Home.textpresentationbis</T></p>
+        <p><T>Home.textPresentation</T><br/><br/><T>Home.textPresentationBis</T></p>
       </div>
     </div>
     <div className="videoContainer">
