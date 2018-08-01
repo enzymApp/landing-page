@@ -43,7 +43,6 @@ a, a:hover {
   height: 100vh;
 }
 
-
 .outer-div {
   display: table;
   position: absolute;
@@ -189,7 +188,6 @@ a, a:hover {
 .social_links a img{
   height: 70%;
 }
-
 
 #loading {
   margin: 0 auto;
@@ -398,6 +396,10 @@ a, a:hover {
   color:#fff;
 }
 
+.table th {
+  border-top:0;
+}
+
 .table {margin-bottom:-2px;}
 
 .table-responsive {
@@ -424,11 +426,16 @@ tbody {
 
 .table-responsive th {
   border-top-right-radius: 10px;
+  text-align: center;
 }
 
 .table-responsive th:first-of-type {
   border-top-left-radius: 10px;
   border-top-right-radius: 0px;
+}
+
+.table-responsive td {
+  text-align: center;
 }
 
 /*.tableau tr {
@@ -498,6 +505,87 @@ border-bottom-right-radius: 0px;
   display: inline-block;
     margin: 0.6rem 20px;
     cursor: pointer;
+}
+
+.video {
+  background: #e63b99;
+  padding-top:3rem;
+  padding-bottom:2rem;
+}
+
+.screenContainer {
+  display:flex;
+  flex:1;
+  flex-direction: row;
+  padding:4rem;
+  padding-top:2rem;
+  padding-bottom: 0;
+
+}
+
+.screen {
+  display:flex;
+  flex:1.6;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen img {
+  width:100%;
+}
+
+.textPresentation{
+  flex:1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color:#fff;
+  padding-right:5.5rem;
+  font-weight: 400;
+}
+
+.textPresentation p {
+  margin:0;
+  padding-bottom: 5rem;
+}
+
+.videoContainer{
+  margin:10rem;
+  margin-bottom:2rem;
+  margin-top:0rem;
+  padding:4rem;
+  border:1px solid #fff;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video h2 {
+  color: #fff;
+  text-transform: uppercase;
+letter-spacing: 4px;
+text-align: center;
+font-size: 2.6rem;
+margin:0;
+}
+
+.video iframe {
+margin-left:auto;
+margin-right:auto;
+display: block;
 }
 
 .col-6{
@@ -576,7 +664,7 @@ border-bottom-right-radius: 0px;
 
 .tab_ethique, .tab_innovant{
   color:#fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: justify;
   padding:20px;
   padding-top:50px;
@@ -593,7 +681,7 @@ border-bottom-right-radius: 0px;
 
 .tab_innovant img, .tab_ethique img {
   width:80%;
-  max-width:300px;
+  max-width:260px;
   display:block;
   margin: 0 auto;
   padding-bottom:4vh;
@@ -603,7 +691,8 @@ border-bottom-right-radius: 0px;
   background: #ffd900;
   text-align: justify;
   color:#fff;
-  padding:40px 10px;
+  padding:10px;
+  padding-top:40px;
 }
 
 .recompenses .col-4{
@@ -612,7 +701,7 @@ border-bottom-right-radius: 0px;
 }
 
 .recompenses img {
-  max-width: 200px;
+  max-width: 180px;
   width:100%;
   padding: 0;
 
@@ -630,7 +719,7 @@ border-bottom-right-radius: 0px;
 }
 
 .recompenses p {
-  line-height: 200px;
+  line-height: 180px;
   margin-bottom:0;
 }
 
@@ -643,13 +732,37 @@ border-bottom-right-radius: 0px;
   padding:1.6rem;
 }
 
+.tableStats {
+background: #ffd900;
+padding-bottom: 2rem;
+border-top: 1px solid #fff;
+}
+
+.tableStats tbody {
+    max-height: 230px !important;
+}
+
+.tableStats h2 {
+  color: #fff;
+  text-transform: uppercase;
+letter-spacing: 2px;
+text-align: center;
+font-size: 1.4rem;
+margin:0;
+line-height: 6rem;
+}
+
+.tableStats .table-responsive {
+  margin-top:0;
+  border: 10px solid #69ddc8;
+}
+
 .team{
   background: #e63b99;
   color: #fff;
   text-align: center;
   padding:20px 50px;
 }
-
 
 .team h2 {
   text-transform: uppercase;
@@ -821,7 +934,7 @@ font-size: 28px;
   }
 
   .recompenses span span {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -852,6 +965,8 @@ font-size: 28px;
     font-size: 1.8rem;
   }
 
+
+
 }
 
 @media screen and (max-width: 760px) {
@@ -877,6 +992,23 @@ font-size: 28px;
   #accroche {
     letter-spacing: 1px;
   }
+
+.screenContainer {
+  flex-direction: column-reverse;
+
+}
+
+.textPresentation {
+font-size: 2.3rem;
+margin-top:6rem;
+margin-bottom:-5.5rem;
+padding-right:0;
+}
+
+.screenContainer {
+  margin-bottom:4rem;
+}
+
 }
 
 @media screen and (max-width: 650px) {
@@ -959,6 +1091,10 @@ border-width: 2px;
 }
 
 @media screen and (max-height: 600px) {
+
+html {
+  font-size:7px;
+}
 
   .background_img_top {
     height:130vh;
