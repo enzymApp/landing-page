@@ -6,23 +6,15 @@ import T      from '../Translator'
 
 
 export default class EthereumAddressForm extends React.Component {
-  /*static getDerivedStateFromProps(props, {account, submitted}) {
-    if(submitted || account) return
-    console.log(this)
-    const res = EthereumAddressForm.getFromMetaMask()
-    console.log(res)
-    return res
-  }*/
-  constructor(props) {
-    super(props)
+  state = {
+    account:    '',
+    submitted:  false,
+  }
+  componentDidMount() {
     this.accountInterval = setInterval(this.getFromInjectedWeb3, 1000)
-    this.state = {
-      account: '',
-      submitted:  false,
-    }
   }
   componentWillUnmount() {
-    this.accountInterval.stop()
+    clearInterval(this.accountInterval)
   }
   render() {
     const {account, metaMaskLoggedOut, submitted} = this.state
@@ -77,8 +69,5 @@ export default class EthereumAddressForm extends React.Component {
       account: this.state.account,
       referrerId: this.props.referrerId,
     })
-  }
-  reload = () => {
-    this.props.reload()
   }
 }

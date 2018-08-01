@@ -96,7 +96,7 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
         }
       }
       if(Object.keys(modifier).length > 0) {
-        logs.push(["db update", referrer._id, modifier])
+        logs.push(["db update", referrer._id, JSON.stringify(modifier)])
         if(doIt) {
           db.collection('referrers').update(referrer._id, {$set: modifier})
         }

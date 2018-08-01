@@ -4,6 +4,7 @@ import {Random}     from 'meteor/random'
 import {Tracker}    from 'meteor/tracker'
 import SimpleSchema from 'simpl-schema'
 
+import sendZyms                 from '/imports/blockchain/sendZyms'
 import addPaginatedListCentered from './paginatedListCentered'
 
 //SimpleSchema.extendOptions(['allowInsert', 'denyInsert'])
@@ -94,7 +95,9 @@ Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) 
   const _id = Referrers.insert({
     userId, rank, referrals: [], city, region, country, geoloc
   })
-  return Referrers.findOne(_id)
+  const referrer = Referrers.findOne(_id)
+  sendZyms(referrer.token, 1)
+  return referrer
 }
 
 Referrers.helpers({

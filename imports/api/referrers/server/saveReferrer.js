@@ -1,5 +1,6 @@
-import web3, {getContract, gasPrice} from '/imports/blockchain/web3'
+import sendZyms    from '/imports/blockchain/sendZyms'
 import {Referrers} from '../Referrers'
+
 
 
 export default async function(_id, {profile}) {
@@ -23,25 +24,6 @@ export default async function(_id, {profile}) {
       futureReferrer._id,
       {$set: {referrals: [...futureReferrer.referrals, _id]}}
     )
-
-    const referrerTokenHex = web3.utils.toHex(referrerToken)
-    const amount = web3.utils.toWei('1', 'ether')
-    console.log(referrerTokenHex, amount)
-    const contract = getContract('referring')
-    contract.methods.transferOrIncrease(referrerTokenHex, amount)
-      .send({gas: 100000}, (err, res) => {
-        err && console.log("error", err)
-        console.log(res)
-      })
-
-    console.log(referrerTokenHex)
-    contract.methods.referrers(referrerTokenHex).call((err, res) => {
-      err && console.log("error", err)
-      console.log(res)
-    })
-    contract.methods.referrerAmounts(referrerTokenHex).call((err, res) => {
-      err && console.log("error", err)
-      console.log(res)
-    })
+    sendZyms(referrerToken, 1)
   }
 }
