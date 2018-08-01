@@ -13,7 +13,7 @@ const engine = new ProviderEngine()
 const web3 = new Web3(engine)
 
 export default web3
-export let gasPrice
+let gasPrice
 let smartContracts
 
 export function connectWeb3({_rpcUrl, _gasPrice, _privateKey, _smartContracts}) {

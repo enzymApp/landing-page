@@ -25,7 +25,7 @@ Meteor.startup(async () => {
   Counters.init(Referrers)
 
   connectWeb3({
-    _gasPrice:       web3.utils.toWei('5', 'gwei'),
+    _gasPrice:       web3.utils.toWei(String(Meteor.settings.web3.gasPrice), 'gwei'),
     _privateKey:     Meteor.settings.web3.privateKey,
     _rpcUrl:         Meteor.settings.web3.provider,
     _smartContracts: Meteor.settings.smartContracts,
