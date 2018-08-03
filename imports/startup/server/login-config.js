@@ -23,7 +23,6 @@ Accounts.onCreateUser((options, user) => {
   options.profile = options.profile || {}
   return {
     ...user,
-    //emails: [email],
     profile: socialNetwork ? {} : options.profile
   }
 })

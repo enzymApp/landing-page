@@ -10,7 +10,7 @@ import {analytics}    from 'meteor/okgrow:analytics'
 import Button         from './Button'
 import T              from './Translator'
 
-class SubscriptionFormContainer extends React.Component {
+export default class UserPageForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -52,5 +52,3 @@ class SubscriptionFormContainer extends React.Component {
     this.setState({submitted: true})
   }
 }
-
-export default SubscriptionFormContainer

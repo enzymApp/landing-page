@@ -1,7 +1,7 @@
 import {Accounts} from 'meteor/accounts-base'
 import {HTTP}     from 'meteor/http'
 
-import emailVerificationTemplate from './emailVerificationTemplate'
+import emailVerificationTemplate from '/imports/api/users/emailVerificationTemplate'
 
 const RECAPTCHA_SECRET = Meteor.settings.recaptchaSecret
 const RECAPTCHA_MIN_HUMAN_SCORE = 0.5

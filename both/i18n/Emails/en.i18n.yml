@@ -1,0 +1,21 @@
+_namespace: Emails
+
+emailVerification:
+  subject: Enzym - E-mail confirmation
+  text: |
+    hi!
+
+    Please click on this link or copy it in your browser to validate your e-mail address:
+
+    {$url}
+
+    The Enzym team
+
+welcome:
+  subject: Enzym - referrers
+  text: |
+    hi!
+
+    {$url}
+
+    The Enzym team

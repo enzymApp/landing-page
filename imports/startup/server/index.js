@@ -5,11 +5,11 @@ import '/imports/api/counters/server/publications'
 import '/imports/api/referrers/server/publications'
 import '/imports/api/referrers/server/updateRanks'
 import {onUserCreate,
-        onUserChange} from '/imports/api/users/server/userHooks'
-import saveReferrer   from '/imports/api/referrers/server/saveReferrer'
-import {Counters}     from '/imports/api/counters/Counters'
-import {Referrers}    from '/imports/api/referrers/Referrers'
-import welcomeEmailTemplate from './welcomeEmailTemplate'
+        onUserChange}       from '/imports/api/users/server/userHooks'
+import saveReferrer         from '/imports/api/referrers/server/saveReferrer'
+import {Counters}           from '/imports/api/counters/Counters'
+import {Referrers}          from '/imports/api/referrers/Referrers'
+import welcomeEmailTemplate from '/imports/api/users/welcomeEmailTemplate'
 //import './fixtures'
 import './initRanks'
 import './login-config'
@@ -24,17 +24,17 @@ onUserCreate('createRefferer', (_id, user) => {
     userId:  _id,
     profile: user.profile,
   })
-  sendWelcomeEmail(referrer, user.email().address)
+  sendWelcomeEmail(referrer, user.email().address, user.profile)
 })
 onUserCreate('updateCounter', () => Counters.upsertCollectionCount(Referrers))
 
 
-function sendWelcomeEmail(referrer, email) {
+function sendWelcomeEmail(referrer, email, profile) {
   const url = referrer.getUrl()
   Email.send({
     to:      email,
     from:    Meteor.settings.emailFrom,
-    subject: welcomeEmailTemplate.subject(),
-    text:    welcomeEmailTemplate.text(url),
+    subject: welcomeEmailTemplate.subject(profile),
+    text:    welcomeEmailTemplate.text(url, profile),
   })
 }
