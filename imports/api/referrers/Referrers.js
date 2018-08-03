@@ -1,7 +1,5 @@
-import {Email}      from 'meteor/email'
 import {Mongo}      from 'meteor/mongo'
 import {Random}     from 'meteor/random'
-import {Tracker}    from 'meteor/tracker'
 import SimpleSchema from 'simpl-schema'
 
 import sendZyms                 from '/imports/blockchain/sendZyms'

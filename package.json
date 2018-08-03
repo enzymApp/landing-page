@@ -14,6 +14,7 @@
     "meteor-node-stubs": "^0.3.2",
     "passwordless": "^1.1.2",
     "passwordless-mongostore": "^0.1.4",
+    "promise-queue": "^2.2.5",
     "react": "^16.4.0",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^16.4.0",

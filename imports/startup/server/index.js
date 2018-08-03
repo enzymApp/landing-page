@@ -20,17 +20,17 @@ import './login-config'
 import './passwordless-config'
 
 Meteor.startup(async () => {
-  prototypeDdpConnection(Meteor.settings.prototypeDdp)
 
   Counters.init(Referrers)
 
   connectWeb3({
-    _gasPrice:       web3.utils.toWei(String(Meteor.settings.web3.gasPrice), 'gwei'),
-    _privateKey:     Meteor.settings.web3.privateKey,
-    _rpcUrl:         Meteor.settings.web3.provider,
-    _smartContracts: Meteor.settings.smartContracts,
+    gasPrice:       web3.utils.toWei(String(Meteor.settings.web3.gasPrice), 'gwei'),
+    privateKey:     Meteor.settings.web3.privateKey,
+    rpcUrl:         Meteor.settings.web3.provider,
+    smartContracts: Meteor.settings.smartContracts,
   })
   initRanks()
+  prototypeDdpConnection(Meteor.settings.prototypeDdp)
 
   onUserChange('saveReferrerIfWasReferred', saveReferrer)
   onUserCreate('saveReferrerIfWasReferred', saveReferrer)

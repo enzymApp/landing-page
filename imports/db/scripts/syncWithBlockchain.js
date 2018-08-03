@@ -1,12 +1,12 @@
-import web3, {getContract, connectWeb3, getNonce, saveNonce, disconnectWeb3} from '../../blockchain/web3'
+import web3, {getContract, connectWeb3, disconnectWeb3} from '../../blockchain/web3'
 
 export default async (db, settings, doIt) => {
   try {
     connectWeb3({
-      _gasPrice:       web3.utils.toWei(String(settings.web3.gasPrice), 'gwei'),
-      _privateKey:     settings.web3.privateKey,
-      _rpcUrl:         settings.web3.provider,
-      _smartContracts: settings.smartContracts,
+      gasPrice:       web3.utils.toWei(String(settings.web3.gasPrice), 'gwei'),
+      privateKey:     settings.web3.privateKey,
+      rpcUrl:         settings.web3.provider,
+      smartContracts: settings.smartContracts,
     })
     const zymToken = getContract('zymToken')
     const referringContract = getContract('referring')
@@ -39,7 +39,7 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
         account = address
       }
       if(account != referrer.account) {
-        if(!!account) {
+        if(account) {
           modifier.account = account
         } else {
           account = referrer.account
@@ -75,7 +75,6 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
         } else {
           console.log("missing in blockchain")
           console.log("transferOrIncrease", referrerTokenHex, missingZyms.toString())
-          //console.log("nonce", await getNonce())
           if(doIt) {
             try {
               const res = await referringContract.methods.transferOrIncrease(referrerTokenHex, missingZyms)

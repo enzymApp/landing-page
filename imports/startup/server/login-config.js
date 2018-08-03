@@ -8,7 +8,8 @@ const {google, facebook, twitter} = Meteor.settings.oauth
 const loginStyle = 'popup'
 
 Accounts.onCreateUser((options, user) => {
-  console.log(user, options)
+  console.log(user)
+  console.log(options)
   const services = user.services || {}
   const {facebook, google, twitter} = services
   const socialNetwork = facebook || google || twitter

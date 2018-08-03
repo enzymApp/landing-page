@@ -22,7 +22,7 @@ Schemas.UserProfile = new SimpleSchema({
     optional: true
   },
   country: {
-    type: Date,
+    type:     String,
     optional: true
   },
   geoloc: {
@@ -32,6 +32,10 @@ Schemas.UserProfile = new SimpleSchema({
   lang : {
     type: String,
     optional: true
+  },
+  technical: {
+    type: Boolean,
+    optional: true,
   },
 });
 
