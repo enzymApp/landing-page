@@ -4,6 +4,6 @@ import {Meteor}   from 'meteor/meteor'
 export default ({username, password}) => {
   if(!Meteor.users.findOne({username})) {
     console.log(`create account for ${username}`)
-    Accounts.createUser({username, password})
+    Accounts.createUser({username, password, profile: {technical: true}})
   }
 }

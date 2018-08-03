@@ -18,8 +18,8 @@ export default async function(_id, {profile}) {
   if(!referrer) {
     const futureReferrer = Referrers.findOne(
       {token: referrerToken},
-      {fields: {_id: 1, referrals: 1}
-    })
+      {fields: {_id: 1, referrals: 1}}
+    )
     Referrers.update(
       futureReferrer._id,
       {$set: {referrals: [...futureReferrer.referrals, _id]}}

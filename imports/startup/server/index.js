@@ -32,9 +32,11 @@ Meteor.startup(async () => {
   })
   initRanks()
 
-  onUserChange('saveReferrer', saveReferrer)
-  onUserCreate('saveReferrer', saveReferrer)
+  onUserChange('saveReferrerIfWasReferred', saveReferrer)
+  onUserCreate('saveReferrerIfWasReferred', saveReferrer)
   onUserCreate('createRefferer', (_id, user) => {
+    if(user.profile && user.profile.technical) return
+
     const referrer = Referrers.createReferrer({
       userId:  _id,
       profile: user.profile,
