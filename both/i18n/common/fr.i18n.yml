@@ -9,8 +9,12 @@ signup:
   loggedInWithEmail: Tu es inscrit avec l'adresse {$email}.
   alreadySubscribed: Déjà inscrit ?
   incorrectEmailAdress: Adresse e-mail incorrecte
-  emailSent: "Nous t'avons envoyé un e-mail pour valider ton adresse.
-              Dès que tu auras cliqué sur le lien qu'il contient tu pourras participer au concours de parrainage."
+  emailSent1: "Nous t'avons envoyé un e-mail à cette adresse :"
+  emailSent2: Dès que tu auras cliqué sur le lien qu'il contient tu pourras participer au concours de parrainage.
+
+tryAgain:
+  notReceived: Tu n'as pas reçu l'e-mail de validation ?
+  button: Réessaye!
 
 chooseUsername:
   text: Choisir un pseudo ?

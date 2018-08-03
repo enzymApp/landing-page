@@ -1,3 +1,4 @@
+import {Accounts}    from 'meteor/accounts-base'
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 import {withRouter}  from 'react-router'
@@ -19,10 +20,12 @@ export default withRouter(withTracker(({children, match}) => {
     {userId: user._id},
     {fields: referrerFields}
   )
+  const emailLoginAttempt = Accounts.getPasswordlessLoginAttemptSelector()
   return {
-    user,
     children,
-    referrer,
+    emailLoginAttempt,
     loading: !handler.ready(),
+    referrer,
+    user,
   }
 })(withLoading(Home)))

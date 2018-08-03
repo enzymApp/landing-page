@@ -9,5 +9,5 @@ export default ({imgSrc, langCode}) => (
 
 const changeLanguage = (langCode) => () => {
   i18n.setLocale(langCode)
-  saveLanguage(Meteor.userId(), langCode)
+  Meteor.userId() && saveLanguage(Meteor.userId(), langCode)
 }
