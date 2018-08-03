@@ -6,9 +6,8 @@ import { render }   from 'react-dom'
 import smoothscroll from 'smoothscroll-polyfill'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AppContainer from '/imports/ui/layouts/AppContainer'
-import addHotjar    from './addHotjar'
-import addTawkChat  from './addTawkChat'
-import addReCaptcha from './addReCaptcha'
+import discordWidget, {changeChannelLang} from '/imports/tools/discordWidget'
+import addReCaptcha  from './addReCaptcha'
 
 smoothscroll.polyfill()
 
@@ -22,13 +21,13 @@ i18n.setOptions({
 Meteor.startup(() => {
   const config = Meteor.settings.public
   render(<AppContainer />, document.getElementById('app'))
-  if(config.hotjar)    addHotjar   (window, document, config.hotjar)
+  if(config.discord)   discordWidget(window, document)
   if(config.recaptcha) addReCaptcha(window, document, config.recaptcha)
-  if(config.tawk)      addTawkChat (window, document, config.tawk)
   Accounts.onLogin(() => {
     const user = Meteor.user()
     if(user && user.profile && user.profile.lang) {
       i18n.setLocale(user.profile.lang)
+      changeChannelLang()
     }
   })
 })
