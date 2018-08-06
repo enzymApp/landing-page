@@ -9,7 +9,7 @@ addressSaved: Your Ethereum address has been saved. We have just sent your ZYMs 
 nbOfTokensDistributed: You have already received {$zyms} ZYMs
 nbOfTokensWaiting:     "{$zyms} ZYMs are waiting for you"
 
-sessionExpired: Your session has expired. To get your ZYMs, you need to login again {#via} from
+sessionExpired: Your session has expired. To get your ZYMs, you need to login again {$via} from
 via_facebook: with Facebook
 via_google:   with Google
 via_twitter:  with Twitter

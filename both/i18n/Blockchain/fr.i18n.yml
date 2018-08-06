@@ -9,7 +9,7 @@ addressSaved: Ton adresse Ethereum a été sauvegardé. Nous venons de demander 
 nbOfTokensDistributed: Tu as déjà reçu {$zyms} ZYMs
 nbOfTokensWaiting:     Tu as {$zyms} ZYMs à récupérer
 
-sessionExpired: Ta session a expiré. Pour récupérer tes ZYMs, il faut te reconnecter {#via} depuis
+sessionExpired: Ta session a expiré. Pour récupérer tes ZYMs, il faut te reconnecter {$via} depuis
 via_facebook: par Facebook
 via_google:   par Google
 via_twitter:  par Twitter
