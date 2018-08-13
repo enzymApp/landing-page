@@ -79,30 +79,32 @@ class SubscriptionFormContainer extends React.Component {
           </Experiment>
         </h4>
         {!submitted && !emailLoginAttempt &&
-          <Form onSubmit={this.handleSubmit()}>
+          <div>
             <div className="social_logins">
               {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
               <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
                 <T>Common.signup.alreadySubscribed</T>
               </a>
             </div>
-            <FormGroup row>
-              <div className="top_form">
-                <Input
-                  type="email"
-                  placeholder="Email"
-                  onChange={this.handleChange('email')}
-                />
-                <FormFeedback><T>Common.signup.incorrectEmailAdress</T></FormFeedback>
-                <Button type="submit">
-                  <Experiment name={this.BUTTON_TEST}>
-                    <Variant name="PARTICIPER"><T>ABTesting.engageButton.participate</T></Variant>
-                    <Variant name="REJOINS_NOUS"><T>ABTesting.engageButton.joinUs</T></Variant>
-                  </Experiment>
-                </Button>
-              </div>
-            </FormGroup>
-          </Form>
+            <Form onSubmit={this.handleSubmit()}>
+              <FormGroup row>
+                <div className="top_form">
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    onChange={this.handleChange('email')}
+                  />
+                  <FormFeedback><T>Common.signup.incorrectEmailAdress</T></FormFeedback>
+                  <Button type="submit">
+                    <Experiment name={this.BUTTON_TEST}>
+                      <Variant name="PARTICIPER"><T>ABTesting.engageButton.participate</T></Variant>
+                      <Variant name="REJOINS_NOUS"><T>ABTesting.engageButton.joinUs</T></Variant>
+                    </Experiment>
+                  </Button>
+                </div>
+              </FormGroup>
+            </Form>
+          </div>
         }
         {(submitted || emailLoginAttempt) &&
           <div className="texte_valider_email">
