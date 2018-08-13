@@ -21,7 +21,7 @@ try {
     const client = await MongoClient.connect(url)
     const db = client.db(dbName)
 
-    console.log(doIt)
+    console.log("doIt", doIt)
 
     const func = require('./scripts/' + script + '.js').default
     await func(db, settings, doIt)

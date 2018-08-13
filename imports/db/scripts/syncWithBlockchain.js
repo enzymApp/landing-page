@@ -23,6 +23,7 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
   const DECIMALS = await zymToken.methods.decimals().call()
   const referrers = await (db.collection('referrers').find({}, {fields: {token: 1, zyms: 1, account: 1}})
     .toArray())
+  let modifNumber = 0
   for(let idx in referrers) {
     const referrer = referrers[idx]
     console.log(`${parseInt(idx)+1}/${referrers.length}`)
@@ -51,6 +52,7 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
                 console.log(res)
               })
           }
+          modifNumber++
         }
       }
       if(!account) {
@@ -71,7 +73,7 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
         console.log("missing", formatZyms(missingZyms, DECIMALS))
         if(missingZyms.ltn(0)) {
           console.log("missing in db")
-          modifier.zyms = web3.utils.fromWei(zyms, 'ether')
+          modifier.zyms = parseFloat(web3.utils.fromWei(zyms, 'ether'))
         } else {
           console.log("missing in blockchain")
           console.log("transferOrIncrease", referrerTokenHex, missingZyms.toString())
@@ -84,14 +86,16 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
             } catch(error) {
               console.log("transfer error", error)
             }
+            modifNumber++
           }
         }
       }
       if(Object.keys(modifier).length > 0) {
         console.log("db update", referrer._id, JSON.stringify(modifier))
         if(doIt) {
-          db.collection('referrers').update(referrer._id, {$set: modifier})
+          db.collection('referrers').update({_id: referrer._id}, {$set: modifier})
         }
+        modifNumber++
       }
     } catch(e) {
       console.log("call failed", JSON.stringify(e))
@@ -99,6 +103,7 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
     console.log()
     console.log()
   }
+  console.log(modifNumber, "modications")
 }
 
 function formatZyms(num, decimals) {

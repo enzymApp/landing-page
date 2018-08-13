@@ -39,7 +39,7 @@ export default class GetTokens extends React.Component {
         <div>
           <T via={via}>Blockchain.sessionExpired</T>
           {' '}
-          <Link to="/"><T>Blockchain.homePageLink</T></Link>
+          <Link to="/logout"><T>Blockchain.homePageLink</T></Link>
         </div>
       )
     }

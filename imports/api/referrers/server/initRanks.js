@@ -10,7 +10,7 @@ export default () => {
     {},
     {
       sort:   Referrers.rankBaseSort,
-      fields: {_id: 1, rank: 1, zyms: 1, createdAt: 1},
+      fields: {_id: 1, zyms: 1, createdAt: 1},
       //disableOplog: true,
       //pollingIntervalMs: 10000,
     }

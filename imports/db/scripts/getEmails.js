@@ -8,11 +8,11 @@ function email(user) {
 }
 
 print(
-  db.users.find()
+  db.users.find({$or: [{'profile.lang': {$regex: 'fr'}}, {'profile.lang': {$exists: false}}]})
+  //db.users.find({'profile.lang': {$regex: 'en'}})
   .toArray()
-  .map(u => email(u).address)
+  .map(u => email(u))
   .filter(e => !!e)
-  .map(e => e)
+  .map(e => e.address)
   .join('\n')
 )
-
