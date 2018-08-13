@@ -24,9 +24,10 @@ onUserCreate('createRefferer', (_id, user) => {
     userId:  _id,
     profile: user.profile,
   })
-  sendWelcomeEmail(referrer, user.email().address, user.profile)
+  if(user.email() && user.email().address) {
+    sendWelcomeEmail(referrer, user.email().address, user.profile)
+  }
 })
-onUserCreate('updateCounter', () => Counters.upsertCollectionCount(Referrers))
 
 
 function sendWelcomeEmail(referrer, email, profile) {

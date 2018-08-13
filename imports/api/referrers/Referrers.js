@@ -4,6 +4,7 @@ import {Random}     from 'meteor/random'
 import {Tracker}    from 'meteor/tracker'
 import SimpleSchema from 'simpl-schema'
 
+import {Counters}               from '/imports/api/counters/Counters'
 import addPaginatedListCentered from './paginatedListCentered'
 
 //SimpleSchema.extendOptions(['allowInsert', 'denyInsert'])
@@ -91,6 +92,7 @@ Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) 
   const _id = Referrers.insert({
     userId, rank, referrals: [], city, region, country, geoloc
   })
+  Counters.upsertCollectionCount(Referrers)
   return Referrers.findOne(_id)
 }
 
