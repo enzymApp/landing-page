@@ -5,16 +5,18 @@ import '/imports/api/counters/server/publications'
 import '/imports/api/referrers/server/publications'
 import '/imports/api/referrers/server/updateRanks'
 import {onUserCreate,
-        onUserChange}       from '/imports/api/users/server/userHooks'
-import saveReferrer         from '/imports/api/referrers/server/saveReferrer'
-import {Counters}           from '/imports/api/counters/Counters'
-import {Referrers}          from '/imports/api/referrers/Referrers'
-import welcomeEmailTemplate from '/imports/api/users/welcomeEmailTemplate'
+        onUserChange}         from '/imports/api/users/server/userHooks'
+import saveReferrer           from '/imports/api/referrers/server/saveReferrer'
+import {Counters}             from '/imports/api/counters/Counters'
+import {Referrers}            from '/imports/api/referrers/Referrers'
+import welcomeEmailTemplate   from '/imports/api/users/welcomeEmailTemplate'
+import prototypeDdpConnection from './prototypeDdpConnection'
 //import './fixtures'
 import './initRanks'
 import './login-config'
 import './passwordless-config'
 
+prototypeDdpConnection(Meteor.settings.prototypeDdp)
 Counters.init(Referrers)
 
 onUserChange('saveReferrer', saveReferrer)
