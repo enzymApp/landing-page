@@ -5,10 +5,6 @@ import T from './Translator'
 
 
 export default class ReferrerList extends React.Component {
-  componentDidUpdate(nextProps) {
-    const {centerId} = nextProps
-    this.centerListOn(centerId)
-  }
   componentDidMount() {
     const {centerId} = this.props
     this.centerListOn(centerId)

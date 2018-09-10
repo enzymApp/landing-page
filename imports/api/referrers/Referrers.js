@@ -2,6 +2,7 @@ import {Mongo}      from 'meteor/mongo'
 import {Random}     from 'meteor/random'
 import SimpleSchema from 'simpl-schema'
 
+import {Counters}               from '/imports/api/counters/Counters'
 import sendZyms                 from '/imports/blockchain/sendZyms'
 import addPaginatedListCentered from './paginatedListCentered'
 
@@ -95,6 +96,7 @@ Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) 
   })
   const referrer = Referrers.findOne(_id)
   sendZyms(referrer.token, 1)
+  Counters.upsertCollectionCount(Referrers)
   return referrer
 }
 

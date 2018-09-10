@@ -4,23 +4,23 @@ import {Email}    from 'meteor/email'
 import '/imports/api/counters/server/publications'
 import '/imports/api/referrers/methods'
 import '/imports/api/referrers/server/publications'
-
-import {Counters}           from '/imports/api/counters/Counters'
-import {Referrers}          from '/imports/api/referrers/Referrers'
-import initRanks            from '/imports/api/referrers/server/initRanks'
-import saveReferrer         from '/imports/api/referrers/server/saveReferrer'
+import '/imports/api/referrers/server/updateRanks'
 import {onUserCreate,
-        onUserChange}       from '/imports/api/users/server/userHooks'
-import welcomeEmailTemplate from '/imports/api/users/welcomeEmailTemplate'
+        onUserChange}         from '/imports/api/users/server/userHooks'
+import saveReferrer           from '/imports/api/referrers/server/saveReferrer'
+import {Referrers}            from '/imports/api/referrers/Referrers'
+import welcomeEmailTemplate   from '/imports/api/users/welcomeEmailTemplate'
+import prototypeDdpConnection from './prototypeDdpConnection'
+import {Counters}           from '/imports/api/counters/Counters'
+import initRanks            from '/imports/api/referrers/server/initRanks'
 import web3, {connectWeb3}  from '/imports/blockchain/web3'
 
-import prototypeDdpConnection from './prototypeDdpConnection'
 import './login-config'
 import './passwordless-config'
 
-Meteor.startup(async () => {
+Counters.init(Referrers)
 
-  Counters.init(Referrers)
+Meteor.startup(async () => {
 
   connectWeb3({
     gasPrice:       web3.utils.toWei(String(Meteor.settings.web3.gasPrice), 'gwei'),
@@ -40,7 +40,9 @@ Meteor.startup(async () => {
       userId:  _id,
       profile: user.profile,
     })
-    sendWelcomeEmail(referrer, user.email().address, user.profile)
+    if(user.email() && user.email().address) {
+      sendWelcomeEmail(referrer, user.email().address, user.profile)
+    }
   })
   onUserCreate('updateCounter', () => Counters.upsertCollectionCount(Referrers))
 })

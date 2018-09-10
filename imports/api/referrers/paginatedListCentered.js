@@ -23,7 +23,6 @@ export default (Referrers) => {
     let count = 0, prevCount = -1
     prevMin = min + 1
     prevMax = max - 1
-    const referrers = []
     while(count < minCount && count > prevCount) {
       prevCount = count
       count += (
@@ -60,12 +59,8 @@ function getReferrers(Referrers, {from, to, fields}) {
     {rank: {$gte: from, $lt: to}},
     {
       fields,
+      pollingThrottleMs: 1000,
       sort:   {rank: 1},
     }
   )
-}
-
-function countInArray(arr) {
-  return arr.map(cursor => cursor.count())
-  .reduce((acc, count) => acc + count, 0)
 }

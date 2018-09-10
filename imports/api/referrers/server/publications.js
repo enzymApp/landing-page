@@ -56,3 +56,25 @@ Meteor.publishComposite('referrers.list', function(minCount, minRank, maxRank) {
     }]
   }
 })
+
+Meteor.publishComposite('serverSync', function() {
+  const {username} = Meteor.settings.prototypeDdp
+  const caller = Meteor.user()
+  console.log(caller)
+  if(!caller)                      throw new Meteor.Error('LOGIN_REQUIRED')
+  if(caller.username !== username) throw new Meteor.Error('UNAUTHORIZED')
+  return {
+    find() {
+      return Meteor.users.find({}, {fields: {
+        emails: 1, registered_emails: 1, profile: 1, username: 1, services: 1
+      }})
+    },
+    children: [{
+      find(user) {
+        return Referrers.find({userId: user._id}, {fields: {
+          zyms: 1, rank: 1, bestRank: 1, userId: 1,
+        }})
+      }
+    }]
+  }
+})
