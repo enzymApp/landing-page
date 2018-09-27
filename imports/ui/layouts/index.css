@@ -518,8 +518,7 @@ border-bottom-right-radius: 0px;
   flex:1;
   flex-direction: row;
   padding:4rem;
-  padding-top:2rem;
-  padding-bottom: 0;
+  margin-bottom: 2rem;
 
 }
 
@@ -540,7 +539,7 @@ border-bottom-right-radius: 0px;
   align-items: center;
   display: flex;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 3rem;
   color:#fff;
   padding-right:5.5rem;
@@ -552,10 +551,11 @@ border-bottom-right-radius: 0px;
   padding-bottom: 5rem;
 }
 
+
 .videoContainer{
   margin:10rem;
   margin-bottom:2rem;
-  margin-top:0rem;
+  margin-top:2rem;
   padding:4rem;
   border:1px solid #fff;
 }
@@ -1006,7 +1006,7 @@ padding-right:0;
 }
 
 .screenContainer {
-  margin-bottom:4rem;
+  margin-bottom:0rem;
 }
 
 }
