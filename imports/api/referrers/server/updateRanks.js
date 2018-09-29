@@ -23,7 +23,7 @@ export default function updateRanks(Referrers, fromZyms) {
 }
 
 function getMaxZyms(Referrers) {
-  return (Referrers.findOne({}, {sort: {zyms: -1}}) || {}).zyms || 1
+  return (Referrers.findOne({}, {sort: {zyms: -1}}) || {}).zyms || 5
 }
 function getPreviousRank(Referrers, zyms) {
   return (

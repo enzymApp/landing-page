@@ -27,7 +27,7 @@ export default class ReferrerList extends React.Component {
               <td>
                 {username || _id === centerId && <SetUsername /> || <T>Referrer.username</T>}
               </td>
-              <td>{zyms - 1}</td>
+              <td>{zyms}</td>
             </tr>
           ))}
         </tbody>

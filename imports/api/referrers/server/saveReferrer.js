@@ -24,6 +24,6 @@ export default async function(_id, {profile}) {
       futureReferrer._id,
       {$set: {referrals: [...futureReferrer.referrals, _id]}}
     )
-    sendZyms(referrerToken, 1)
+    if(referrer.ethAddress) sendZyms(referrer._id)
   }
 }

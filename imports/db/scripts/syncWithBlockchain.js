@@ -21,32 +21,32 @@ export default async (db, settings, doIt) => {
 
 async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
   const DECIMALS = await zymToken.methods.decimals().call()
-  const referrers = await (db.collection('referrers').find({}, {fields: {token: 1, zyms: 1, account: 1}})
+  const referrers = await (db.collection('referrers').find({}, {fields: {token: 1, zyms: 1, ethAccount: 1}})
     .toArray())
   let modifNumber = 0
   for(let idx in referrers) {
     const referrer = referrers[idx]
     console.log(`${parseInt(idx)+1}/${referrers.length}`)
-    console.log(referrer._id, referrer.account)
+    console.log(referrer._id, referrer.ethAccount)
     console.log(formatZyms(referrer.zyms, DECIMALS))
     const modifier = { }
     const referrerTokenHex = web3.utils.toHex(referrer.token)
-    let account
+    let ethAccount
     let zyms
     console.log(referrerTokenHex)
     try {
       const address = await referringContract.methods.referrers(referrerTokenHex).call()
       if(!web3.utils.toBN(address).eqn(0)) {
-        account = address
+        ethAccount = address
       }
-      if(account != referrer.account) {
-        if(account) {
-          modifier.account = account
+      if(ethAccount != referrer.ethAccount) {
+        if(ethAccount) {
+          modifier.ethAccount = ethAccount
         } else {
-          account = referrer.account
-          console.log("addReferrerAndTransfer", referrerTokenHex, account)
+          ethAccount = referrer.ethAccount
+          console.log("addReferrerAndTransfer", referrerTokenHex, ethAccount)
           if(doIt) {
-            await referringContract.methods.addReferrerAndTransfer(referrerTokenHex, account)
+            await referringContract.methods.addReferrerAndTransfer(referrerTokenHex, ethAccount)
               .send({gas: 120000}, (err, res) => {
                 err && console.log("error", err)
                 console.log(res)
@@ -55,15 +55,15 @@ async function syncWithBlockchain(db, web3, zymToken, referringContract, doIt) {
           modifNumber++
         }
       }
-      if(!account) {
-        console.log("no account")
+      if(!ethAccount) {
+        console.log("no ethAccount")
         zyms = web3.utils.toBN(
           await referringContract.methods.referrerAmounts(referrerTokenHex).call()
         )
       } else {
-        console.log("account", account)
+        console.log("ethAccount", ethAccount)
         zyms = web3.utils.toBN(
-          await zymToken.methods.balanceOf(account).call()
+          await zymToken.methods.balanceOf(ethAccount).call()
         )
       }
       const dbZyms = web3.utils.toWei(web3.utils.toBN(referrer.zyms), 'ether')

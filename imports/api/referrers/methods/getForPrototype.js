@@ -22,7 +22,7 @@ export default new ValidatedMethod({
     return {
       landingPageUserId: user._id,
       username:          user.username,
-      account:           referrer.account,
+      ethAccount:        referrer.ethAccount,
       referringToken:    referrer.token,
     }
   }

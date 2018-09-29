@@ -2,12 +2,11 @@
 db.referrers.find()
 .toArray()
 .map(referrer => {
-  print(referrer._id)
-  if(typeof referrer.zyms !== 'undefined') return
+  const zyms = 5 * (1 + referrer.referralCount)
+  if(typeof referrer.zyms !== 'undefined' && referrer.zyms != null) return
+  print(referrer._id, zyms)
   db.referrers.update(
     {_id: referrer._id},
-    {$set: {
-      zyms: NumberInt(1 + referrer.referralCount)
-    }
+    {$set: { zyms }
   })
 })

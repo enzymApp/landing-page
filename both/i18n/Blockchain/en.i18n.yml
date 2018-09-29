@@ -1,17 +1,4 @@
 _namespace: Blockchain
 
-itsMe: It's me!
-getMyTokens: Get my ZYMs
-
-account:   Ethereum address
-addressSaved: Your Ethereum address has been saved. We have just sent your ZYMs to this address. Depending on the blockchain current load it could take from seconds to hours to be done
-
-nbOfTokensDistributed: You have already received {$zyms} ZYMs
-nbOfTokensWaiting:     "{$zyms} ZYMs are waiting for you"
-
-sessionExpired: Your session has expired. To get your ZYMs, you need to login again {$via} from
-via_facebook: with Facebook
-via_google:   with Google
-via_twitter:  with Twitter
-via_email:    using the same e-mail address
-homePageLink: the home page
+nbOfTokensDistributed: You have already received {$zyms} ZYMs, available in the mobile app
+nbOfTokensWaiting:     "{$zyms} ZYMs are waiting for you on the prototype available on the Android Play Store!"

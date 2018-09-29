@@ -72,7 +72,7 @@ Meteor.publishComposite('serverSync', function() {
     children: [{
       find(user) {
         return Referrers.find({userId: user._id}, {fields: {
-          zyms: 1, rank: 1, bestRank: 1, userId: 1,
+          zyms: 1, rank: 1, bestRank: 1, userId: 1, ethAccount: 1,
         }})
       }
     }]

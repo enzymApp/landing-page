@@ -3,7 +3,6 @@ import {Random}     from 'meteor/random'
 import SimpleSchema from 'simpl-schema'
 
 import {Counters}               from '/imports/api/counters/Counters'
-import sendZyms                 from '/imports/blockchain/sendZyms'
 import addPaginatedListCentered from './paginatedListCentered'
 
 //SimpleSchema.extendOptions(['allowInsert', 'denyInsert'])
@@ -27,14 +26,14 @@ Referrers.schema = new SimpleSchema({
   'referrals.$': {
     type: String,
   },
-  account: {type: String, optional: true, regEx: /0x[0-9a-z]{40}/i},
+  ethAddress: {type: String, optional: true, regEx: /0x[0-9a-z]{40}/i},
   zyms:  {
     type:         SimpleSchema.Integer,
     optional:     true,
     autoValue() {
       if(this.isSet) return
       if(!this.field('referrals').isSet) return
-      return 1 + this.field('referrals').value.length
+      return 5 * (1 + this.field('referrals').value.length)
     }
   },
   rank: {
@@ -80,7 +79,7 @@ Referrers.publicFields = {
 
 Referrers.allFields = {
   ...Referrers.publicFields,
-  account: 1,
+  ethAddress: 1,
 }
 
 Referrers.deny({
@@ -95,7 +94,6 @@ Referrers.createReferrer = ({userId, profile: {city, region, country, geoloc}}) 
     userId, rank, referrals: [], city, region, country, geoloc
   })
   const referrer = Referrers.findOne(_id)
-  sendZyms(referrer.token, 1)
   Counters.upsertCollectionCount(Referrers)
   return referrer
 }

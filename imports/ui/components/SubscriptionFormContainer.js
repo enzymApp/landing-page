@@ -1,3 +1,4 @@
+import {Meteor}       from 'meteor/meteor'
 import React          from 'react'
 import {Form,
         FormGroup,
@@ -78,13 +79,14 @@ class SubscriptionFormContainer extends React.Component {
             <Variant name="JEU_LOCAL">   <T>ABTesting.localGame.small</T>   </Variant>
           </Experiment>
         </h4>
-        {!submitted && !emailLoginAttempt &&
+        {!submitted && !emailLoginAttempt && (
           <div>
             <div className="social_logins">
-              {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
-              <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
+              {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}
+              <br />
+              {/*<a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
                 <T>Common.signup.alreadySubscribed</T>
-              </a>
+              </a>*/}
             </div>
             <Form onSubmit={this.handleSubmit()}>
               <FormGroup row>
@@ -105,8 +107,8 @@ class SubscriptionFormContainer extends React.Component {
               </FormGroup>
             </Form>
           </div>
-        }
-        {(submitted || emailLoginAttempt) &&
+        )}
+        {(submitted || emailLoginAttempt) && (
           <div className="texte_valider_email">
             <T>Common.signup.emailSent1</T>
             <div><strong>{this.state.email || emailLoginAttempt}</strong></div>
@@ -119,7 +121,7 @@ class SubscriptionFormContainer extends React.Component {
               <Button type="button" onClick={this.clearLoginAttempt}><T>Common.tryAgain.button</T></Button>
             </div>
           </div>
-        }
+        )}
       </div>
     )
   }

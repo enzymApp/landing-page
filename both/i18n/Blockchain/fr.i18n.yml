@@ -1,19 +1,4 @@
 _namespace: Blockchain
 
-itsMe: C'est moi !
-getMyTokens: Récupérer mes ZYMs
-
-account: Adresse Ethereum
-addressSaved: Ton adresse Ethereum a été sauvegardé. Nous venons de demander l'envoi de tes ZYMs à cette adresse. Cela peut prendre de quelques secondes jusqu'à plusieurs heures, selon le trafic actuel sur la blockchain.
-
-nbOfTokensDistributed: Tu as déjà reçu {$zyms} ZYMs
-nbOfTokensWaiting:     Tu as {$zyms} ZYMs à récupérer
-
-sessionExpired: Ta session a expiré. Pour récupérer tes ZYMs, il faut te reconnecter {$via} depuis
-via_facebook: par Facebook
-via_google:   par Google
-via_twitter:  par Twitter
-via_email:    en utilisant la même adresse e-mail
-homePageLink: la page d'accueil
-
-metaMaskLoggedOut: L'extension MetaMask est installé mais tu n'es pas connecté(e)
+nbOfTokensDistributed: Tu as déjà reçu {$zyms} ZYMs, disponibles sur l'application mobile
+nbOfTokensWaiting:     "{$zyms} ZYMs t'attendent sur le prototype disponible sur le Play Store Android !"
