@@ -8,22 +8,14 @@ const {google, facebook, twitter} = Meteor.settings.oauth
 const loginStyle = 'popup'
 
 Accounts.onCreateUser((options, user) => {
-  console.log(user, options)
+  console.log(user)
+  console.log(options)
   const services = user.services || {}
   const {facebook, google, twitter} = services
   const socialNetwork = facebook || google || twitter
-  const email = (
-    socialNetwork ?
-    {
-      address:  socialNetwork.email,
-      verified: socialNetwork.verified_email === undefined || socialNetwork.verified_email
-    } :
-    user.emails[0]
-  )
   options.profile = options.profile || {}
   return {
     ...user,
-    //emails: [email],
     profile: socialNetwork ? {} : options.profile
   }
 })

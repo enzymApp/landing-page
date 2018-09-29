@@ -9,8 +9,12 @@ signup:
   loggedInWithEmail: You are registered with the address {$email}
   alreadySubscribed: Registered already?
   incorrectEmailAdress: Invalid E-mail address
-  emailSent: "We sent you an e-mail to validate your address.
-              As soon as you click on the link it contains you will be able to participate in the sponsorship contest."
+  emailSent1: "We sent you an e-mail to this address:"
+  emailSent2: As soon as you click on the link it contains you will be able to participate in the sponsorship contest.
+
+tryAgain:
+  notReceived: You don't have received the validation e-mail?
+  button: Try again!
 
 chooseUsername:
   text: Choose a username

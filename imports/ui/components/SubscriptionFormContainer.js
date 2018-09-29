@@ -9,6 +9,7 @@ import {withRouter}   from 'react-router'
 import {Experiment,
         Variant,
         emitter}      from '@enzymapp/react-ab-test'
+import {Accounts}     from 'meteor/accounts-base'
 import {analytics}    from 'meteor/okgrow:analytics'
 import i18n           from 'meteor/universe:i18n'
 import Button         from './Button'
@@ -51,6 +52,7 @@ class SubscriptionFormContainer extends React.Component {
     })
   }
   render() {
+    const {emailLoginAttempt} = this.props
     const {referrerToken} = this.props.match.params
     const {submitted, userPageForm} = this.state
     if(userPageForm) return <UserPageForm />
@@ -76,22 +78,23 @@ class SubscriptionFormContainer extends React.Component {
             <Variant name="JEU_LOCAL">   <T>ABTesting.localGame.small</T>   </Variant>
           </Experiment>
         </h4>
-        <div className="social_logins">
-          {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
-          <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
-            <T>Common.signup.alreadySubscribed</T>
-          </a>
-        </div>
-        {!submitted &&
-          <Form onSubmit={this.handleSubmit()}>
-            <FormGroup row>
-              <div className="top_form">
+        {!submitted && !emailLoginAttempt &&
+          <div>
+            <div className="social_logins">
+              {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
+              <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
+                <T>Common.signup.alreadySubscribed</T>
+              </a>
+            </div>
+            <Form onSubmit={this.handleSubmit()}>
+              <FormGroup row>
+                <div className="top_form">
                   <Input
-                  type="email"
-                  placeholder="Email"
-                  onChange={this.handleChange('email')}
+                    type="email"
+                    placeholder="Email"
+                    onChange={this.handleChange('email')}
                   />
-                <FormFeedback><T>Common.signup.incorrectEmailAdress</T></FormFeedback>
+                  <FormFeedback><T>Common.signup.incorrectEmailAdress</T></FormFeedback>
                   <Button type="submit">
                     <Experiment name={this.BUTTON_TEST}>
                       <Variant name="PARTICIPER"><T>ABTesting.engageButton.participate</T></Variant>
@@ -99,16 +102,29 @@ class SubscriptionFormContainer extends React.Component {
                     </Experiment>
                   </Button>
                 </div>
-            </FormGroup>
-          </Form>
+              </FormGroup>
+            </Form>
+          </div>
         }
-        {submitted &&
+        {(submitted || emailLoginAttempt) &&
           <div className="texte_valider_email">
-            <T>Common.signup.emailSent</T>
+            <T>Common.signup.emailSent1</T>
+            <div><strong>{this.state.email || emailLoginAttempt}</strong></div>
+            <T>Common.signup.emailSent2</T>
+            <br/>
+            <br/>
+            <br/>
+            <div>
+              <div><T>Common.tryAgain.notReceived</T></div>
+              <Button type="button" onClick={this.clearLoginAttempt}><T>Common.tryAgain.button</T></Button>
+            </div>
           </div>
         }
       </div>
     )
+  }
+  clearLoginAttempt = () => {
+    Accounts.clearPasswordlessLoginAttempt()
   }
   loadCaptchaReady() {
     if(!window.grecaptcha) return
@@ -134,7 +150,10 @@ class SubscriptionFormContainer extends React.Component {
     emitter.emitWin(this.TEASER_TEST)
     const {email} = this.state
     const {referrerToken} = this.props.match.params
-    const profile = {referrerToken}
+    const profile = {
+      lang: i18n.getLocale(),
+      referrerToken,
+    }
     const options = {
       recaptchaToken: this.recaptchaToken
     }
