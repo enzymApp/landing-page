@@ -23,12 +23,12 @@ import Header         from '../layouts/Header'
 import Main           from '../layouts/Main'
 
 
-export default ({user, children, referrer}) => (
+export default ({emailLoginAttempt, user, children, referrer}) => (
   <div>
     <Header />
     <Main isUserPage={isReferrer(user, referrer)}>
       {!hasAccount(user) &&
-        <SubscriptionFormContainer />
+        <SubscriptionFormContainer {...{emailLoginAttempt}} />
       }
       <div className="banner_ready">
       {isReferrer(user, referrer) &&
@@ -39,7 +39,7 @@ export default ({user, children, referrer}) => (
       }
       {hasAccount(user) &&
         <div>
-        <ReferrerListContainer referrer={referrer} />
+          <ReferrerListContainer referrer={referrer} />
           <span className="know_more_gifts">
             <T>
               Referrer.giftsLink.before

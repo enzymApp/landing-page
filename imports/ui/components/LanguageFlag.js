@@ -1,6 +1,8 @@
-import React from 'react'
-import i18n  from 'meteor/universe:i18n'
-import saveLanguage from '/imports/api/users/saveLanguage';
+import React    from 'react'
+import {Meteor} from 'meteor/meteor'
+import i18n     from 'meteor/universe:i18n'
+import saveLanguage        from '/imports/api/users/saveLanguage'
+import {changeChannelLang} from '/imports/tools/discordWidget'
 
 
 export default ({imgSrc, langCode}) => (
@@ -9,5 +11,6 @@ export default ({imgSrc, langCode}) => (
 
 const changeLanguage = (langCode) => () => {
   i18n.setLocale(langCode)
-  saveLanguage(Meteor.userId(), langCode)
+  changeChannelLang()
+  Meteor.userId() && saveLanguage(Meteor.userId(), langCode)
 }

@@ -9,10 +9,10 @@ function email(user) {
 
 print(
   db.users.find()
+  .sort({createdAt: 1})
   .toArray()
-  .map(u => email(u).address)
-  .filter(e => !!e)
+  .map(u => [u.profile.lang || "fr", (email(u) || {}).address])
+  .filter(e => !!e[1])
   .map(e => e)
   .join('\n')
 )
-
