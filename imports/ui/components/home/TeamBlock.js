@@ -18,15 +18,15 @@ const settingsSmall = {
   slidesToScroll: 1,
 }
 const slides = [
-  {photoSrc: '/images/team_jeremy.jpg',  name: 'Jeremy',  job: 'CMO'},
   {photoSrc: '/images/team_alfred.jpg',  name: 'Alfred',  job: 'Artistic Director'},
-  {photoSrc: '/images/team_sylvain.jpg', name: 'Sylvain', job: 'CTO'},
-  {photoSrc: '/images/team_yannick.jpg', name: 'Yannick', job: 'CEO'},
+  {photoSrc: '/images/team_fred.jpg',    name: 'Frédéric',job: 'Developer'},
+  {photoSrc: '/images/team_jeremy.jpg',  name: 'Jeremy',  job: 'CMO'},
+  {photoSrc: '/images/team_kevin.jpg',   name: 'Kevin',   job: 'Community Manager'},
   {photoSrc: '/images/team_octave.jpg',  name: 'Octave',  job: 'Writer'},
   {photoSrc: '/images/team_pauline.jpg', name: 'Pauline', job: 'Community Manager'},
-  {photoSrc: '/images/team_pascal.jpg',  name: 'Pascal',  job: 'Full-stack developer'},
-  {photoSrc: '/images/team_kevin.jpg',   name: 'Kevin',   job: 'Community Manager'},
-  {photoSrc: '/images/team_fred.jpg',    name: 'Frédéric',job: 'Developer'},
+  {photoSrc: '/images/team_sophea.jpg',  name: 'Sophea',  job: 'UX Designer'},
+  {photoSrc: '/images/team_sylvain.jpg', name: 'Sylvain', job: 'CTO'},
+  {photoSrc: '/images/team_yannick.jpg', name: 'Yannick', job: 'CEO'},
 ]
 const orderedSlides = randomlyOrderedSlides(slides)
 
