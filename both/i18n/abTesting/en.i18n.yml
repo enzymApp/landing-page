@@ -12,9 +12,15 @@ play:
   big:   Play on your smartphone to meet strangers in real life
   small: Join Enzym, the social network to hang out with your friends and meet new people
 
-playAlone:
-  big:   Are you tired to play alone on your smartphone?
-  small: Join Enzym, the game that makes you meet many people
+intro:
+  big:   The first real-life mobile game
+  big2:  encouraging social networking
+  small: Lorem ipsum dolor sit amet
+
+descr:
+  p1: Enzym t'envois des missions pour récolter des ZYMs (carburant) sur des autres téléphones
+  p2: C'est un jeu sécurisé et totalement gratuit
+  p3: Rejoins-nous en devenant Ambassadeur ici, nous te contacterons très vite
 
 cheapChat:
   big:   Rebuild a society of sharing and talking!

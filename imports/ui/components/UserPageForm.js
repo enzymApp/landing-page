@@ -29,13 +29,14 @@ export default class UserPageForm extends React.Component {
           <Form onSubmit={this.handleSubmit()}>
             <FormGroup row>
               <div className="top_form">
+                <h2>Connect</h2>
                 <Input
                   type="text"
                   placeholder="Pseudo"
                   onChange={this.handleChange('username')}
                   autoFocus={true}
                 />
-                <Button type="submit"><T>Common.submit</T></Button>
+                <Button type="submit"><T>Ok</T></Button>
                 </div>
               </FormGroup>
           </Form>

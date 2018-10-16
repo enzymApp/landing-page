@@ -5,7 +5,7 @@ import T from '../Translator'
 export default ({text}) => (
   <div className="recompenses">
     <h2><T>Home.gifts.title</T></h2>
-    <Row>
+    <Row className="container">
       <Col xs="4">
         <div className="outer-div"><div className="mid-div"><div className="center-div">
         <img src="/images/picto_coin.png" />
@@ -15,7 +15,7 @@ export default ({text}) => (
         <p><span><T>Home.gifts.coin</T></span></p>
       </Col>
     </Row>
-    <Row>
+    <Row className="container">
       <Col xs="8">
         <p><span><T>Home.gifts.chest</T></span></p>
       </Col>
@@ -25,7 +25,7 @@ export default ({text}) => (
         </div></div></div>
       </Col>
     </Row>
-    <Row>
+    <Row className="container">
       <Col xs="4">
         <div className="outer-div"><div className="mid-div"><div className="center-div">
           <img src="/images/picto_crown.png" />

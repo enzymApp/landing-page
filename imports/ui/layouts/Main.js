@@ -1,20 +1,25 @@
 import React from 'react'
+import {Row, Col} from 'reactstrap'
+import T              from '../components/Translator'
+import i18n           from 'meteor/universe:i18n'
 
 export default ({children, isUserPage}) => {
   return (
     <div className="background_img_top">
-      <div className={`outer-div ${isUserPage && "active-black"}`}>
-        <div className="mid-div">
-          <div className="center-div">
-            <div id="logo_enzym_shadow">
-              <a href="/">
-                <img src="/images/logo_enzym_intro_shadow.png" align="center" />
-              </a>
-            </div>
+      <Row id="main">
+        <Col xs="12" sm="6" md="8" >
+          <div id="visual">
+            <h1><T>ABTesting.intro.big</T><br/><T>ABTesting.intro.big2</T></h1>
+            <h3><T>ABTesting.intro.small</T></h3>
+            <img src="/images/application-enzym.png" class="mockup"/>
+          </div>
+        </Col>
+        <Col xs="12" sm="6" md="4">
+          <div id="block">
             {children}
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   )
 }

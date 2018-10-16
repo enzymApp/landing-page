@@ -33,29 +33,31 @@ const orderedSlides = randomlyOrderedSlides(slides)
 
 export default ({text}) => (
   <div className="team">
-    <h2><T>Home.team.title</T></h2>
-    <Slider {...settings} className="d-none d-md-block">
-      {orderedSlides.map(({photoSrc, name, job}) => (
-        <div className="slide" key={name}>
-          <img src={photoSrc} />
-          <p>
-            {name}<br/>
-            <span>{` - ${job} - `}</span>
-          </p>
-        </div>
-      ))}
-    </Slider>
-    <Slider {...settingsSmall} className="d-block d-md-none">
-      {orderedSlides.map(({photoSrc, name, job}) => (
-        <div className="slide" key={name}>
-          <img src={photoSrc} />
-          <p>
-            {name}<br/>
-            <span>{` - ${job} - `}</span>
-          </p>
-        </div>
-      ))}
-    </Slider>
+    <div class="container">
+      <h2><T>Home.team.title</T></h2>
+      <Slider {...settings} className="d-none d-md-block">
+        {orderedSlides.map(({photoSrc, name, job}) => (
+          <div className="slide" key={name}>
+            <img src={photoSrc} />
+            <p>
+              {name}<br/>
+              <span>{` - ${job} - `}</span>
+            </p>
+          </div>
+        ))}
+      </Slider>
+      <Slider {...settingsSmall} className="d-block d-md-none">
+        {orderedSlides.map(({photoSrc, name, job}) => (
+          <div className="slide" key={name}>
+            <img src={photoSrc} />
+            <p>
+              {name}<br/>
+              <span>{` - ${job} - `}</span>
+            </p>
+          </div>
+        ))}
+      </Slider>
+    </div>
   </div>
 )
 

@@ -6,8 +6,10 @@ import ReferrerListContainer     from '/imports/ui/components/ReferrerListContai
 
 export default () => (
 <div className="tableStats">
-  <h2><T>Home.contesttitle</T></h2>
-<ReferrerListContainer />
+  <div class="container">
+    <h2><T>Home.contesttitle</T></h2>
+    <ReferrerListContainer />
+  </div>
 </div>
 
 )

@@ -12,9 +12,15 @@ play:
   big:   Joue sur ton smartphone pour rencontrer des inconnus dans le monde réel
   small: Rejoins Enzym, le réseau social pour sortir avec ses potes et faire de nouvelles rencontres
 
-playAlone:
-  big:   Tu en as marre de jouer tout seul sur ton téléphone ?
-  small: Rejoins Enzym, le jeu qui te fait rencontrer du monde
+intro:
+  big:   Le jeu grandeur nature
+  big2: qui te fait rencontrer du monde
+  small: Lorem ipsum dolor sit amet
+
+descr:
+  p1: Enzym t'envois des missions pour récolter des ZYMs (carburant) sur des autres téléphones
+  p2: C'est un jeu sécurisé et totalement gratuit
+  p3: Rejoins-nous en devenant Ambassadeur ici, nous te contacterons très vite
 
 cheapChat:
   big:   Recontruisez une société de partages et de bavardages !

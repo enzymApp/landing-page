@@ -11,6 +11,7 @@ import T                         from '/imports/ui/components/Translator'
 
 import GamingRow      from '../components/home/GamingRow'
 import MeetingRow     from '../components/home/MeetingRow'
+import MapRow     from '../components/home/MapRow'
 import JoinUsBanner   from '../components/home/JoinUsBanner'
 import TwoTabsBlock   from '../components/home/TwoTabsBlock'
 import GiftsBlock     from '../components/home/GiftsBlock'
@@ -51,7 +52,7 @@ export default ({emailLoginAttempt, user, children, referrer}) => (
       }
       </div>
     </Main>
-    <Video />
+    <MapRow />
     <GamingRow />
     <MeetingRow />
     <JoinUsBanner scroll text="Home.buttons.joinUs" />

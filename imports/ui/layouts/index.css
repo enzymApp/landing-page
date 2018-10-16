@@ -34,9 +34,94 @@ strong {
 .row{
   margin:0;
 }
-
+.container{
+  max-width: 1200px;
+  margin:auto;
+}
 .gaming_row {
   flex-direction: row-reverse;
+}
+
+.responsive-img{
+  max-width: 100%;
+}
+
+.hamburger img{
+  width: 25px !important;
+  margin-top: 0px !important;
+  margin-right: 5px !important;
+  cursor: pointer;
+
+}
+@media screen and (min-width: 901px) {
+  .hamburger img{
+    display: none;
+  }
+}
+
+#main{
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#main #visual{
+  margin-top: 65px;
+  text-align: center;
+}
+
+#main #visual h1{
+  text-align: center;
+  font-size: 3.4rem;
+  color:white;
+  text-shadow: 4px 4px 16px rgba(150, 150, 150, 1);
+}
+#main #visual h3{
+  text-align: center;
+  font-size: 2rem;
+  color:white;
+}
+#main #block{
+  margin-top: 65px;
+  border-radius: 10px;
+  padding: 15px;
+  background: #e63b99; /* Old browsers */
+  background: -moz-linear-gradient(top, #e63b99 0%, #bf3173 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e63b99 0%,#bf3173 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e63b99 0%,#bf3173 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e63b99', endColorstr='#bf3173',GradientType=0 ); /* IE6-9 */
+}
+@media screen and (max-width: 575px) {
+  #main #block{
+    margin-top: 10px;
+  }
+}
+
+#main #block .logo{
+  margin-bottom:5px;
+  text-align: center;
+}
+#top_bloc .logo img{
+  max-width: 200px;
+}
+
+#main #block p{
+  color:white;
+  text-align: center;
+  line-height: 1.2;
+}
+.available-support{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+#main #block hr{
+  border-top: 5px solid white;
+}
+
+#main .mockup{
+  width: 100%;
+  max-width: 600px;
 }
 
 .background_img_top{
@@ -44,7 +129,8 @@ strong {
   background-attachment: fixed;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
-  height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 55px;
 }
 
 .outer-div {
@@ -76,6 +162,7 @@ strong {
 .top_form{
   display: block;
   margin:0 auto;
+  width:100%;
 }
 
 .purple_buttons {
@@ -86,13 +173,13 @@ strong {
   color:#fff;
   font-weight: 500;
   cursor:pointer;
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: 6px;
   transition: 0.2s;
 }
 
 .purple_buttons:hover {
-  letter-spacing: 8px;
+
 }
 
 .top_form .purple_buttons {
@@ -102,18 +189,35 @@ strong {
 }
 
 .top_form .purple_buttons:hover {
-  letter-spacing: 4px;
+
 }
 
 .top_form input {
-  max-width:500px;
-  width:30vw;
+  max-width:75%;
+  width: 75%;
+  font-size:16px;
   border:none;
   border-radius: 6px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   float:left;
-  min-width: 200px;
+}
+
+#subscribe .join-us{
+  text-transform: uppercase;
+  text-align: center !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.top_form .purple_buttons {
+  width: 25%;
+}
+
+#subscribe .already-subscribed{
+  text-align:center !important;
+  margin-top:5px;
+  display:block;
+  font-size: 13px;
 }
 
 .form-control {
@@ -193,6 +297,28 @@ strong {
   height: 70%;
 }
 
+.map-container{
+  height: 100%;
+  width: 100%;
+}
+.link-channel{
+  text-align: center;
+}
+.link-channel a{
+  color : #e63b99;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.events{
+  overflow-y: scroll;
+  max-height: 250px;
+}
+.events p{
+  margin-bottom: 0rem;
+}
+
 #loading {
   margin: 0 auto;
   display: block;
@@ -202,7 +328,7 @@ strong {
 
 #header {
   background: #ffd900;
-  height:40px;
+  height:48px;
   position: fixed;
   width:100%;
   z-index: 99;
@@ -216,11 +342,21 @@ strong {
 
 #header .right-side {
   text-align: right;
+  padding-top: 9px;
 }
 
-#header .right-side img {
-  margin:6px 10px;
+#header .right-side a {
+  margin: 6px 10px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.2s;
 }
+
+#header .right-side a:hover {
+  color:#e63b99;
+  transition: 0.2s;
+}
+
 
 #logo_top{
   height:100%;
@@ -228,6 +364,7 @@ strong {
 
 #logo_top img {
   line-height: 100%;
+  margin-top: 11px;
 }
 
 #logo_enzym_shadow a {
@@ -262,8 +399,7 @@ strong {
 
 .social_logins {
   text-align: center;
-  margin-top:50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .social_logins a {
@@ -277,12 +413,12 @@ strong {
 
 /* Shared */
 .loginBtn {
+  height: 38px;
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
   /* width: 13em;  - apply for fixed size */
-  margin: 0.4em;
-  padding: 4px 15px 4px 46px;
+  padding: 4px 15px 4px 20px;
   border: none;
   text-align: left;
   line-height: 34px;
@@ -307,6 +443,9 @@ strong {
   box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
 }
 
+#top_bloc p{
+  font-size: 16px;
+}
 
 /* Facebook */
 .loginBtn--Facebook {
@@ -316,7 +455,7 @@ strong {
   text-shadow: 0 -1px 0 #354C8C;
 }
 .loginBtn--Facebook:before {
-  border-right: #364e92 1px solid;
+
   background: url('/images/icon_facebook.png') 4px 9px no-repeat;
 }
 .loginBtn--Facebook:hover,
@@ -334,7 +473,7 @@ strong {
 
 }
 .loginBtn--Google:before {
-  border-right: #BB3F30 1px solid;
+
   background: url('/images/icon_google.png') 4px 9px no-repeat;
 }
 .loginBtn--Google:hover,
@@ -351,7 +490,7 @@ strong {
 
 }
 .loginBtn--Twitter:before {
-  border-right: #1676a4 1px solid;
+
   background: url('/images/icon_twitter.png') 4px 9px no-repeat;
 }
 .loginBtn--Twitter:hover,
@@ -557,22 +696,18 @@ border-bottom-right-radius: 0px;
 
 
 .videoContainer{
-  margin:10rem;
   margin-bottom:2rem;
   margin-top:2rem;
-  padding:4rem;
-  border:1px solid #fff;
+  padding:2rem;
+  border:1px solid #e63b99;
 }
 
 .videoWrapper {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+  height: 300px;
 }
 
 .videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -601,7 +736,7 @@ display: block;
 }
 
 .text_blocks {
-  padding:4vw;
+  padding:2.0vw;
   height:100%;
 }
 
@@ -668,7 +803,7 @@ display: block;
 
 .tab_ethique, .tab_innovant{
   color:#fff;
-  font-size: 1.5rem;
+  font-size: 15px;
   text-align: justify;
   padding:20px;
   padding-top:50px;
@@ -684,7 +819,7 @@ display: block;
 }
 
 .tab_innovant img, .tab_ethique img {
-  width:80%;
+  width:50%;
   max-width:260px;
   display:block;
   margin: 0 auto;
@@ -871,19 +1006,19 @@ font-size: 28px;
 
 @media screen and (min-width: 1572px) {
   html {
-    font-size:18px;
+    font-size:12px;
   }
 }
 
 @media screen and (max-width: 1572px) {
   html {
-    font-size:14px;
+    font-size:11px;
   }
 }
 
 @media screen and (max-width: 1209px) {
   html {
-    font-size:12px;
+    font-size:10px;
   }
 }
 
@@ -944,7 +1079,7 @@ font-size: 28px;
 
 @media screen and (max-width: 830px) {
   html {
-    font-size:10px;
+    font-size:9px;
   }
 
   #top_bloc {
@@ -1070,11 +1205,11 @@ padding-right:0;
   }
 
   .purple_buttons:hover {
-    letter-spacing: 4px;
+
   }
 
   .top_form .purple_buttons:hover {
-    letter-spacing: 2px;
+
   }
 
   .social_links{
@@ -1117,5 +1252,39 @@ html {
 
   .background_img_top .outer-div {
     height:225vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hide-link{
+    display:none;
+  }
+}
+.menu-mobile .hide-link{
+  display:none;
+}
+@media screen and (max-width: 900px) {
+  .menu-mobile .hide-link{
+    display:block;
+  }
+  .menu-mobile{
+    background-color: #ffd900;
+    padding: 0px 10px;
+    border-top: white solid 1px;
+  }
+  .menu-mobile a{
+    display:block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: 0.2s;
+  }
+  .menu-mobile a:hover{
+    display:block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    color: #e63b99;
+    transition: 0.2s;
   }
 }

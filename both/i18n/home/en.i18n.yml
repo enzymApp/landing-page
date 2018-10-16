@@ -11,6 +11,9 @@ buttons:
   joinUs: Join us!
   contribute: Want to contribute to the project?
 
+map:
+  title: Nos évènements sur Lyon, Grenoble
+
 meet:
   title: Meet
   p1: "Who has never been struck by the sudden desire to meet someone new? Enzym’s DNA is a promise to gather users through IRL instant encounters."

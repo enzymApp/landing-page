@@ -4,7 +4,7 @@ import {Form,
         FormFeedback,
         Input,
         Label,
-        Col}          from 'reactstrap'
+        Col, Row}          from 'reactstrap'
 import {withRouter}   from 'react-router'
 import {Experiment,
         Variant,
@@ -58,33 +58,28 @@ class SubscriptionFormContainer extends React.Component {
     if(userPageForm) return <UserPageForm />
     return (
       <div id="top_bloc">
-        <h3 id="accroche" align="center">
-          <Experiment name={this.TEASER_TEST}>
-            <Variant name="FAUX_PROFILS"><T>ABTesting.fakeProfiles.big</T></Variant>
-            <Variant name="JOUE">        <T>ABTesting.play.big</T>        </Variant>
-            <Variant name="JOUER_SEUL">  <T>ABTesting.playAlone.big</T>   </Variant>
-            <Variant name="BAVARDAGES">  <T>ABTesting.cheapChat.big</T>   </Variant>
-            <Variant name="VOL_DONNÉES"> <T>ABTesting.dataStealing.big</T></Variant>
-            <Variant name="JEU_LOCAL">   <T>ABTesting.localGame.big</T>   </Variant>
-          </Experiment>
-        </h3>
-        <h4 id="accrochebis" align="center">
-          <Experiment name={this.TEASER_TEST}>
-            <Variant name="FAUX_PROFILS"><T>ABTesting.fakeProfiles.small</T></Variant>
-            <Variant name="JOUE">        <T>ABTesting.play.small</T>        </Variant>
-            <Variant name="JOUER_SEUL">  <T>ABTesting.playAlone.small</T>   </Variant>
-            <Variant name="BAVARDAGES">  <T>ABTesting.cheapChat.small</T>   </Variant>
-            <Variant name="VOL_DONNÉES"> <T>ABTesting.dataStealing.small</T></Variant>
-            <Variant name="JEU_LOCAL">   <T>ABTesting.localGame.small</T>   </Variant>
-          </Experiment>
-        </h4>
+        <div class="logo">
+          <img src="/images/logo_enzym_white.png" class="responsive-img"/>
+        </div>
+        <p><T>ABTesting.descr.p1</T></p>
+        <p><T>ABTesting.descr.p2</T></p>
+        <hr />
+        <Row>
+          <Col xs="12" md="6" align="center">
+            <a href="#"><img src="/images/available-android.png" class="responsive-img available-support"/></a>
+          </Col>
+          <Col xs="12" md="6" align="center">
+            <a href="#"><img src="/images/available-ios.png" class="responsive-img"/></a>
+          </Col>
+        </Row>
+        <hr />
         {!submitted && !emailLoginAttempt &&
-          <div>
+          <div id="subscribe">
+            <p class="join-us"><T>ABTesting.engageButton.joinUs</T></p>
             <div className="social_logins">
+              <Row>
               {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
-              <a role="button" tabIndex="0" onClick={this.showUserPageForm()}>
-                <T>Common.signup.alreadySubscribed</T>
-              </a>
+              </Row>
             </div>
             <Form onSubmit={this.handleSubmit()}>
               <FormGroup row>
@@ -98,12 +93,15 @@ class SubscriptionFormContainer extends React.Component {
                   <Button type="submit">
                     <Experiment name={this.BUTTON_TEST}>
                       <Variant name="PARTICIPER"><T>ABTesting.engageButton.participate</T></Variant>
-                      <Variant name="REJOINS_NOUS"><T>ABTesting.engageButton.joinUs</T></Variant>
+                      <Variant name="REJOINS_NOUS">Ok</Variant>
                     </Experiment>
                   </Button>
                 </div>
               </FormGroup>
             </Form>
+            <a role="button" tabIndex="0" onClick={this.showUserPageForm()} class="already-subscribed">
+              <T>Common.signup.alreadySubscribed</T>
+            </a>
           </div>
         }
         {(submitted || emailLoginAttempt) &&

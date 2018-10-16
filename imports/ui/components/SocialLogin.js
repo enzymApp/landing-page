@@ -2,6 +2,7 @@ import {Accounts}    from 'meteor/accounts-base'
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 import React         from 'react'
+import {Row, Col} from 'reactstrap'
 
 const LOGIN_SOCIAL_NETWORKS = ['Facebook', 'Google', 'Twitter']
 
@@ -14,9 +15,10 @@ export default withTracker(({name, referrerToken}) => ({
   if(loading) return null
   const classForLoginBtn = `loginBtn loginBtn--${name}`;
   return (
-    <button className={classForLoginBtn} onClick={oauthCall(name, referrerToken)}>
-      Login with {name}
-    </button>
+    <Col xs="4">
+      <button className={classForLoginBtn} onClick={oauthCall(name, referrerToken)}>
+      </button>
+    </Col>
   )
 })
 
