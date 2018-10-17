@@ -6,9 +6,9 @@ import {Referrers} from '/imports/api/referrers/Referrers'
 import T          from './Translator'
 
 const UsersCount = ({count}) => {
-  if(!count) return null
+  //if(!count) return null
   return (
-    <span><T count={count}>Common.usersCount</T></span>
+    <span class="user-count"><T count={count}>307 inscrits</T></span>
   )
 }
 

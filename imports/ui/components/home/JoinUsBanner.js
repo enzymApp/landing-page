@@ -4,7 +4,7 @@ import T      from '../Translator'
 
 export default ({scroll, openChat, text}) => (
   <div className="joinus_banner">
-    <Button onClick={onClick(scroll, openChat)}><T>{text}</T></Button>
+    <a href="mailto:yannick@enzym.io"><Button onClick={onClick(scroll, openChat)}><T>{text}</T></Button></a>
   </div>
 )
 

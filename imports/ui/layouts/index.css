@@ -46,6 +46,12 @@ strong {
   max-width: 100%;
 }
 
+.user-count{
+  margin-right: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+}
 .hamburger img{
   width: 25px !important;
   margin-top: 0px !important;
@@ -53,7 +59,7 @@ strong {
   cursor: pointer;
 
 }
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 991px) {
   .hamburger img{
     display: none;
   }
@@ -73,14 +79,15 @@ strong {
 
 #main #visual h1{
   text-align: center;
-  font-size: 3.4rem;
+  font-size: 3.8rem;
   color:white;
-  text-shadow: 4px 4px 16px rgba(150, 150, 150, 1);
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 }
 #main #visual h3{
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color:white;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 }
 #main #block{
   margin-top: 65px;
@@ -186,6 +193,9 @@ strong {
   letter-spacing: 2px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  background: white;
+  color: #e63b99;
+  border-left: #e63b99 1px solid;
 }
 
 .top_form .purple_buttons:hover {
@@ -1255,7 +1265,7 @@ html {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
   .hide-link{
     display:none;
   }
@@ -1263,7 +1273,7 @@ html {
 .menu-mobile .hide-link{
   display:none;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
   .menu-mobile .hide-link{
     display:block;
   }

@@ -75,7 +75,7 @@ class SubscriptionFormContainer extends React.Component {
         <hr />
         {!submitted && !emailLoginAttempt &&
           <div id="subscribe">
-            <p class="join-us"><T>ABTesting.engageButton.joinUs</T></p>
+            <p class="join-us"><T>ABTesting.descr.p3</T><br /><T>ABTesting.descr.p4</T></p>
             <div className="social_logins">
               <Row>
               {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>

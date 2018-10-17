@@ -57,7 +57,6 @@ export default ({emailLoginAttempt, user, children, referrer}) => (
     <MeetingRow />
     <JoinUsBanner scroll text="Home.buttons.joinUs" />
     <TwoTabsBlock />
-    <GiftsBlock />
     <TableStats />
     <TeamBlock />
     <JoinUsBanner openChat text="Home.buttons.contribute" />
