@@ -111,9 +111,9 @@ class SubscriptionFormContainer extends React.Component {
             <T>Common.signup.emailSent2</T>
             <br/>
             <br/>
-            <br/>
             <div>
               <div><T>Common.tryAgain.notReceived</T></div>
+              <br/>
               <Button type="button" onClick={this.clearLoginAttempt}><T>Common.tryAgain.button</T></Button>
             </div>
           </div>
