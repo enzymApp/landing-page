@@ -116,22 +116,24 @@ strong {
   margin-bottom:5px;
   text-align: center;
 }
-#top_bloc .logo img{
-  max-width: 200px;
-}
-
 #main #block p{
   color:white;
   text-align: center;
   line-height: 1.2;
 }
+#main #block hr{
+  border-top: 5px solid white;
+}
+#top_bloc .logo img{
+  max-width: 200px;
+}
+
+
 .available-support{
   margin-top: 2px;
   margin-bottom: 2px;
 }
-#main #block hr{
-  border-top: 5px solid white;
-}
+
 
 #main .mockup{
   width: 100%;
@@ -352,7 +354,7 @@ strong {
   border-bottom:1px solid #e5c300;
 }
 
-#logo_top{
+#header #logo_top{
   line-height: 40px;
   margin-left:10px;
 }
@@ -375,11 +377,11 @@ strong {
 }
 
 
-#logo_top{
+#header #logo_top{
   height:100%;
 }
 
-#logo_top img {
+#header #logo_top img {
   line-height: 100%;
   margin-top: 11px;
 }
@@ -1277,26 +1279,27 @@ html {
     display:none;
   }
 }
-.menu-mobile .hide-link{
+
+#header .menu-mobile .hide-link{
   display:none;
 }
 @media screen and (max-width: 990px) {
-  .menu-mobile .hide-link{
+  #header .menu-mobile .hide-link{
     display:block;
   }
-  .menu-mobile{
+  #header .menu-mobile{
     background-color: #ffd900;
     padding: 0px 10px;
     border-top: white solid 1px;
   }
-  .menu-mobile a{
+  #header .menu-mobile a{
     display:block;
     font-size: 14px;
     font-weight: bold;
     padding: 5px 0;
     transition: 0.2s;
   }
-  .menu-mobile a:hover{
+  #header .menu-mobile a:hover{
     display:block;
     font-size: 14px;
     font-weight: bold;
@@ -1304,4 +1307,300 @@ html {
     color: #e63b99;
     transition: 0.2s;
   }
+}
+
+/* ICO page */
+
+/* Header */
+
+
+#header-ico {
+  background: #e63b99;
+  height:55px;
+  position: fixed;
+  width:100%;
+  z-index: 99;
+}
+
+#header-ico #logo_top{
+  line-height: 40px;
+  margin-left:10px;
+}
+
+#header-ico .right-side {
+  text-align: right;
+  padding-top: 9px;
+}
+
+#header-ico .right-side a {
+  margin: 6px 10px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+#header-ico .left-side a:hover {
+  color:black;
+  transition: 0.2s;
+}
+
+#header-ico .left-side {
+  text-align: left;
+  padding-top: 5px;
+  display:inline-block;
+}
+
+#header-ico .left-side a {
+  margin: 6px 25px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+#header-ico .left-side a:hover {
+  color:black;
+  transition: 0.2s;
+}
+
+
+
+#header-ico #logo_top{
+  height:100%;
+}
+
+#header-ico #logo_top img {
+  line-height: 100%;
+  margin-top: 4px;
+  margin-right: 15px;
+}
+
+/* Menu mobile */
+
+#header-ico .menu-mobile .hide-link{
+  display:none;
+}
+@media screen and (max-width: 990px) {
+  #header-ico .menu-mobile .hide-link{
+    display:block;
+  }
+  #header-ico .menu-mobile{
+    background-color: #e63b99;
+    padding: 0px 10px;
+    border-top: white solid 1px;
+  }
+  #header-ico .menu-mobile a{
+    display:block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: 0.2s;
+  }
+  #header-ico .menu-mobile a:hover{
+    display:block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    color: black;
+    transition: 0.2s;
+  }
+  #header-ico #logo_top img {
+    margin-top: 9px;
+  }
+}
+
+/* Main */
+
+.background_img_top-ico{
+  background: url('/images/wave_bg.png') no-repeat center;
+  background-attachment: fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  padding-top: 30px;
+  padding-bottom: 55px;
+  min-height: 95vh;
+}
+
+#main-ico{
+  min-height: 95vh;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding-top: 55px;
+}
+
+#main-ico h2{
+  font-size: 48px;
+  text-align:center;
+  color:white;
+  font-weight: bold;
+}
+
+#main-ico h3{
+  font-size: 28px;
+  text-align:center;
+  color:white;
+}
+
+#main-ico #visual{
+  margin-top: 65px;
+  text-align: center;
+}
+
+#main-ico #visual h1{
+  text-align: center;
+  font-size: 3.8rem;
+  color:white;
+}
+#main-ico #visual h3{
+  text-align: center;
+  font-size: 2.2rem;
+  color:white;
+}
+#main-ico #block{
+  margin-top: 22px;
+  border-radius: 10px;
+  padding: 15px;
+  background: #e63b99; /* Old browsers */
+  background: -moz-linear-gradient(top, #e63b99 0%, #bf3173 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e63b99 0%,#bf3173 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e63b99 0%,#bf3173 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e63b99', endColorstr='#bf3173',GradientType=0 ); /* IE6-9 */
+  -webkit-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  -moz-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+}
+@media screen and (max-width: 575px) {
+  #main-ico #block{
+    margin-top: 10px;
+  }
+}
+
+#main-ico #block p{
+  color:white;
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.2;
+}
+#main-ico #block hr{
+  border-top: 5px solid white;
+}
+
+#main-ico .mockup{
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Social Link */
+
+.social_links_ico{
+  position: fixed;
+  top:60px;
+  right:8px;
+  transition: 0.2s;
+  z-index: 9;
+  padding:8px;
+}
+
+.social_links_ico .twitter_icon{
+  background-color: #fff;
+  width:45px;
+  height:45px;
+  border-radius: 50%;
+  border:5px solid #ffd900;
+  transition: 0.4s;
+  -webkit-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  -moz-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+}
+
+.social_links_ico .twitter_icon:hover{
+  background-color: #ffd900;
+}
+
+.social_links_ico .facebook_icon{
+  background-color: #fff;
+  width:45px;
+  height:45px;
+  border-radius: 50%;
+  border:5px solid #e63b99;
+  transition: 0.4s;
+  -webkit-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  -moz-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+}
+
+.social_links_ico .facebook_icon:hover{
+  background-color: #e63b99;
+}
+
+.social_links_ico .telegram_icon{
+  background-color: #fff;
+  width:45px;
+  height:45px;
+  border-radius: 50%;
+  border:5px solid #69ddc8;
+  transition: 0.4s;
+  -webkit-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  -moz-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+}
+
+.social_links_ico .telegram_icon:hover{
+  background-color: #69ddc8;
+}
+
+.social_links_ico .telegram_icon img {
+  margin-right:4px;
+}
+
+.social_links_ico a {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-bottom:10px;
+}
+
+.social_links_ico a img{
+  height: 50%;
+}
+
+.social_links_ico .github_icon{
+  background-color: #fff;
+  width:45px;
+  height:45px;
+  border-radius: 50%;
+  border:5px solid #e63b99;
+  transition: 0.4s;
+  -webkit-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  -moz-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+}
+
+.social_links_ico .github_icon:hover{
+  background-color: #e63b99;
+}
+
+.social_links_ico .bitcoin_icon{
+  background-color: #fff;
+  width:45px;
+  height:45px;
+  border-radius: 50%;
+  border:5px solid #ffd900;
+  transition: 0.4s;
+  -webkit-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  -moz-box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+  box-shadow: 5px 5px 63px -15px rgba(0,0,0,0.59);
+}
+
+.social_links_ico .bitcoin_icon:hover{
+  background-color: #ffd900;
+}
+
+.eth{
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+.center{
+  text-align: center;
 }
