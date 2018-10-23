@@ -20,7 +20,7 @@ class Home extends React.Component {
     const TopComponent = isReferrer(user, referrer) ? TopConnected : TopDisconnected
     return (
       <Base>
-        <TopComponent>
+        <TopComponent isUserPage={true}>
           {!hasAccount(user) &&
             <SubscriptionFormContainer {...{emailLoginAttempt}} />
           }
