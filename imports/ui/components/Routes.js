@@ -3,16 +3,15 @@ import {Route,
         Switch,
         Redirect}            from 'react-router'
 import {BrowserRouter}       from 'react-router-dom'
-import createBrowserHistory  from 'history/createBrowserHistory'
 import {withEmailValidation} from 'meteor/enzymapp:accounts-passwordless'
 
-import HomeContainer        from '/imports/ui/pages/HomeContainer'
+import Home        from '/imports/ui/pages/Home'
 import Privacy            from '/imports/ui/pages/Privacy'
 import TermsAndConditions from '/imports/ui/pages/TermsAndConditions'
 import Logout             from './Logout'
 
 const Loading = () => (
-  <HomeContainer>Validation en cours</HomeContainer>
+  <Home>Validation en cours</Home>
 )
 
 const ValidationComponent = withEmailValidation({
@@ -26,11 +25,11 @@ export default () => (
   <BrowserRouter>
     <div>
       <Switch>
-        <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={HomeContainer}/>
-        <Route exact name="homeWithUsername" path="/page/:username"          component={HomeContainer}/>
+        <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={Home}/>
+        <Route exact name="homeWithUsername" path="/page/:username"          component={Home}/>
         <Route exact name="validation"       path="/validation/:token"       component={ValidationComponent} />
         <Route exact name="logout"           path="/logout"                  component={Logout}/>
-        <Route name="home" path="/" component={HomeContainer}/>
+        <Route name="home" path="/" component={Home}/>
       </Switch>
       <Switch>
         <Route name="privacy" path="/privacy" component={Privacy} />

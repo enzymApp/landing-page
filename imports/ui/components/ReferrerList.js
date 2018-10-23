@@ -1,7 +1,7 @@
 import React from 'react'
 import {Table} from 'reactstrap'
-import SetUsername from './SetUsername'
-import T from './Translator'
+import SetUsername   from './SetUsername'
+import T             from './Translator'
 
 
 export default class ReferrerList extends React.Component {
@@ -40,8 +40,5 @@ export default class ReferrerList extends React.Component {
     const elm = document.getElementById(id)
     if(!elm) return
     elm.scrollIntoView({block: 'center'})
-  }
-  scrollToGifts() {
-    document.getElementsByClassName('recompenses')[0].scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }

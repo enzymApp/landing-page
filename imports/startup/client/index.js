@@ -5,7 +5,7 @@ import React        from 'react'
 import { render }   from 'react-dom'
 import smoothscroll from 'smoothscroll-polyfill'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import AppContainer from '/imports/ui/layouts/AppContainer'
+import App          from '/imports/ui/layouts/App'
 import discordWidget, {changeChannelLang} from '/imports/tools/discordWidget'
 import addReCaptcha  from './addReCaptcha'
 
@@ -20,7 +20,7 @@ i18n.setOptions({
 
 Meteor.startup(() => {
   const config = Meteor.settings.public
-  render(<AppContainer />, document.getElementById('app'))
+  render(<App />, document.getElementById('app'))
   if(config.discord)   discordWidget(window, document)
   if(config.recaptcha) addReCaptcha(window, document, config.recaptcha)
   Accounts.onLogin(() => {
