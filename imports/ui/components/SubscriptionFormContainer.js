@@ -58,24 +58,24 @@ class SubscriptionFormContainer extends React.Component {
     if(userPageForm) return <UserPageForm />
     return (
       <div id="top_bloc">
-        <div class="logo">
-          <img src="/images/logo_enzym_white.png" class="responsive-img"/>
+        <div className="logo">
+          <img src="/images/logo_enzym_white.png" className="responsive-img"/>
         </div>
         <p><T>ABTesting.descr.p1</T></p>
         <p><T>ABTesting.descr.p2</T></p>
         <hr />
         <Row>
           <Col xs="12" md="6" align="center">
-            <a href="#"><img src="/images/available-android.png" class="responsive-img available-support"/></a>
+            <a href="#"><img src="/images/available-android.png" className="responsive-img available-support"/></a>
           </Col>
           <Col xs="12" md="6" align="center">
-            <a href="#"><img src="/images/available-ios.png" class="responsive-img"/></a>
+            <a href="#"><img src="/images/available-ios.png" className="responsive-img"/></a>
           </Col>
         </Row>
         <hr />
         {!submitted && !emailLoginAttempt &&
           <div id="subscribe">
-            <p class="join-us"><T>ABTesting.descr.p3</T><br /><T>ABTesting.descr.p4</T></p>
+            <p className="join-us"><T>ABTesting.descr.p3</T><br /><T>ABTesting.descr.p4</T></p>
             <div className="social_logins">
               <Row>
               {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
@@ -99,7 +99,7 @@ class SubscriptionFormContainer extends React.Component {
                 </div>
               </FormGroup>
             </Form>
-            <a role="button" tabIndex="0" onClick={this.showUserPageForm()} class="already-subscribed">
+            <a role="button" tabIndex="0" onClick={this.showUserPageForm()} className="already-subscribed">
               <T>Common.signup.alreadySubscribed</T>
             </a>
           </div>

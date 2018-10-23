@@ -21,7 +21,7 @@ export default class TwoTabsBlock extends React.Component {
           </Col>
         </Row>
         {visibleTab === 1 && (
-          <div class="tab_ethique">
+          <div className="tab_ethique">
             <Row className="container">
               <Col xs="12" sm="8" >
                 <p><T>Home.ethics.p1</T></p>
@@ -34,7 +34,7 @@ export default class TwoTabsBlock extends React.Component {
           </div>
         )}
         {visibleTab === 2 && (
-          <div class="tab_innovant">
+          <div className="tab_innovant">
             <Row className="container">
               <Col xs="12" sm="4">
                 <img src="/images/picto_innovant.png" />

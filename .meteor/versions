@@ -9,10 +9,10 @@ allow-deny@1.1.0
 amplify@1.0.0
 autoupdate@1.4.0
 babel-compiler@7.0.9
-babel-runtime@1.2.2
+babel-runtime@1.2.7
 base64@1.0.11
 binary-heap@1.0.10
-blaze@2.3.2
+blaze@2.3.3
 blaze-tools@1.0.10
 boilerplate-generator@1.4.0
 caching-compiler@1.1.12
@@ -28,7 +28,7 @@ ddp-server@2.1.2
 deps@1.0.12
 dferber:prerender@2.2.2_3
 diff-sequence@1.1.0
-dynamic-import@0.3.0
+dynamic-import@0.3.1
 ecmascript@0.10.9
 ecmascript-runtime@0.5.0
 ecmascript-runtime-client@0.6.2
@@ -86,7 +86,7 @@ reywood:publish-composite@1.6.0
 routepolicy@1.0.13
 server-render@0.3.1
 service-configuration@1.0.11
-session@1.1.7
+session@1.1.8
 sha@1.0.9
 shell-server@0.3.1
 shim-common@0.1.0

@@ -2,7 +2,6 @@ import React  from 'react'
 import {Link} from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import breaks        from 'remark-breaks'
-import HomeContainer from './HomeContainer'
 import Modal         from '../components/Modal'
 import T             from '../components/Translator'
 

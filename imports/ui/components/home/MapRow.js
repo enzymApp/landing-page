@@ -4,16 +4,16 @@ import T from '../Translator'
 
 
 export default () => (
-  <Row className="meeting_row row_blocks">
+  <Row className="row_blocks">
     <Col xs="6">
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44994.32062218341!2d5.680437272709334!3d45.18416017286712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af48bd689be6f%3A0x618c10cd6e995398!2sGrenoble!5e0!3m2!1sfr!2sfr!4v1539684541777" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      <div className="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44994.32062218341!2d5.680437272709334!3d45.18416017286712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af48bd689be6f%3A0x618c10cd6e995398!2sGrenoble!5e0!3m2!1sfr!2sfr!4v1539684541777" width="100%" height="100%" frameBorder="0" allowFullScreen></iframe>
       </div>
     </Col>
     <Col xs="6">
       <div className="rencontrez text_blocks">
         <h4><T>Home.map.title</T></h4>
-        <div class="events">
+        <div className="events">
           <p>Aux copain d'abord : <i>tous les jeudis 18-20h</i></p>
           <p>Au Monopol : <i>tous les jeudis 18-21h</i></p>
           <p>Au Zanzibar : <i>tous les jeudis 20-23h</i></p>
@@ -36,7 +36,7 @@ export default () => (
             </iframe>
           </div>
         </div>
-        <div class="link-channel">
+        <div className="link-channel">
           <a href="https://www.youtube.com/channel/UChypzko_OZt_Ic6Ke7bNtew">Notre chaîne youtube</a>
         </div>
       </div>

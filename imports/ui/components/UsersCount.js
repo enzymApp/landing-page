@@ -8,7 +8,7 @@ import T          from './Translator'
 const UsersCount = ({count}) => {
   //if(!count) return null
   return (
-    <span class="user-count"><T count={count}>307 inscrits</T></span>
+    <span className="user-count"><T count={count}>307 inscrits</T></span>
   )
 }
 

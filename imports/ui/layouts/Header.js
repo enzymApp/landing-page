@@ -39,7 +39,7 @@ export default class Header extends React.Component {
       <Row id="header">
         <Col xs="6" md="3">
           <div id="logo_top">
-            <span class="hamburger" onClick={()=>this.toggleStatus()}><img src="/images/hamburger.png"/></span>
+            <span className="hamburger" onClick={()=>this.toggleStatus()}><img src="/images/hamburger.png"/></span>
             <img src="/images/logo_enzym_small_white.png" />
           </div>
         </Col>

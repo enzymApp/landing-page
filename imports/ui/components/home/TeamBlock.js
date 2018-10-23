@@ -33,7 +33,7 @@ const orderedSlides = randomlyOrderedSlides(slides)
 
 export default ({text}) => (
   <div className="team">
-    <div class="container">
+    <div className="container">
       <h2><T>Home.team.title</T></h2>
       <Slider {...settings} className="d-none d-md-block">
         {orderedSlides.map(({photoSrc, name, job}) => (
