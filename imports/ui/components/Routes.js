@@ -5,7 +5,8 @@ import {Route,
 import {BrowserRouter}       from 'react-router-dom'
 import {withEmailValidation} from 'meteor/enzymapp:accounts-passwordless'
 
-import Home        from '/imports/ui/pages/Home'
+import IcoPage            from '/imports/ui/pages/IcoPage'
+import Home               from '/imports/ui/pages/Home'
 import Privacy            from '/imports/ui/pages/Privacy'
 import TermsAndConditions from '/imports/ui/pages/TermsAndConditions'
 import Logout             from './Logout'
@@ -25,6 +26,7 @@ export default () => (
   <BrowserRouter>
     <div>
       <Switch>
+        <Route name="ico" path="/ico" component={IcoPage}/>
         <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={Home}/>
         <Route exact name="homeWithUsername" path="/page/:username"          component={Home}/>
         <Route exact name="validation"       path="/validation/:token"       component={ValidationComponent} />
