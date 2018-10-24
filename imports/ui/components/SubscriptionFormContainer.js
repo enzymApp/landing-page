@@ -61,21 +61,28 @@ class SubscriptionFormContainer extends React.Component {
         <div className="logo">
           <img src="/images/logo_enzym_white.png" className="responsive-img"/>
         </div>
-        <p><T>ABTesting.descr.p1</T></p>
-        <p><T>ABTesting.descr.p2</T></p>
+        <p><T>Home.descr.p1</T></p>
+        <p><T>Home.descr.p2</T></p>
         <hr />
         <Row>
           <Col xs="12" md="6" align="center">
-            <a href="#"><img src="/images/available-android.png" className="responsive-img available-support"/></a>
+            <a href="https://play.google.com/store/apps/details?id=com.enzym_proto" target="_blank">
+              <img src="/images/available-android.png" className="responsive-img available-support"/>
+            </a>
           </Col>
           <Col xs="12" md="6" align="center">
-            <a href="#"><img src="/images/available-ios.png" className="responsive-img"/></a>
+            <a href="https://itunes.apple.com/app/id1437880226" target="_blank">
+              <img src="/images/available-ios.png" className="responsive-img"/>
+            </a>
           </Col>
         </Row>
         <hr />
         {!submitted && !emailLoginAttempt &&
           <div id="subscribe">
-            <p className="join-us"><T>ABTesting.descr.p3</T><br /><T>ABTesting.descr.p4</T></p>
+            <p className="join-us">
+              <T>Home.descr.p3</T><br />
+              <T>Home.descr.p4</T>
+            </p>
             <div className="social_logins">
               <Row>
               {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
@@ -86,16 +93,11 @@ class SubscriptionFormContainer extends React.Component {
                 <div className="top_form">
                   <Input
                     type="email"
-                    placeholder="Email"
+                    placeholder="E-mail"
                     onChange={this.handleChange('email')}
                   />
                   <FormFeedback><T>Common.signup.incorrectEmailAdress</T></FormFeedback>
-                  <Button type="submit">
-                    <Experiment name={this.BUTTON_TEST}>
-                      <Variant name="PARTICIPER"><T>ABTesting.engageButton.participate</T></Variant>
-                      <Variant name="REJOINS_NOUS">Ok</Variant>
-                    </Experiment>
-                  </Button>
+                  <Button type="submit">Ok</Button>
                 </div>
               </FormGroup>
             </Form>

@@ -1,12 +1,5 @@
 _namespace: Home
 
-menu:
-  place: Les lieux
-  concept: Le concept
-  partner : Nos partenaires
-  pro : Nos offres pro
-  contact: Contact
-
 videoTitle: Nous avons testé le prototype dans un bar !
 textPresentation: Enzym est le premier jeu mobile gratuit à mettre le virtuel au service du réel !
 textPresentationBis: Le joueur répond à des défis qui le conduisent dans des endroits insolites et à faire la rencontre d'autres joueurs. Le prototype est disponible !
@@ -17,6 +10,17 @@ contesttitle: Les meilleurs du classement... pour le moment !
 buttons:
   joinUs: Rejoignez-nous !
   contribute: Envie de devenir notre Ambassadeur ?
+
+intro:
+  big:   Le jeu grandeur nature
+  big2: qui te fait rencontrer du monde
+  small: Fait par des Humains pour plus d’interactions Humaines
+
+descr:
+  p1: Enzym t'envoie des missions pour récolter des ZYMs (carburant) sur d'autres téléphones
+  p2: C'est un jeu sécurisé et totalement gratuit !
+  p3: Intéressé(e) ?
+  p4 : Alors inscris-toi et partage !
 
 map:
   title: Nos évènements sur Lyon, Grenoble

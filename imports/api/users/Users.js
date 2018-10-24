@@ -16,7 +16,7 @@ Meteor.users.schema = new SimpleSchema({
   username:          { type: String, optional: true },
   blockedUsers:      { type: Array,  defaultValue: [] },
   'blockedUsers.$':  { type: String, regEx: SimpleSchema.RegEx.Id },
-  emails:            { type: Array,  optional: true },
+  emails:            { type: Array,  defaultValue: [] },
   "emails.$": { type: Object },
   "emails.$.address": { type: String, regEx: SimpleSchema.RegEx.Email },
   "emails.$.verified": { type: Boolean },

@@ -5,6 +5,16 @@ submit:  Valider
 
 usersCount: "{$count} inscrits"
 
+menu:
+  places:   Les lieux
+  concept:  Le concept
+  partners: Nos partenaires
+  pro:      Nos offres pro
+  contact:  Contact
+
+menuUrls:
+  concept: The+ENZYM+Concept.pdf
+
 signup:
   loggedInWithEmail: Tu es inscrit avec l'adresse {$email}.
   alreadySubscribed: Déjà inscrit ?
@@ -25,6 +35,3 @@ footer:
 
 referrer:
   shareLink: Partage ton intérêt grâce au lien ci-dessous ou sur les réseaux sociaux, et gagne des cadeaux !
-
-menu:
-  concept: The+ENZYM+Concept.pdf

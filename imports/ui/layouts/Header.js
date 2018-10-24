@@ -20,11 +20,11 @@ export default class Header extends React.Component {
   }
   render() {
     const translatedLinks = [
-      {name: 'Les lieux',  href: '#events'},
-      {name: 'Le concept', target: '_blank', href: FILES_URL + i18n.__('Common.menu.concept')},
+      {name: 'Common.menu.places',  href: '#events'},
+      {name: 'Common.menu.concept', target: '_blank', href: FILES_URL + i18n.__('Common.menuUrls.concept')},
       // {href: '/partenaires.pdf', name: 'Nos partenaires'},
       // {href: '/pro.pdf',         name: 'Nos offres pro'},
-      {name: 'Contact',    href: 'mailto:yannick@enzym.io'},
+      {name: 'Common.menu.contact',    href: 'mailto:yannick@enzym.io'},
     ]
     return (
       <Row id="header">

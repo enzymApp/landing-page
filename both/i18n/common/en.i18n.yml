@@ -3,7 +3,16 @@ _namespace: Common
 loading: Loading...
 submit:  Submit
 
-usersCount: "{$count} registered users"
+usersCount: "{$count} users"
+
+menu:
+  places:   Places
+  concept:  The concept
+  partners: Partners
+  contact:  Contact
+
+menuUrls:
+  concept: Le+concept+ENZYM.pdf
 
 signup:
   loggedInWithEmail: You are registered with the address {$email}
@@ -25,6 +34,3 @@ footer:
 
 referrer:
   shareLink: Share your interest through the link below or on social networks, and win rewards!
-
-menu:
-  concept: Le+concept+ENZYM.pdf
