@@ -14,9 +14,9 @@ class MapView extends React.Component {
     viewport: {
       width:     '100%',
       height:    '100%',
-      latitude:  45.725,
+      latitude:  44.725,
       longitude: 2.373,
-      zoom:      4.5
+      zoom:      4
     }
   }
   render() {
