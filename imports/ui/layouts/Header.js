@@ -1,40 +1,31 @@
+import i18n       from 'meteor/universe:i18n'
 import React      from 'react'
 import {Row, Col} from 'reactstrap'
 
 import LanguageFlag from '../components/LanguageFlag'
+import MenuItem     from '../components/MenuItem'
 import UsersCount   from '../components/UsersCount'
-import Menu from '../components/Menu'
 
 const LANGS = [
   {langCode: 'fr', imgSrc: '/images/picto_french.png'},
   {langCode: 'en', imgSrc: '/images/picto_english.png'},
 ]
-
-const LINKS = [
-  {link: '/lieux.pdf', name: 'Les lieux'},
-  {link: '/concept.pdf', name: 'Le concept'},
-  {link: '/partenaires.pdf', name: 'Nos partenaires'},
-  {link: '/pro.pdf', name: 'Nos offres pro'},
-  {link: '/contact', name: 'Contact'},
-
-]
+const FILES_URL = 'https://s3-eu-west-1.amazonaws.com/files.enzym.io/'
 
 export default class Header extends React.Component {
-  constructor(){
-    super();
-    this.state ={
-      status:false
-    }
-  }
-
+  state = { status: false }
   toggleStatus(){
-    this.setState({
-      status:!this.state.status
-    });
-    console.log('toggle button handler: '+ this.state.status);
+    this.setState({ status: !this.state.status })
+    console.log('toggle button handler: '+ this.state.status)
   }
-
   render() {
+    const translatedLinks = [
+      {name: 'Les lieux',  href: '#events'},
+      {name: 'Le concept', target: '_blank', href: FILES_URL + i18n.__('Common.menu.concept')},
+      // {href: '/partenaires.pdf', name: 'Nos partenaires'},
+      // {href: '/pro.pdf',         name: 'Nos offres pro'},
+      {name: 'Contact',    href: 'mailto:yannick@enzym.io'},
+    ]
     return (
       <Row id="header">
         <Col xs="6" md="3">
@@ -44,24 +35,23 @@ export default class Header extends React.Component {
           </div>
         </Col>
         <Col xs="6" md="9" className="right-side">
-          {LINKS.map(({link, name}) => (
-            <Menu {...{link, name}} key={link}></Menu>
-          ))}
+          {this.renderMenu(translatedLinks)}
           {LANGS.map(({langCode, imgSrc}) => (
             <LanguageFlag {...{langCode, imgSrc}} key={langCode} />
           ))}
           <UsersCount />
         </Col>
-        {this.state.status ?
+        {this.state.status && (
           <Col xs="12" className="menu-mobile">
-            {LINKS.map(({link, name}) => (
-              <Menu {...{link, name}} key={name}></Menu>
-            ))}
+            {this.renderMenu(translatedLinks)}
           </Col>
-          :
-        null}
-
+        )}
       </Row>
     )
+  }
+  renderMenu = (translatedLinks) => {
+    return translatedLinks.map((link) => (
+      <MenuItem {...link} key={link.name}></MenuItem>
+    ))
   }
 }
