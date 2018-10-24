@@ -13,9 +13,9 @@ export default function MapRow() {
       <Col xs="6">
         <a name="events"> </a>
         <div className="rencontrez text_blocks">
-          <h4><T>Home.map.title</T></h4>
+          <h4><T>Home.events.title</T></h4>
           <div className="events">
-            <p>Aux copain d'abord (Grenoble) : <i>tous les jeudis 18-20h</i></p>
+            <p><T>Home.events.event1.text</T><i><T>Home.events.event1.time</T></i></p>
           </div>
           <div className="videoContainer">
             <div className="videoWrapper">
@@ -31,7 +31,7 @@ export default function MapRow() {
             </div>
           </div>
           <div className="link-channel">
-            <a href="https://www.youtube.com/channel/UChypzko_OZt_Ic6Ke7bNtew">Notre chaîne youtube</a>
+            <a href="https://www.youtube.com/channel/UChypzko_OZt_Ic6Ke7bNtew"><T>Home.events.youtube</T></a>
           </div>
         </div>
       </Col>

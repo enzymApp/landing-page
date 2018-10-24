@@ -23,12 +23,13 @@ import Header         from '../layouts/Header'
 export default function Base({children}) {
   return (
     <div>
+      <a name="top"> </a>
       <Header />
       {children}
       <MapRow />
       <GamingRow />
       <MeetingRow />
-      <JoinUsBanner scroll text="Home.buttons.joinUs" />
+      <JoinUsBanner scroll="#top" text="Home.buttons.joinUs" />
       <TwoTabsBlock />
       <TableStats />
       <TeamBlock />

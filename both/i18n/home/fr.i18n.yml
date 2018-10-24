@@ -22,8 +22,12 @@ descr:
   p3: Intéressé(e) ?
   p4 : Alors inscris-toi et partage !
 
-map:
+events:
   title: Nos évènements sur Lyon, Grenoble
+  youtube: Notre chaîne Youtube
+  event1:
+    text: "Aux copains d'abord (Grenoble) : "
+    time: "tous les jeudis 18-20h"
 
 meet:
   title: Rencontrez

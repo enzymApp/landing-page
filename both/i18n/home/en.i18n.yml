@@ -22,8 +22,12 @@ buttons:
   joinUs: Join us!
   contribute: Want to contribute to the project?
 
-map:
-  title: Nos évènements sur Lyon, Grenoble
+events:
+  title: Our events in Lyon and Grenoble
+  youtube: Enzym Youtube channel
+  event1:
+    text: "At Les copains d'abord (Grenoble): "
+    time: "every Thursday at 6-8pm"
 
 meet:
   title: Meet
