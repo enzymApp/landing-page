@@ -6,7 +6,7 @@ const UserProfile = new SimpleSchema({
   contest:       { type: Boolean,    optional: true },
   country:       { type: String,     optional: true },
   geoloc:        { type: String,     optional: true },
-  lang :         { type: String,     optional: true },
+  lang:          { type: String,     optional: true },
   referrerToken: { type: String,     optional: true },
   region:        { type: String,     optional: true },
   technical:     { type: Boolean,    optional: true },

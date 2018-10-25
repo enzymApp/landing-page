@@ -19,6 +19,12 @@ class MapView extends React.Component {
       zoom:      3.8
     }
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextProps.ready !== this.props.ready || nextProps.users.length !== this.props.users.length)
+      return true
+    if(JSON.stringify(nextState) !== JSON.stringify(this.state)) return true
+    return false
+  }
   render() {
     const { users } = this.props
     console.log(users)
@@ -31,17 +37,19 @@ class MapView extends React.Component {
           center={[longitude, latitude]}
           zoom={[zoom]}
         >
-          <Cluster ClusterMarkerFactory={this.clusterMarker}>
-            {users.map(u => this.getLocation(u))
-              .filter(l => !!l)
-              .map((location, idx) => (
-              <Marker
-                key={idx}
-                coordinates={location}
-              >
-              </Marker>
-            ))}
-          </Cluster>
+          {ready && (
+            <Cluster ClusterMarkerFactory={this.clusterMarker}>
+              {users.map(u => this.getLocation(u))
+                .filter(l => !!l)
+                .map((location, idx) => (
+                  <Marker
+                    key={idx}
+                    coordinates={location}
+                  >
+                  </Marker>
+              ))}
+            </Cluster>
+          )}
         </Map>
       </div>
     )
@@ -62,8 +70,9 @@ class MapView extends React.Component {
   }
 }
 export default withTracker(() => {
-  Meteor.subscribe('users.locations')
+  const handler = Meteor.subscribe('users.locations')
   return {
+    ready: handler.ready(),
     users: Meteor.users.find().fetch()
   }
 })(MapView)
