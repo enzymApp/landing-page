@@ -13,7 +13,7 @@ menu:
   contact:  Contact
 
 menuUrls:
-  concept: The+ENZYM+Concept.pdf
+  concept: Le+concept+ENZYM.pdf
 
 signup:
   loggedInWithEmail: Tu es inscrit avec l'adresse {$email}.
