@@ -39,6 +39,7 @@ Meteor.publishComposite('referrers.one', function(username) {
 })
 
 Meteor.publishComposite('referrers.list', function(minCount, minRank, maxRank) {
+  this.unblock()
   return {
     find() {
       return Referrers.paginatedListCentered(minCount, minRank, maxRank)
