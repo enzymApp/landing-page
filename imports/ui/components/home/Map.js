@@ -20,14 +20,14 @@ class MapView extends React.Component {
     }
   }
   shouldComponentUpdate(nextProps, nextState) {
-    if(nextProps.ready !== this.props.ready || nextProps.users.length !== this.props.users.length)
-      return true
+    if(nextProps.ready !== this.props.ready) return true
+    if(nextProps.ready && nextProps.users.length !== this.props.users.length) return true
     if(JSON.stringify(nextState) !== JSON.stringify(this.state)) return true
     return false
   }
   render() {
-    const { users } = this.props
-    console.log(users)
+    const { ready, users } = this.props
+    console.log(ready, users.length)
     const { latitude, longitude, height, width, zoom } = this.state.viewport
     return (
       <div className="map-container">

@@ -29,11 +29,11 @@ export default function Base({children}) {
       <MapRow />
       <GamingRow />
       <MeetingRow />
-      <JoinUsBanner scroll="#top" text="Home.buttons.joinUs" />
+      <JoinUsBanner href="#top" text="Home.buttons.joinUs" />
       <TwoTabsBlock />
       <TableStats />
       <TeamBlock />
-      <JoinUsBanner openChat text="Home.buttons.contribute" />
+      <JoinUsBanner href="mailto:yannick@enzym.io" text="Home.buttons.contribute" />
       <Footer />
       <div className="social_links" align="right">
         <SocialLink name="facebook" />

@@ -12,7 +12,7 @@ menu:
   contact:  Contact
 
 menuUrls:
-  concept: Le+concept+ENZYM.pdf
+  concept: The+ENZYM+Concept.pdf
 
 signup:
   loggedInWithEmail: You are registered with the address {$email}

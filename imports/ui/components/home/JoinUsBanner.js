@@ -2,9 +2,9 @@ import React from 'react'
 import Button from '../Button'
 import T      from '../Translator'
 
-export default ({scroll, openChat, text}) => (
+export default ({href, openChat, text}) => (
   <div className="joinus_banner">
-    <a href={scroll}><Button onClick={onClick(openChat)}><T>{text}</T></Button></a>
+    <a href={href}><Button onClick={onClick(openChat)}><T>{text}</T></Button></a>
   </div>
 )
 
