@@ -7,12 +7,27 @@ textPresentationBisBis: Click on the logo above to download it.
 
 contesttitle: Best of the contest... for now!
 
+intro:
+  big:   The first real-life mobile game
+  big2:  encouraging social networking
+  small: Made by Humans to increase Human interactions
+
+descr:
+  p1: Enzym sends missions to you to collect ZYMs (the app "fuel") on other smartphones
+  p2: It is safe and free!
+  p3: Interested?
+  p4 : Register and share!
+
 buttons:
   joinUs: Join us!
   contribute: Want to contribute to the project?
 
-map:
-  title: Nos évènements sur Lyon, Grenoble
+events:
+  title: Our events in Lyon and Grenoble
+  youtube: Enzym Youtube channel
+  event1:
+    text: "At Les copains d'abord (Grenoble): "
+    time: "every Thursday at 6-8pm"
 
 meet:
   title: Meet

@@ -23,16 +23,17 @@ import Header         from '../layouts/Header'
 export default function Base({children}) {
   return (
     <div>
+      <a name="top"> </a>
       <Header />
       {children}
       <MapRow />
       <GamingRow />
       <MeetingRow />
-      <JoinUsBanner scroll text="Home.buttons.joinUs" />
+      <JoinUsBanner href="#top" text="Home.buttons.joinUs" />
       <TwoTabsBlock />
       <TableStats />
       <TeamBlock />
-      <JoinUsBanner openChat text="Home.buttons.contribute" />
+      <JoinUsBanner href="mailto:yannick@enzym.io" text="Home.buttons.contribute" />
       <Footer />
       <div className="social_links" align="right">
         <SocialLink name="facebook" />
