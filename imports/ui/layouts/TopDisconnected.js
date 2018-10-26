@@ -9,9 +9,9 @@ export default function Main({children}) {
         <Col xs="12" sm="6" md="8">
           <div id="visual">
             <h1>
-              <T>ABTesting.intro.big</T><br/><T>ABTesting.intro.big2</T>
+              <T>Home.intro.big</T><br/><T>Home.intro.big2</T>
             </h1>
-            <h3><T>ABTesting.intro.small</T></h3>
+            <h3><T>Home.intro.small</T></h3>
             <img src="/images/application-enzym.png" className="mockup"/>
           </div>
         </Col>
