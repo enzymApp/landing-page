@@ -22,7 +22,6 @@ session@1.1.7
 accounts-base@1.4.2
 mdg:validated-method
 u2622:persistent-session
-okgrow:analytics
 mdg:seo
 reywood:publish-composite
 aldeed:collection2@3.0.0
