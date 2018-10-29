@@ -1,12 +1,8 @@
 import React          from 'react'
 import {Form,
         FormGroup,
-        FormFeedback,
-        Input,
-        Label,
-        Col}          from 'reactstrap'
+        Input}        from 'reactstrap'
 import {Redirect}     from 'react-router-dom'
-import {analytics}    from 'meteor/okgrow:analytics'
 import Button         from './Button'
 import T              from './Translator'
 
