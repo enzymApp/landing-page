@@ -30,11 +30,11 @@ export default class UserPageForm extends React.Component {
                   type="text"
                   placeholder="Pseudo"
                   onChange={this.handleChange('username')}
-                  autoFocus={true}
+                  autoFocus
                 />
                 <Button type="submit"><T>Ok</T></Button>
-                </div>
-              </FormGroup>
+              </div>
+            </FormGroup>
           </Form>
         }
       </div>

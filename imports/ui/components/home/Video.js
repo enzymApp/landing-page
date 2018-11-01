@@ -13,8 +13,7 @@ export default () => (
             src="https://www.youtube.com/embed/CUIr7w3d2Gs"
             frameBorder="0"
             allow="autoplay; encrypted-media"
-            allowFullScreen>
-          </iframe>
+            allowFullScreen />
         </div>
       </div>
   </div>

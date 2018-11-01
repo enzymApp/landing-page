@@ -13,8 +13,7 @@ const IsLoggedIn = ({userId}) => {
   )
 }
 
-
-export default IsLoggedInContainer = withTracker(() => {
+export default withTracker(() => {
   const userId = Meteor.userId()
   return {
     userId

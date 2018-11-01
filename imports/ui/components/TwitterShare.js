@@ -5,7 +5,8 @@ export default ({referrerUrl}) => (
   <TwitterShareButton
     url={referrerUrl}
     quote="enzym"
-    className="network__share-button">
-      <img src="/images/logo_twitter_share.png" />
+    className="network__share-button"
+  >
+    <img src="/images/logo_twitter_share.png" />
   </TwitterShareButton>
 )

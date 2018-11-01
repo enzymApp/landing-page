@@ -1,6 +1,5 @@
 import React         from 'react'
-import {Button,
-        Modal,
+import {Modal,
         ModalHeader,
         ModalBody,
         ModalFooter} from 'reactstrap'
@@ -12,11 +11,8 @@ const MyModal = ({children, history, title, outRoute}) => {
   return (
     <Modal isOpen={!!title} toggle={toggle}>
       <ModalHeader>{title}</ModalHeader>
-      <ModalBody>
-        {children}
-      </ModalBody>
-      <ModalFooter>
-      </ModalFooter>
+      <ModalBody>{children}</ModalBody>
+      <ModalFooter />
     </Modal>
   )
 }

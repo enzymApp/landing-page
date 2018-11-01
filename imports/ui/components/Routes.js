@@ -15,20 +15,20 @@ const Loading = () => (
 )
 
 const ValidationComponent = withEmailValidation({
-    SuccessComponent: () => <Redirect to="/" />,
-    FailureComponent: () => <div>Failure!</div>,
-    routerPropsToCode: ({match: {params: {token}}}) => token,
-    Loading,
-  })
+  SuccessComponent: () => <Redirect to="/" />,
+  FailureComponent: () => <div>Failure!</div>,
+  routerPropsToCode: ({match: {params: {token}}}) => token,
+  Loading,
+})
 
 export default () => (
   <BrowserRouter>
     <div>
       <Switch>
-        <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={Home}/>
-        <Route exact name="homeWithUsername" path="/page/:username"          component={Home}/>
+        <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={Home} />
+        <Route exact name="homeWithUsername" path="/page/:username"          component={Home} />
         <Route exact name="validation"       path="/validation/:token"       component={ValidationComponent} />
-        <Route exact name="logout"           path="/logout"                  component={Logout}/>
+        <Route exact name="logout"           path="/logout"                  component={Logout} />
         <Route name="home" path="/" component={Home}/>
       </Switch>
       <Switch>
@@ -37,4 +37,4 @@ export default () => (
       </Switch>
     </div>
   </BrowserRouter>
-);
+)

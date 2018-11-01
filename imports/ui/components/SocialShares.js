@@ -4,12 +4,12 @@ import TelegramShare             from '/imports/ui/components/TelegramShare'
 import TwitterShare              from '/imports/ui/components/TwitterShare'
 
 export default ({referrer}) => {
-	const referrerUrl = referrer.getUrl()
+  const referrerUrl = referrer.getUrl()
   return (
-      <div className="social_shares">
-        <FacebookShare referrerUrl={referrerUrl} />
-        <TwitterShare referrerUrl={referrerUrl} />
-        <TelegramShare referrerUrl={referrerUrl} />
-      </div>
+    <div className="social_shares">
+      <FacebookShare referrerUrl={referrerUrl} />
+      <TwitterShare referrerUrl={referrerUrl} />
+      <TelegramShare referrerUrl={referrerUrl} />
+    </div>
   )
 }

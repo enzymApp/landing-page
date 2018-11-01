@@ -21,11 +21,11 @@ export default class ReferrerList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {list.map(({_id, userId, username, rank, referralCount}) => (
+          {list.map(({_id, username, rank, referralCount}) => (
             <tr key={_id} className={_id === centerId ? "centered-user" : ""} id={_id}>
               <td>{rank}</td>
               <td>
-                {username || _id === centerId && <SetUsername /> || <T>Referrer.username</T>}
+                {username || _id === centerId && <SetUsername /> || <T>Referrer.username</T>}
               </td>
               <td>{referralCount}</td>
             </tr>

@@ -1,4 +1,5 @@
 import React          from 'react'
+import {Meteor}      from 'meteor/meteor'
 import {Form,
         FormGroup,
         FormFeedback,
@@ -52,7 +53,7 @@ class SubscriptionFormContainer extends React.Component {
           </Col>
         </Row>
         <hr />
-        {!submitted && !emailLoginAttempt &&
+        {!submitted && !emailLoginAttempt && (
           <div id="subscribe">
             <p className="join-us">
               <T>Home.descr.p3</T><br />
@@ -60,7 +61,7 @@ class SubscriptionFormContainer extends React.Component {
             </p>
             <div className="social_logins">
               <Row>
-              {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
+                {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
               </Row>
             </div>
             <Form onSubmit={this.handleSubmit()}>
@@ -80,21 +81,21 @@ class SubscriptionFormContainer extends React.Component {
               <T>Common.signup.alreadySubscribed</T>
             </a>
           </div>
-        }
-        {(submitted || emailLoginAttempt) &&
+        )}
+        {(submitted || emailLoginAttempt) && (
           <div className="texte_valider_email">
             <T>Common.signup.emailSent1</T>
             <div><strong>{this.state.email || emailLoginAttempt}</strong></div>
             <T>Common.signup.emailSent2</T>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div>
               <div><T>Common.tryAgain.notReceived</T></div>
-              <br/>
+              <br />
               <Button type="button" onClick={this.clearLoginAttempt}><T>Common.tryAgain.button</T></Button>
             </div>
           </div>
-        }
+        )}
       </div>
     )
   }
@@ -107,9 +108,9 @@ class SubscriptionFormContainer extends React.Component {
     window.grecaptcha.ready(() => {
       this.recaptchaReady = true
       window.grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
-      .then((token) => {
-        this.recaptchaToken = token
-      })
+        .then((token) => {
+          this.recaptchaToken = token
+        })
     })
   }
   showUserPageForm = () => () => {

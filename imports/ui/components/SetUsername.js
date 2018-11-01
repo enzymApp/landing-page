@@ -2,12 +2,9 @@ import {Meteor}       from 'meteor/meteor'
 import React          from 'react'
 import {Form,
         FormGroup,
-        FormFeedback,
         Input,
-        Button,
-        Label,
-        Col}          from 'reactstrap'
-import T from './Translator'
+        Button}       from 'reactstrap'
+import T              from './Translator'
 
 
 export default class SetUsername extends React.Component {
@@ -25,7 +22,7 @@ export default class SetUsername extends React.Component {
               id="username"
               placeholder="Pseudo"
               onChange={this.handleChange('username')}
-              autoFocus={true}
+              autoFocus
             />
           </FormGroup>
           <Button type="submit" disabled={!this.hasUsername()}>

@@ -41,13 +41,13 @@ class MapView extends React.Component {
             <Cluster ClusterMarkerFactory={this.clusterMarker}>
               {users.map(u => this.getLocation(u))
                 .filter(l => !!l)
-                .map((location, idx) => (
+                .map((location) => (
                   <Marker
-                    key={idx}
+                    key={JSON.stringify(location)}
                     coordinates={location}
-                  >
-                  </Marker>
-              ))}
+                  />
+                ))
+              }
             </Cluster>
           )}
         </Map>
