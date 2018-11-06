@@ -28,6 +28,9 @@ events:
   event1:
     text: "Aux copains d'abord (Grenoble) : "
     time: "tous les jeudis 18-20h"
+  event2:
+    text: "Au Patchwork café (Lyon) : "
+    time: "tous les samedis 18-20h"
 
 meet:
   title: Rencontrez
