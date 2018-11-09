@@ -16,6 +16,7 @@ export default function MapRow() {
           <h4><T>Home.events.title</T></h4>
           <div className="events">
             <p><T>Home.events.event1.text</T><i><T>Home.events.event1.time</T></i></p>
+            <p><T>Home.events.event2.text</T><i><T>Home.events.event2.time</T></i></p>
           </div>
           <div className="videoContainer">
             <div className="videoWrapper">
