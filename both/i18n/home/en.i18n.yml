@@ -28,6 +28,9 @@ events:
   event1:
     text: "At Les copains d'abord (Grenoble): "
     time: "every Thursday at 6-8pm"
+  event2:
+    text: "At Patchwork café (Lyon): "
+    time: "every Saturday at 6-8pm"
 
 meet:
   title: Meet

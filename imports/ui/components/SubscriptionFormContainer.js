@@ -1,16 +1,12 @@
 import React          from 'react'
+import {Meteor}      from 'meteor/meteor'
 import {Form,
         FormGroup,
         FormFeedback,
         Input,
-        Label,
-        Col, Row}          from 'reactstrap'
+        Col, Row}     from 'reactstrap'
 import {withRouter}   from 'react-router'
-import {Experiment,
-        Variant,
-        emitter}      from '@enzymapp/react-ab-test'
 import {Accounts}     from 'meteor/accounts-base'
-import {analytics}    from 'meteor/okgrow:analytics'
 import i18n           from 'meteor/universe:i18n'
 import Button         from './Button'
 import UserPageForm   from './UserPageForm'
@@ -19,7 +15,6 @@ import T              from './Translator'
 
 const HOME_SOCIAL_LOGIN = ['Facebook', 'Google', 'Twitter']
 const RECAPTCHA_KEY = Meteor.settings.public.recaptchaKey
-const ABTestingIndex = 2
 
 class SubscriptionFormContainer extends React.Component {
   constructor(props) {
@@ -28,28 +23,9 @@ class SubscriptionFormContainer extends React.Component {
       submitted:  false,
       email:      '',
     }
-    this.LANG = i18n.getLocale()
-    this.BUTTON_TEST = `${this.LANG}-mainButton-${ABTestingIndex}`
-    this.TEASER_TEST = `${this.LANG}-teaser-${ABTestingIndex}`
-    emitter.defineVariants(this.BUTTON_TEST, ['PARTICIPER', 'REJOINS_NOUS'])
-    emitter.defineVariants(this.TEASER_TEST, ['FAUX_PROFILS', 'JOUE', 'JOUER_SEUL', 'BAVARDAGES', 'VOL_DONNÉES', 'JEU_LOCAL'])
   }
   componentWillMount() {
     this.loadCaptchaReady()
-    emitter.addPlayListener((experimentName, variantName) => {
-      analytics.track(experimentName, {
-        category: 'AB testing',
-        label:    variantName,
-        value:    1,
-      })
-    })
-    emitter.addWinListener((experimentName, variantName) => {
-      analytics.track(`${experimentName}-win`, {
-        category: 'AB testing',
-        label:    variantName,
-        value:    1,
-      })
-    })
   }
   render() {
     const {emailLoginAttempt} = this.props
@@ -77,7 +53,7 @@ class SubscriptionFormContainer extends React.Component {
           </Col>
         </Row>
         <hr />
-        {!submitted && !emailLoginAttempt &&
+        {!submitted && !emailLoginAttempt && (
           <div id="subscribe">
             <p className="join-us">
               <T>Home.descr.p3</T><br />
@@ -85,7 +61,7 @@ class SubscriptionFormContainer extends React.Component {
             </p>
             <div className="social_logins">
               <Row>
-              {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
+                {HOME_SOCIAL_LOGIN.map(name => <SocialLogin {...{name, referrerToken}} key={name} />)}<br/>
               </Row>
             </div>
             <Form onSubmit={this.handleSubmit()}>
@@ -105,21 +81,21 @@ class SubscriptionFormContainer extends React.Component {
               <T>Common.signup.alreadySubscribed</T>
             </a>
           </div>
-        }
-        {(submitted || emailLoginAttempt) &&
+        )}
+        {(submitted || emailLoginAttempt) && (
           <div className="texte_valider_email">
             <T>Common.signup.emailSent1</T>
             <div><strong>{this.state.email || emailLoginAttempt}</strong></div>
             <T>Common.signup.emailSent2</T>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <div>
               <div><T>Common.tryAgain.notReceived</T></div>
-              <br/>
+              <br />
               <Button type="button" onClick={this.clearLoginAttempt}><T>Common.tryAgain.button</T></Button>
             </div>
           </div>
-        }
+        )}
       </div>
     )
   }
@@ -129,12 +105,12 @@ class SubscriptionFormContainer extends React.Component {
   loadCaptchaReady() {
     if(!window.grecaptcha) return
     if(this.recaptchaReady) return
-    grecaptcha.ready(() => {
+    window.grecaptcha.ready(() => {
       this.recaptchaReady = true
-      grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
-      .then((token) => {
-        this.recaptchaToken = token
-      })
+      window.grecaptcha.execute(RECAPTCHA_KEY, {action: 'signUp'})
+        .then((token) => {
+          this.recaptchaToken = token
+        })
     })
   }
   showUserPageForm = () => () => {
@@ -146,8 +122,6 @@ class SubscriptionFormContainer extends React.Component {
   }
   handleSubmit = () => async (e) => {
     e.preventDefault()
-    emitter.emitWin(this.BUTTON_TEST)
-    emitter.emitWin(this.TEASER_TEST)
     const {email} = this.state
     const {referrerToken} = this.props.match.params
     const profile = {

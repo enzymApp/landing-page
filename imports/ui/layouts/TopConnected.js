@@ -1,6 +1,5 @@
 import React from 'react'
 import {Row, Col} from 'reactstrap'
-import T              from '../components/Translator'
 
 export default function Main({children, isUserPage}) {
   return (

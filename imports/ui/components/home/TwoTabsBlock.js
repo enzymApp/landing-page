@@ -23,7 +23,7 @@ export default class TwoTabsBlock extends React.Component {
         {visibleTab === 1 && (
           <div className="tab_ethique">
             <Row className="container">
-              <Col xs="12" sm="8" >
+              <Col xs="12" sm="8">
                 <p><T>Home.ethics.p1</T></p>
                 <p><T>Home.ethics.p2</T></p>
               </Col>

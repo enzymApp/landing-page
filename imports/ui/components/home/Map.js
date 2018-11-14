@@ -1,7 +1,7 @@
 import {Meteor}      from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
 import React         from 'react'
-import ReactMapboxGl, { Marker, Cluster } from 'react-mapbox-gl'
+import ReactMapboxGl, { Marker, Cluster, ZoomControl } from 'react-mapbox-gl'
 
 const Map = ReactMapboxGl({
   accessToken: Meteor.settings.public.mapboxAccessToken
@@ -36,18 +36,20 @@ class MapView extends React.Component {
           containerStyle={{ height, width }}
           center={[longitude, latitude]}
           zoom={[zoom]}
+          dragRotate={false}
         >
+          <ZoomControl/>
           {ready && (
             <Cluster ClusterMarkerFactory={this.clusterMarker}>
               {users.map(u => this.getLocation(u))
                 .filter(l => !!l)
-                .map((location, idx) => (
+                .map((location) => (
                   <Marker
-                    key={idx}
+                    key={JSON.stringify(location)}
                     coordinates={location}
-                  >
-                  </Marker>
-              ))}
+                  />
+                ))
+              }
             </Cluster>
           )}
         </Map>

@@ -1,12 +1,8 @@
 import React          from 'react'
 import {Form,
         FormGroup,
-        FormFeedback,
-        Input,
-        Label,
-        Col}          from 'reactstrap'
+        Input}        from 'reactstrap'
 import {Redirect}     from 'react-router-dom'
-import {analytics}    from 'meteor/okgrow:analytics'
 import Button         from './Button'
 import T              from './Translator'
 
@@ -34,11 +30,11 @@ export default class UserPageForm extends React.Component {
                   type="text"
                   placeholder="Pseudo"
                   onChange={this.handleChange('username')}
-                  autoFocus={true}
+                  autoFocus
                 />
                 <Button type="submit"><T>Ok</T></Button>
-                </div>
-              </FormGroup>
+              </div>
+            </FormGroup>
           </Form>
         }
       </div>

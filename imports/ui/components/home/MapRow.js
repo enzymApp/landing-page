@@ -11,11 +11,12 @@ export default function MapRow() {
         <Map />
       </Col>
       <Col xs="6">
-        <a name="events"> </a>
+        <a name="events" />
         <div className="rencontrez text_blocks">
           <h4><T>Home.events.title</T></h4>
           <div className="events">
             <p><T>Home.events.event1.text</T><i><T>Home.events.event1.time</T></i></p>
+            <p><T>Home.events.event2.text</T><i><T>Home.events.event2.time</T></i></p>
           </div>
           <div className="videoContainer">
             <div className="videoWrapper">
@@ -26,8 +27,8 @@ export default function MapRow() {
                 src="https://www.youtube.com/embed/CUIr7w3d2Gs"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
-                allowFullScreen>
-              </iframe>
+                allowFullScreen
+              />
             </div>
           </div>
           <div className="link-channel">
