@@ -1413,7 +1413,6 @@ html {
 
 .background_img_top-ico{
   background: url('/images/wave_bg.png') no-repeat center;
-  background-attachment: fixed;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
   padding-top: 30px;
@@ -1428,6 +1427,47 @@ html {
   align-items: center;
   justify-content: center;
   padding-top: 55px;
+}
+
+#main-ico .outline{
+  font-weight: bold;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 5px 15px;
+  display: block;
+  text-align: center;
+  font-size:16px;
+  transition: 0.3s;
+}
+
+#main-ico .outline:hover{
+  background-color: white;
+  color: #e63b99;
+  transition: 0.3s;
+}
+
+
+#main-ico .app{
+  background: #e63b99; /* Old browsers */
+  background: -moz-linear-gradient(top, #e63b99 0%, #bf3173 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e63b99 0%,#bf3173 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e63b99 0%,#bf3173 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e63b99', endColorstr='#bf3173',GradientType=0 ); /* IE6-9 */
+  font-weight: bold;
+  width: 100%;
+  border: solid 2px #e63b99;
+  border-radius: 30px;
+  padding: 5px 15px;
+  display: block;
+  text-align: center;
+  font-size:16px;
+  transition: 0.3s;
+}
+
+#main-ico .app:hover{
+  opacity: 0.7;
+  transition: 0.3s;
 }
 
 #main-ico h2{
@@ -1604,4 +1644,213 @@ html {
 }
 .center{
   text-align: center;
+}
+
+/* Video */
+
+.background-img-video-ico{
+  background: url('/images/wave_bg.png') no-repeat center;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  height: calc(95vw/1.77);
+}
+
+#video-ico{
+  height: calc(95vw/1.77);
+  max-width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#video-ico a:hover{
+  opacity: 0.6;
+}
+
+.videoWrapper-ico {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper-ico iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+  width: 100vw;
+  height: calc(95vw/1.77);
+}
+
+
+/* About ico */
+
+.background-radient-about-ico{
+  background: #e53b96; /* Old browsers */
+  background: -moz-linear-gradient(top, #e53b96 0%, #8c2467 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e53b96 0%,#8c2467 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e53b96 0%,#8c2467 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53b96', endColorstr='#8c2467',GradientType=0 );
+}
+
+#about-ico{
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center;
+  padding: 55px 0;
+  align-items: center;
+}
+
+#about-ico .logo-transparent{
+  max-width: 100%;
+}
+#about-ico .para{
+  margin-top: -30px;
+}
+#about-ico p{
+  font-size: 16px;
+  color: white;
+  text-align: justify;
+}
+
+#about-ico #mockup{
+  text-align: center;
+  margin:auto;
+}
+
+#about-ico #mockup img{
+  max-width: 75%;
+}
+
+/* Team */
+
+.background-img-team-ico{
+  background: #69ddc8; /* Old browsers */
+  background: -moz-linear-gradient(top, #69ddc8 0%, #6fc3ce 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #69ddc8 0%,#6fc3ce 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #69ddc8 0%,#6fc3ce 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69ddc8', endColorstr='#6fc3ce',GradientType=0 ); /* IE6-9 */
+  padding: 30px 0;
+}
+
+#team-ico{
+  max-width: 1200px;
+  margin: auto;
+}
+
+#advisors-ico{
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+#financial-ico{
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+#team-ico h2, #financial-ico h2{
+  color: #e63b99;
+  font-weight: bold;
+}
+
+#team-ico h3, #financial-ico h3{
+  color:white;
+  margin-bottom: 10px;
+}
+
+#team-ico .profil, #financial-ico .para{
+  margin-bottom: 20px;
+}
+#team-ico .yellow{
+  color:yellow;
+  font-size:14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+#team-ico .para, #financial-ico .para{
+  color:white;
+  font-size:15px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+#team-ico .linkedin-ico img, #financial-ico .linkedin-ico img{
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+#team-ico .title h2, #advisors-ico .title h2{
+  text-align: center;
+  font-size: 48px;
+  color:white;
+  margin-bottom: 20px;
+}
+
+#team-ico .profil, #financial-ico .profil{
+  display: flex;
+  position: relative;
+}
+
+#team-ico .img-profil, #financial-ico .img-profil{
+  flex: 1;
+}
+
+#team-ico .content, #financial-ico .content{
+  flex: 3;
+}
+
+
+#advisors-ico h2{
+  color: #e63b99;
+  font-weight: bold;
+  text-align: center;
+}
+
+#advisors-ico h3{
+  color:white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#advisors-ico .visual{
+  text-align: center;
+}
+
+#advisors-ico .profil{
+  margin-bottom: 20px;
+}
+
+#advisors-ico .profil img{
+  max-width: 75%;
+}
+
+#advisors-ico .linkedin-ico img{
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+#advisors-ico .content-one{
+  margin-bottom: 20px;
+}
+
+#advisors-ico .content-one h2{
+  text-align: left;
+}
+#advisors-ico .content-one h3{
+  text-align: left;
+}
+
+#advisors-ico .para{
+  color:white;
+  font-size:15px;
+  line-height: 1.2;
+  text-align: justify;
 }

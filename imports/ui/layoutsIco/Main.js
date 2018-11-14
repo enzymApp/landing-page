@@ -14,6 +14,17 @@ export default ({children, isUserPage}) => {
             <h3><T>Ico.intro.small</T></h3>
             <img src="/images/application-enzym.png" className="mockup"/>
           </div>
+          <Row class="cta">
+            <Col xs="12" sm="6" md="4">
+              <a href="" class="outline">WHITEPAPER</a>
+            </Col>
+            <Col xs="12" sm="6" md="4">
+              <a href="https://itunes.apple.com/app/id1437880226" class="app" target="_blank">GO TO APP STORE</a>
+            </Col>
+            <Col xs="12" sm="6" md="4">
+              <a href="https://play.google.com/store/apps/details?id=com.enzym_proto" class="app" target="_blank">GO TO PLAY STORE</a>
+            </Col>
+          </Row>
         </Col>
         <Col xs="12" sm="6" md="4">
           <div id="block">

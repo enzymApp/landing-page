@@ -26,6 +26,7 @@ export default () => (
   <BrowserRouter>
     <div>
       <Switch>
+        <Route name="ico" path="/ico" component={IcoPage}/>
         <Route exact name="homeWithReferrer" path="/referrer/:referrerToken" component={Home} />
         <Route exact name="homeWithUsername" path="/page/:username"          component={Home} />
         <Route exact name="validation"       path="/validation/:token"       component={ValidationComponent} />

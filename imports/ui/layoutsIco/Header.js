@@ -10,10 +10,9 @@ const LANGS = [
 ]
 
 const LINKS = [
-  {link: '/#about', name: 'About Enzym'},
-  {link: '/#whitepaper', name: 'Whitepaper'},
-  {link: '/#team', name: 'Team'},
-  {link: '/bounty', name: 'Bounty Z'}
+  {link: '/ico#about-ico', name: 'About Enzym'},
+  {link: '/ico#whitepaper', name: 'Whitepaper'},
+  {link: '/ico#team-ico', name: 'Team'},
 
 ]
 

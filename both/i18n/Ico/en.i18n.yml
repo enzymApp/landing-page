@@ -13,3 +13,113 @@ para1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ligula no
 para2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ligula non ex consectetur mattis. Proin neque urna, lacinia at dapibus non, volutpat eget purus. In at orci at velit posuere vestibulum id eu leo.
 
 goal: GOAL
+
+about:
+  para1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium lorem eget sem efficitur lacinia. Vestibulum ornare, lorem feugiat aliquam venenatis, arcu lectus sollicitudin turpis, at finibus risus velit in nibh. Pellentesque egestas, ligula a bibendum rutrum, leo nibh dictum metus, quis vulputate est enim nec ex. Sed sodales quis metus eget fermentum.
+  para2: Maecenas sed iaculis eros, vel ultrices ligula. Nam et mauris sit amet nunc blandit elementum sed a dolor. Duis tincidunt eros id leo accumsan convallis. Sed lectus ex, varius a nisi in, tempor vestibulum augue. Nulla vestibulum posuere lacus. Integer at rhoncus turpis. Nulla eget ipsum vitae turpis euismod commodo. Maecenas ut tellus nec enim bibendum venenatis. Duis viverra quam nec ipsum dapibus venenatis. Proin blandit, eros et aliquet lobortis, augue urna efficitur dui, ut imperdiet erat quam semper ipsum. Morbi condimentum, nulla a volutpat dictum, ligula nulla accumsan lorem, at vestibulum lectus felis eget est.
+  para3: In hac habitasse platea dictumst. Quisque accumsan orci eget hendrerit maximus. Cras laoreet convallis consectetur. Fusce venenatis purus sit amet ante efficitur condimentum.
+  para4: Curabitur mattis ac erat aliquet aliquet. Praesent consequat nunc ut posuere semper. Duis vel quam neque.
+
+team:
+  yannick:
+    identity: Yannick Barnel
+    work: Co-fondateur - CEO
+    yellow: Serial entrepreneur and cryptocurrency lover
+    para: Yannick has founded several societies, including Bubble Diving SA (60 shareholders), and managed several fundraisings. He is passionate about human relations and the blockchain technological revolution, and convinced he can help formulate the alternative to current social networks. He likes long ideological debates but prefers the fulfilment of concrete objectives.
+    img: /yannick.png
+    linkedin: https://www.linkedin.com/in/barnel-yannick/
+  sylvain:
+    identity: Sylvain Duchesne
+    work: Co-fondateur - CTO
+    yellow: Senior software designer with cryptology background - Entrepreneur - Neophile
+    para: Sylvain is a major blockchain and cryptography enthusiast. After he graduated from his studies in IT security and cryptography he joined several startups and became a specialist in complex mobile apps. As a perfectionist and a planning connoisseur he thrives to find the best tools and coordinate the team's progress to optimize our performance.
+    img: /sylvain.png
+    linkedin: https://www.linkedin.com/in/duchesnesylvain/
+  jeremy:
+    identity: Jeremy Coleman
+    work: Chief Marketing Officer
+    para: After he graduated from Sciences Po in Lyon Jeremy delved into marketing and web sciences. He worked for the Publicis Group as a specialist in communication and public relations for major companies. He also was in charge of communication and business development for the Lyon Festival of Lights. He also used to work for the digital transformation of various local associations.
+    img: /jeremy.png
+    linkedin: https://www.linkedin.com/in/jeremycolemanscpo/
+  alfred:
+    identity: Alfred Gautier
+    work: Direction artistique
+    para: Alfred travelled extensively before and after he graduated from the School of Fine Arts in Orléans. This enriched and anchored his appreciation for a variety of cultures and aesthetics. Since then he has been working for prestigious Parisian agencies such as Axiom Graphique.
+    img: /alfred.png
+    linkedin: https://www.linkedin.com/in/alfred-gautier-036147152/
+  theophile:
+    identity: Théophile Batoz
+    work: Ingénieur logiciel
+    para: After he graduated from INP engineer’s degree, computer siences in Grenoble, Théophile delved into Apple speciality devices. At Apple, he holds the position of software engineer, he worked under strong constraint performance dealing with several hundred million key-value pairs in up to 10 map-reduce jobs.
+    img: /jeremy.png
+    linkedin: https://www.linkedin.com/in/theophilebatoz/
+  bertrand:
+    identity: Bertrand Viricel
+    work: Graphic Designer UX & Intégrateur web
+    para: Front-end developer, Bertrand is also at the cutting edge of the latest technologies. He has recently become fond of React and React Native, languages ​​developed by Facebook. He is our reference in terms of integration of our models where he excels !
+    img: /bertrand.png
+    linkedin: https://www.linkedin.com/in/bertrand-hello-world/
+  sophea:
+    identity: Sophea Sock
+    work: Designer d’interfaces et expériences utilisateur
+    para: Sophea is a versatile Ui / Ux designer. With his graphic profile and product designer, he specializes in interface design and ergonomic website. His many conventional or offbeat projects allow him to offer different design experiences and human but always creative
+    img: /sophea.png
+    linkedin: https://www.linkedin.com/in/sopheasok/
+  octave:
+    identity: Octave Rolland
+    work: Rédacteur et traducteur
+    para: Octave is a writer specialized in the analysis of video game history, culture and aesthetics. His studies in Australia and Latin America taught him about academic and journalistic writing, language philosophy, semiotics, anthropology and other human sciences, which allowed him to develop a strong taste for the analysis of cultures and communications.
+    img: /ocatve.png
+    linkedin: https://www.linkedin.com/in/octave-rolland-a64b41167/
+  pauline:
+    identity: Pauline Rochette
+    work: Community Manager
+    para: Pauline is a content creator and curator, arming brands with original content to rule over the Internet and shame their opposants. Pauline studied the Arts, languages as well as communication and tied it all together with a Digital Marketing Master. She works as a freelancer and does not enjoy mentioning herself using the third person.
+    img: /ocatve.png
+    linkedin: https://www.linkedin.com/in/pauline-rochette-624ba210b/
+  kevin:
+    identity: Kevin Fuks
+    work: Community Manager
+    para: Kevin est un ingénieur IT étudiant la blockchain à côté de son travail temps-plein. Crypto-enthousiaste et Community Manager de 3 différentes blockchain, il s’amuse tout en travaillant dans ce domaine. Kevin est parti 6 mois vivre au Canada pour terminer ses études et adore découvrir de nouveaux pays et nouvelles cultures lors de festivals.
+    img: /kevin.png
+    linkedin: https://www.linkedin.com/in/ke-fu/
+  guillaume:
+    identity: Guillaume Larochette
+    work: Community Manager
+    para: Guillaume is a social media manager with a financial background, he worked six years in a french bank before he decided to go on a one year trip in Australia and Asia. He then joined two startups to train himself in social media management and support new projects.
+    img: /guillaume.png
+    linkedin: https://www.linkedin.com/in/glarochette/
+  fred:
+    identity: Frédéric DUchesne
+    work: Business Developper
+    para: Guillaume is a social media manager with a financial background, he worked six years in a french bank before he decided to go on a one year trip in Australia and Asia. He then joined two startups to train himself in social media management and support new projects.
+    img: /fred.png
+    linkedin: https://www.linkedin.com/in/glarochette/
+
+advisors:
+  title: B2EXPAND
+  subtitle: Technical and Marketing Advisor
+  para1: Having succeeded a token launch over a year ago, B2Expand makes successful video games implementing the blockchain technology, monetization as well as in the game-play itself.
+  para2: The team also provides extensive consulting services and continues to invest in R&D.
+  para3: As a crypto-funded company, B2Expand is one of the leaders in the industry backed by its expertise in launching ICOs, managing post-ICO and making games using the blockchain technology.
+  eric:
+    identity: Eric Burgel
+    work: Président - B2Expand
+    linkedin: https://www.linkedin.com/in/eric-burgel-a4313b5/
+    img: /eric.png
+  manon:
+    identity: Manon Burgel
+    work: CEO - B2Expand
+    linkedin: https://www.linkedin.com/in/eric-burgel-a4313b5/
+    img: /eric.png
+  remi:
+    identity: Rémi Burgel
+    work: CTO - B2Expand
+    linkedin: https://www.linkedin.com/in/r%C3%A9mi-burgel-1999ab149/
+    img: /remi.png
+  nicolas:
+    identity: Nicolas Paillet
+    work: Legal and financial advisor - Public accountant
+    para: Nicolas is a public accountant specialized in ICOs. He likes to help anticipate risks and share his knowledge on current international legislations. A tech enthusiast at heart, he personally uses cryptocurrencies for investment.
+    linkedin: https://www.google.fr
+    img: /nicolas.png
