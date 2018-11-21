@@ -31,7 +31,7 @@ export default class Header extends React.Component {
             :
             <Row id="video-ico">
               <div className="center">
-                <a href="Javascript:void(0);"><img src="/images/eth.png" className="play" onClick={()=>this.toggleVideo()}/></a>
+                <a href="Javascript:void(0);"><img src="/images/play-ico.png" className="play" onClick={()=>this.toggleVideo()}/></a>
               </div>
             </Row>
           }

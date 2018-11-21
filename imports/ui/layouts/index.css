@@ -1649,7 +1649,7 @@ html {
 /* Video */
 
 .background-img-video-ico{
-  background: url('/images/wave_bg.png') no-repeat center;
+  background: url('/images/background-video-ico.jpg') no-repeat center;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
   height: calc(95vw/1.77);
@@ -1781,7 +1781,7 @@ html {
 #team-ico .linkedin-ico img, #financial-ico .linkedin-ico img{
   width: 30px;
   position: absolute;
-  right: 15px;
+  right: 0px;
   top: 0;
 }
 
@@ -1797,8 +1797,13 @@ html {
   position: relative;
 }
 
-#team-ico .img-profil, #financial-ico .img-profil{
+#team-ico .visual, #financial-ico .visual{
   flex: 1;
+}
+
+#team-ico .img-profil, #financial-ico .img-profil{
+  max-width: 100%;
+  width: 150px;
 }
 
 #team-ico .content, #financial-ico .content{
@@ -1833,7 +1838,7 @@ html {
 #advisors-ico .linkedin-ico img{
   width: 30px;
   position: absolute;
-  right: 15px;
+  right: 0px;
   top: 0;
 }
 

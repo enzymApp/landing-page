@@ -7,7 +7,7 @@ export default ({children, isUserPage}) => {
     <div className="background-radient-about-ico">
       <Row id="about-ico">
         <Col xs="12" sm="6" md="6">
-          <img src="/images/application-enzym.png" className="logo-transparent"/>
+          <img src="/images/enzym-transparent-ico.png" className="logo-transparent"/>
           <div class="para">
             <p><T>Ico.about.para1</T></p>
             <p><T>Ico.about.para2</T></p>
@@ -17,7 +17,7 @@ export default ({children, isUserPage}) => {
         </Col>
         <Col xs="12" sm="6" md="6">
         <div id="mockup">
-          <img src="/images/application-enzym.png"/>
+          <img src="/images/mockup-enzym-ico.png"/>
         </div>
         </Col>
       </Row>
