@@ -89,9 +89,6 @@ export default ({children, isUserPage}) => {
             <h3><T>Ico.advisors.nicolas.work</T></h3>
             <p className="para"><T>Ico.advisors.nicolas.para</T></p>
           </div>
-          <div class="linkedin-ico">
-            <a href='https://www.google.fr' target="_blank"><img src="/images/linkedin-ico.png" /></a>
-          </div>
         </div>
       </div>
     </div>

@@ -1277,7 +1277,7 @@ html {
 
 @media screen and (max-width: 990px) {
   .hide-link{
-    display:none;
+    display:none !important;
   }
 }
 
@@ -1411,6 +1411,67 @@ html {
 
 /* Main */
 
+.whitepaper.inb{
+  display:inline-block;
+  position: relative;
+}
+
+.whitepaper.inb .name{
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.whitepaper .sub-lang{
+  display: none;
+  position: absolute;
+  width: 100px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  left: 0;
+  right: 0;
+  top: 30px;
+  padding: 5px;
+}
+
+.whitepaper.inb .sub-lang{
+  top:40px;
+}
+
+.whitepaper .sub-lang a{
+  color:black;
+}
+.whitepaper .sub-lang a:hover{
+  color:#e63b99;
+}
+
+.whitepaper .outline:hover > .sub-lang{
+  display: block;
+}
+
+@media screen and (max-width: 990px) {
+  .whitepaper .outline:hover > .sub-lang{
+    display: block;
+
+  }
+  .whitepaper .sub-lang{
+    position: relative;
+    display: block;
+    background-color: transparent;
+    top:auto;
+  }
+
+  #main-ico .cta .outline:hover{
+    background-color: transparent !important;
+    cursor: auto;
+    color: #e63b99;
+    transition: 0.3s;
+  }
+
+}
+
 .background_img_top-ico{
   background: url('/images/wave_bg.png') no-repeat center;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
@@ -1429,9 +1490,12 @@ html {
   padding-top: 55px;
 }
 
-#main-ico .outline{
+#main-ico .cta .outline{
+  word-break: break-all;
   font-weight: bold;
+  cursor: pointer;
   width: 100%;
+  color:white;
   border: 2px solid white;
   border-radius: 30px;
   padding: 5px 15px;
@@ -1439,20 +1503,18 @@ html {
   text-align: center;
   font-size:16px;
   transition: 0.3s;
+  margin-bottom: 10px;
 }
 
-#main-ico .outline:hover{
+#main-ico .cta .outline:hover{
   background-color: white;
   color: #e63b99;
   transition: 0.3s;
 }
 
 
-#main-ico .app{
-  background: #e63b99; /* Old browsers */
-  background: -moz-linear-gradient(top, #e63b99 0%, #bf3173 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #e63b99 0%,#bf3173 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #e63b99 0%,#bf3173 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+#main-ico .cta .app{
+  background-color: #e63b99; /* Old browsers */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e63b99', endColorstr='#bf3173',GradientType=0 ); /* IE6-9 */
   font-weight: bold;
   width: 100%;
@@ -1463,11 +1525,13 @@ html {
   text-align: center;
   font-size:16px;
   transition: 0.3s;
+  margin-bottom: 10px;
 }
 
-#main-ico .app:hover{
-  opacity: 0.7;
+#main-ico .cta .app:hover{
+  background-color: transparent;
   transition: 0.3s;
+  color: #e63b99
 }
 
 #main-ico h2{
