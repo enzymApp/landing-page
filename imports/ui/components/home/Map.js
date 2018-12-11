@@ -57,12 +57,24 @@ class MapView extends React.Component {
     )
   }
   clusterMarker = (coordinates, number) => {
-    const size = 40 + Math.floor(Math.log10(number)) * 8
-    styles.playerCount.height = styles.playerCount.width = size
+    const size = 30 + Math.floor(Math.log10(number) * 20)
     const key = JSON.stringify(coordinates)
     return (
-      <Marker coordinates={coordinates} style={styles.playerCount} key={key}>
-        <div style={styles.playerCountText}>{number}</div>
+      <Marker
+        coordinates={coordinates}
+        style={{
+          backgroundColor: '#E63B97',
+          opacity: 1,
+          display: 'table',
+          height: size,
+          width: size,
+          borderRadius: '100%',
+          border: '5px solid',
+          borderColor: '#FFD900',
+        }}
+        key={key}
+      >
+        <div style={styles.playerCounter}>{number}</div>
       </Marker>
     )
   }
@@ -80,19 +92,7 @@ export default withTracker(() => {
 })(MapView)
 
 const styles = {
-  playerCount: {
-    backgroundColor: '#E63B97',
-    opacity: 1,
-    display: 'table',
-    height: 20,
-    width: 20,
-    borderRadius: '50%',
-    border: '5px solid',
-    borderColor: '#FFD900',
-    textAlign: 'center',
-    verticalAlign: 'middle',
-  },
-  playerCountText: {
+  playerCounter: {
     fontSize: 18,
     color: 'white',
     display: 'table-cell',
