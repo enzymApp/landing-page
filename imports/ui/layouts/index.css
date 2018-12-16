@@ -316,7 +316,7 @@ strong {
 }
 
 .map-container{
-  height: 100%;
+  height: 600px;
   width: 100%;
 }
 .link-channel{
@@ -1049,7 +1049,7 @@ font-size: 28px;
   .row_blocks .col-6 {
     max-width: 85%;
     flex: 0 0 85%;
-    text-align: center;
+    /* text-align: center; */
     margin:0 auto;
   }
 
