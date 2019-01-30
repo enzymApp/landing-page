@@ -42,7 +42,7 @@ class SubscriptionFormContainer extends React.Component {
         <hr />
         <Row>
           <Col xs="12" md="6" align="center">
-            <a href="https://play.google.com/store/apps/details?id=com.enzym_proto" target="_blank">
+            <a href="https://play.google.com/store/apps/details?id=io.enzym.app" target="_blank">
               <img src="/images/available-android.png" className="responsive-img available-support"/>
             </a>
           </Col>
