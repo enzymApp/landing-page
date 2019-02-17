@@ -21,8 +21,8 @@ export default class Header extends React.Component {
   render() {
     const translatedLinks = [
       {name: 'Common.menu.places',  href: '#events'},
-      {name: 'Common.menu.concept', target: '_blank', href: FILES_URL + i18n.__('Common.menuUrls.concept')},
-      // {href: '/partenaires.pdf', name: 'Nos partenaires'},
+      {name: 'Common.menu.concept',  target: '_blank', href: 'Common.menuUrls.concept'},
+      {name: 'Common.menu.partners', target: '_blank', href: 'Common.menuUrls.partners'},
       // {href: '/pro.pdf',         name: 'Nos offres pro'},
       {name: 'Common.menu.contact',    href: 'mailto:yannick@enzym.io'},
     ]
@@ -51,7 +51,7 @@ export default class Header extends React.Component {
   }
   renderMenu = (translatedLinks) => {
     return translatedLinks.map((link) => (
-      <MenuItem {...link} key={link.name}></MenuItem>
+      <MenuItem {...link} key={link.name} />
     ))
   }
 }
