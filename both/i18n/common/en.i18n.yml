@@ -9,11 +9,12 @@ menu:
   places:   Places
   concept:  The concept
   partners: Our partners
+  pros:     Offers for pros
   contact:  Contact
 
 menuUrls:
   concept:  https://s3-eu-west-1.amazonaws.com/files.enzym.io/The+ENZYM+Concept.pdf
-  partners: https://s3-eu-west-1.amazonaws.com/files.enzym.io/Our offers for professionals.pdf
+  pros: https://s3-eu-west-1.amazonaws.com/files.enzym.io/Our offers for professionals.pdf
 
 signup:
   loggedInWithEmail: You are registered with the address {$email}

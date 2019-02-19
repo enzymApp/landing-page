@@ -22,8 +22,7 @@ export default class Header extends React.Component {
     const translatedLinks = [
       {name: 'Common.menu.places',  href: '#events'},
       {name: 'Common.menu.concept',  target: '_blank', href: 'Common.menuUrls.concept'},
-      {name: 'Common.menu.partners', target: '_blank', href: 'Common.menuUrls.partners'},
-      // {href: '/pro.pdf',         name: 'Nos offres pro'},
+      {name: 'Common.menu.pros',     target: '_blank', href: 'Common.menuUrls.pros'},
       {name: 'Common.menu.contact',    href: 'mailto:yannick@enzym.io'},
     ]
     return (

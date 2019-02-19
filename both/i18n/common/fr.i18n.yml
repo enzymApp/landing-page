@@ -9,12 +9,12 @@ menu:
   places:   Les lieux
   concept:  Le concept
   partners: Nos partenaires
-  pro:      Nos offres pro
+  pros:     Nos offres pro
   contact:  Contact
 
 menuUrls:
   concept: https://s3-eu-west-1.amazonaws.com/files.enzym.io/Le+concept+ENZYM.pdf
-  partners: https://s3-eu-west-1.amazonaws.com/files.enzym.io/Nos offres pour les professionnels.pdf
+  pros: https://s3-eu-west-1.amazonaws.com/files.enzym.io/Nos offres pour les professionnels.pdf
 
 signup:
   loggedInWithEmail: Tu es inscrit avec l'adresse {$email}.
