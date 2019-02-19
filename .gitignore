@@ -8,3 +8,4 @@ settings-production.json
 .DS_Store
 
 dumps
+yarn.lock
