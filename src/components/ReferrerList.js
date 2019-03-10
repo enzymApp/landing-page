@@ -47,27 +47,25 @@ export default compose(
     const minRank = 1
     const maxRank = MIN_COUNT
     Meteor.subscribe('referrers.list', MIN_COUNT, minRank, maxRank)
-    return {
-      centerId: referrer && referrer._id,
-      minRank,
-      maxRank,
-    }
-  }),
-  // pure,
-  withProps(({ minRank, maxRank }) => ({
-    list: Referrers.paginatedListCentered(MIN_COUNT, minRank, maxRank)
+    const list = Referrers.paginatedListCentered(MIN_COUNT, minRank, maxRank)
       .map(referrer => {
         return {
           ...referrer,
           username: (referrer.userId &&
             Meteor.users.findOne(
               {_id: referrer.userId},
-              {fields: {username: 1}}
+              {fields: { username: 1 }}
             ) || {}
           ).username
         }
-      }),
-  })),
+      })
+    return {
+      centerId: referrer && referrer._id,
+      list,
+      minRank,
+      maxRank,
+    }
+  }),
   withProps(({ list }) => ({
     loading: list.length < 2,
   })),
