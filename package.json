@@ -2,15 +2,19 @@
   "name": "enzym_landingpage",
   "private": true,
   "scripts": {
-    "start": "UNIVERSE_I18N_LOCALES='fr,en' meteor run --settings settings.json",
+    "start": "meteor run --settings settings.json",
     "deploy-prod": "UNIVERSE_I18N_LOCALES='fr,en' DEPLOY_HOSTNAME=eu-west-1.galaxy.meteor.com meteor deploy www.enzym.io --settings ./settings-production.json ; date",
-    "deploy-preprod": "UNIVERSE_I18N_LOCALES='fr,en' DEPLOY_HOSTNAME=us-east-1.galaxy.meteor.com meteor deploy preprod.enzym.io --settings ./settings-preprod.json ; date"
+    "prod:deploy": "git push prod master:master ; date",
+    "preprod:deploy": "git push -f preprod HEAD:master ; date",
+    "preprod:start": "scalingo --app enzym-landing-preprod scale web:1",
+    "preprod:stop": "scalingo --app enzym-landing-preprod scale web:0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.49",
+    "@babel/runtime": "7.3.4",
     "@enzymapp/react-ab-test": "^2.1.1",
     "bootstrap": "^4.1.3",
     "history": "^4.7.2",
+    "intl-messageformat": "2.2.0",
     "mapbox-gl": "^0.50.0",
     "meteor-node-stubs": "^0.3.2",
     "mongodb": "^3.1.8",
@@ -19,6 +23,7 @@
     "react": "^16.5.2",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^16.5.2",
+    "react-intl": "^2.8.0",
     "react-mapbox-gl": "^4.0.0",
     "react-markdown": "^3.6.0",
     "react-router": "^4.2.0",
@@ -26,6 +31,7 @@
     "react-share": "^2.3.1",
     "react-slick": "^0.23.1",
     "reactstrap": "^6.5.0",
+    "recompose": "^0.30.0",
     "remark-breaks": "^1.0.1",
     "semantic-ui-react": "^0.80.2",
     "simpl-schema": "^1.5.3",
@@ -48,5 +54,11 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-meteor": "^5.0.0",
     "eslint-plugin-react": "^7.10.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "/src/startup/client",
+      "server": "/src/startup/server"
+    }
   }
 }

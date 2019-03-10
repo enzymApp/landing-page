@@ -1,0 +1,12 @@
+_namespace: Referrer
+
+table:
+  rank: Rang
+  username: Pseudo
+  points: Points
+
+username: pseudo
+
+giftsLink:
+  before: En savoir plus sur le
+  text: programme de récompenses
