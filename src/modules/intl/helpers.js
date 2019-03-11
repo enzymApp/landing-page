@@ -35,3 +35,14 @@ export const guessLang = (locales, requestedLang) => {
   if(locales[short]) return short
   return 'en'
 }
+
+export const guessBrowserLang = (locales) => guessLang(
+  locales,
+  (
+    navigator.languages && navigator.languages[0] ||
+    navigator.language ||
+    navigator.browserLanguage ||
+    navigator.userLanguage ||
+    'en-US'
+  )
+)

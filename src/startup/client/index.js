@@ -7,18 +7,20 @@ import en from 'react-intl/locale-data/en'
 import fr from 'react-intl/locale-data/fr'
 import smoothscroll from 'smoothscroll-polyfill'
 import App          from '/src/App'
+import locales from '/src/modules/intl/loadLocales'
 // import discordWidget, {changeChannelLang} from '/src/tools/discordWidget'
 import '../both'
 import addReCaptcha  from './addReCaptcha'
+import { guessBrowserLang } from '/src/modules/intl/helpers'
 
 addLocaleData([...en, ...fr])
 smoothscroll.polyfill()
 
-console.log(getLang())
+console.log(guessBrowserLang(locales))
 
 Meteor.startup(() => {
   const config = Meteor.settings.public
-  const locale = getLang()
+  const locale = guessBrowserLang(locales)
   render(<App locale={locale} />, document.getElementById('app'))
   // if(config.discord)   discordWidget(window, document, { locale })
   if(config.recaptcha) addReCaptcha(window, document, config.recaptcha)
@@ -30,13 +32,3 @@ Meteor.startup(() => {
   //   }
   // })
 })
-
-function getLang () {
-  return (
-    navigator.languages && navigator.languages[0] ||
-    navigator.language ||
-    navigator.browserLanguage ||
-    navigator.userLanguage ||
-    'en-US'
-  )
-}
